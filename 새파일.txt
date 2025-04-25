@@ -1,0 +1,3497 @@
+
+<!DOCTYPE html>
+
+<html class="nb-theme-1 nb-fontSize-1" lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=0" name="viewport"/>
+<title>중앙대학교 포탈</title>
+<link href="/common/image/favicon.ico" rel="shortcut icon"/>
+<link href="/common/css/jquery-ui.css" rel="stylesheet"/>
+<link href="/common/bootstrap-3.3.6/css/bootstrap.css" rel="stylesheet"/>
+<link href="/common/css/select.css" rel="stylesheet"/>
+<link href="/common/css/select2.css" rel="stylesheet"/>
+<link href="/common/css/ng-table.css" rel="stylesheet">
+<link href="/common/summernote/font-awesome.min.css" rel="stylesheet">
+<link href="/common/summernote/summernote.css" rel="stylesheet"/>
+<link href="/common/axj/AXJ.css" rel="stylesheet"/>
+<link href="/common/axj/AXUpload5.css" rel="stylesheet"/>
+<link href="/common/axj/AXButton.css" rel="stylesheet"/>
+<link href="/common/fullcalendar/fullcalendar.min.css" rel="stylesheet"/>
+<link href="/common/css/dev.css" rel="stylesheet"/>
+<link href="/common/css/ui_ux.css" rel="stylesheet"/>
+<link href="/common/css/popup.css" rel="stylesheet">
+<link href="/common/css/SpGrid.css" rel="stylesheet">
+<link href="/common/css/SpModal.css" rel="stylesheet"/>
+<link href="/common/css/layout.reset.css" rel="stylesheet"/>
+<link href="/common/css/cau.page.css" rel="stylesheet"/>
+<link href="/common/fullcalendar/fullcalendar.min.css" rel="stylesheet">
+<link href="/common/css/da-form.css" rel="stylesheet">
+<link href="/common/css/SpModal.css" rel="stylesheet"/>
+<link href="/common/css/treeview.css" rel="stylesheet"/>
+<script src="/common/js/lodash.min.js"></script>
+<script src="/common/fullcalendar/moment.min.js"></script>
+<script src="/common/js/moment.locale.kr.js"></script>
+<script src="/common/js/jquery-1.12.1.js"></script>
+<script src="/common/js/jquery.form.js"></script>
+<script src="/common/js/jquery-ui.js"></script>
+<script src="/common/bootstrap-3.3.6/js/bootstrap.js"></script>
+<script src="/common/js/angular.min.js"></script>
+<script src="/common/js/angular-strap.min.js"></script>
+<script src="/common/js/angular-strap.tpl.min.js"></script>
+<script src="/common/fullcalendar/fullcalendar.min.js"></script>
+<script src="/common/fullcalendar/calendar.js"></script>
+<script src="/common/js/select.min.js"></script>
+<script src="/common/js/mask.min.js"></script>
+<script src="/common/js/ng-table.min.js"></script>
+<script src="/common/js/ui-bootstrap-tpls-2.2.0.min.js"></script>
+<script src="/common/js/ocLazyLoad.min.js"></script>
+<script src="/common/summernote/summernote.js"></script>
+<script src="/common/summernote/lang/summernote-ko-KR.js"></script>
+<script src="/common/summernote/angular-summernote.js"></script>
+<script src="/common/axj/AXJ.js"></script>
+<script src="/common/axj/AXUpload5.js"></script>
+<script src="/common/chart/Chart.min.js"></script>
+<script src="/common/chart/angular-chart.min.js"></script>
+<script src="/common/js/angular-input-masks-standalone.js"></script>
+<script src="/common/js/shim.js"></script>
+<script src="/common/js/portalCommon.js"></script>
+<script src="/common/msg/commonMsg.js"></script>
+<script src="/common/js/itsu.common.js?20220315"></script>
+<script src="/common/js/itsu.grid.core.js"></script>
+<script src="/common/js/globalize.js"></script>
+<script src="/common/js/portalCommonService.js"></script>
+<script src="/common/js/fileUploadService.js"></script>
+<script src="/common/js/i18nMessage.js"></script>
+<script src="/common/js/i18nService.js?20220310"></script>
+<script src="/common/js/authService.js"></script>
+<script src="/common/js/pageDirective.js"></script>
+<script src="/common/js/portalCommonDirective.js?20221201"></script>
+<script src="/common/js/portalCommonFilter.js"></script>
+<script src="/common/js/alasql.min.js"></script>
+<script src="/common/js/xlsx.core.min.js"></script>
+<script src="/common/js/xls.full.min.js"></script>
+<script src="/common/js/xlsx.full.min.js"></script>
+<script src="/common/js/ods.js"></script>
+<script src="/common/js/oz.js"></script>
+<script src="/common/js/jquery.vticker.js"></script>
+<script src="/common/js/SpUi.js?20220311"></script>
+<script src="/common/js/angular-sanitize.js"></script>
+<script src="/common/js/SpTreeView.js"></script>
+<script src="/common/js/jquery.countdown.js"></script>
+<script src="/common/js/qrcode.min.js"></script>
+<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d91a0b4028eb80c312788a24a5a27470" type="text/javascript"></script>
+</link></link></link></link></link></link></head>
+<script>
+
+	var locale = '';
+
+	if (locale == 'en') {
+
+		document.write('<script src="/common/js/angular-locale_en-us.js"><\/script>');
+
+	}else{
+
+		document.write('<script src="/common/js/angular-locale_ko-kr.js"><\/script>');
+
+	}
+
+	var _pageSize = 10;
+
+	var _popupPageSize = 7;
+
+	moment.locale('ko');
+
+	angular.module('portal',
+
+			['ngSanitize',
+
+				'oc.lazyLoad',
+
+				'ngTable',
+
+				'mgcrea.ngStrap',
+
+				'ui.bootstrap',
+
+				'ui.select',
+
+				'ui.mask',
+
+				'chart.js',
+
+				'summernote',
+
+				'ui.calendar',
+
+				'ui.utils.masks',
+
+				'portal.commonService',
+
+				'portal.commonDirective',
+
+				'portal.pageDirective',
+
+				'portal.commonFilter',
+
+				'SpUi']);
+
+
+
+	angular
+
+			.module('portal')
+
+			.config(['$provide', '$httpProvider', '$datepickerProvider', 'ChartJsProvider',
+
+				function($provide, $httpProvider, $datepickerProvider, ChartJsProvider, $rootScope){
+
+					$provide.decorator('textareaDirective', function($delegate, $log) {
+
+						//$log.debug('Hijacking input directive');
+
+						var directive = $delegate[0];
+
+						angular.extend(directive.link, {
+
+							post: function(scope, element, attr, ctrls) {
+
+								element.on('compositionupdate', function (event) {
+
+									element.triggerHandler('compositionend');
+
+								})
+
+							}
+
+						});
+
+						return $delegate;
+
+					});
+
+					$provide.decorator('inputDirective', function($delegate, $log) {
+
+						//$log.debug('Hijacking input directive');
+
+						var directive = $delegate[0];
+
+						angular.extend(directive.link, {
+
+							post: function(scope, element, attr, ctrls) {
+
+								element.on('compositionupdate', function (event) {
+
+									element.triggerHandler('compositionend');
+
+								})
+
+							}
+
+						});
+
+						return $delegate;
+
+					});
+
+
+
+					//http
+
+					$httpProvider.interceptors.push(function($q, $timeout, $window, $rootScope ) {
+
+						return {
+
+							// On request success
+
+							request: function (config) {
+
+								// Return the config or wrap it in a promise if blank.
+
+
+
+
+
+								return config || $q.when(config);
+
+							},
+
+							// On request failure
+
+							requestError: function (rejection) {
+
+								return $q.reject(rejection);
+
+							},
+
+							// On response success
+
+							response: function (response) {
+
+//			        	 Return the response or promise.
+
+								if(response.data.msgCode == "error") {
+
+									//alert(_ERR_LOGIC + "\n" + response.data.msg);
+
+
+
+									if ( !/main\.do/.test(location.href) ){
+
+										alert(response.data.message);
+
+										submitWithJson({
+
+											url : "/sysTemError.do",
+
+											data : {
+
+												msg : 'error',
+
+												error : "URL : "+response.config.url+"<br>ERROR : "+response.data.message
+
+											}
+
+										});
+
+									}
+
+
+
+									$q.reject();
+
+								}
+
+
+
+								return response || $q.when(response);
+
+							},
+
+							// On response failture
+
+							responseError: function (rejection) {
+
+								// Return the promise rejection.
+
+								if(rejection.status === 401){
+
+									//alert(_MSG_NO_SESSION);
+
+									$window.location = '/login.do';
+
+								}
+
+								return $q.reject(rejection);
+
+							}
+
+						}
+
+					});
+
+
+
+					//datepicker
+
+					angular.extend($datepickerProvider.defaults, {
+
+						dateFormat: 'yyyy/MM/dd',
+
+						autoclose: true,
+
+						dateType : 'string'
+
+					});
+
+
+
+					ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
+
+				}])
+
+			.run(function($http, $rootScope, $window, $ocLazyLoad, authService, i18nService , Toast){
+
+
+
+				$rootScope.modal = {};
+
+
+
+				$rootScope.$on('changeCurrentMenuName', function(event, curMenuInfo) {
+
+					var navHader = $("#nbNav2ds");
+
+					var topMenu = $("#topMenu");
+
+					var sndMenu = $("#sndMenu");
+
+					navHader.attr("data-mid", curMenuInfo.menuId);
+
+					navHader.attr("data-pid", curMenuInfo.prtMenuId);
+
+					topMenu.html(curMenuInfo.topMenu)
+
+					sndMenu.html(curMenuInfo.sndMenu);
+
+				})
+
+
+
+				// 공통 팝업 js 호출
+
+				$ocLazyLoad.load([
+
+					, '/common/popup/massEnrollmentController.js'
+
+					, '/common/popup/massEnrollmentController2.js'
+
+					, '/common/popup/massEnrollmentAplyInController.js'
+
+					, '/common/popup/researchPopupController.js'
+
+					, '/common/popup/gradeEnrollmentAplyInController.js'
+
+					, '/common/popup/pUsjMidIns01PopupController.js'
+
+					, '/common/popup/pUsjFinIns01PopupController.js'
+
+					, '/common/popup/sUsjFinRev01PopPopupController.js'
+
+					, '/common/popup/surveyClassificationPopupController.js'
+
+					, '/common/popup/surveyCopyPopupController.js'
+
+					, '/common/popup/surveyPageManagePopupController.js'
+
+					, '/common/popup/surveyQuestionManagePopupController.js'
+
+					, '/common/popup/surveyQuarterManagePopupController.js'
+
+					, '/common/popup/surveyTargetPopupController.js'
+
+					, '/common/popup/surveyTargetMailPopupController.js'
+
+					, '/common/popup/surveyTargetPushPopupController.js'
+
+					, '/common/popup/surveyDeployRequestPopupController.js'
+
+					, '/common/popup/rowDataPopupController.js?20211210'
+
+					, '/common/popup/gradeMsgPopupController.js'
+
+					, '/common/popup/aplyTargetController.js'
+
+				]);
+
+
+
+				// 로그인 화면 (권이)
+
+
+
+				$rootScope.modal = {};
+
+				if($window.location.pathname === '/login/index.do' ||  $window.location.pathname === '/common/auth/SSOlogin.do' ){
+
+					sessionStorage.clear();
+
+					return ;
+
+				}
+
+
+
+				// main.jsp 로그인 정보 layout.jsp에 JOIN (권이)
+
+
+
+				var signIn = false;
+
+
+
+
+
+
+
+				//로그인 정보
+
+				$rootScope.loginInfo = {};
+
+				if($window.location.pathname != '/main.do' ){
+
+					$rootScope.currentMenu = JSON.parse('null');
+
+				}
+
+				var authMenuList = null, favoMenuList = null;
+
+
+
+//			var authMenuList = JSON.parse(sessionStorage.getItem('authMenuList'));
+
+//			var favoMenuList = JSON.parse(sessionStorage.getItem('favoMenuList'));
+
+
+
+
+
+//			if( authMenuList && nanaBand.header ){ // 메뉴 정보 세션에서 가져오기
+
+
+
+//				nanaBand.header(authMenuList,favoMenuList, signIn);
+
+
+
+//			}else{// 메뉴 정보 세션에 넣어주기
+
+
+
+
+
+
+
+
+
+				$http.post('/menu/selectUserMenuList.ajax', {userId : '', userGrpCd : ''})
+
+						.success(function(data){
+
+							if(data.msgCode === "success"){
+
+
+
+								authMenuList = transformTozTreeFormat(data.authMenuList);
+
+								//if(!authMenuList || authMenuList.length === 0 || typeof authMenuList !== 'object'){
+
+								//	return ;
+
+								//}
+
+
+
+								sessionStorage.setItem('authMenuList', JSON.stringify(authMenuList));
+
+
+
+								if(data.favoMenuList && data.favoMenuList.privateInfo){
+
+									sessionStorage.setItem('favoMenuList', JSON.stringify( data.favoMenuList.privateInfo));
+
+									favoMenuList=   data.favoMenuList.privateInfo;
+
+								}
+
+
+
+								if(authMenuList && nanaBand.header){
+
+									if('' == 'guest') signIn = false;
+
+									nanaBand.header(authMenuList, favoMenuList, signIn);
+
+								}
+
+							}else{
+
+								console.log("%cERROR CODE: 3010100117", "color: red");
+
+							}
+
+						});
+
+//			}
+
+
+
+				// create & getting (portlets, privateInfo, theme) session (권이)
+
+				(function($http, main){
+
+					var portlets = null, privateInfo = null;
+
+					/*
+
+                                    var portlets = sessionStorage.getItem('portlets'),
+
+                                        privateInfo = sessionStorage.getItem('privateInfo');
+
+
+
+                                    if(portlets && privateInfo){ // 세션에서 가져오기
+
+
+
+                                        portlets = JSON.parse(portlets);
+
+                                        privateInfo = JSON.parse(privateInfo)[0];
+
+
+
+
+
+                                        if(nbMore.setting){
+
+                                            nbMore.setting(privateInfo);
+
+                                        }
+
+
+
+                                        if(main){
+
+                                            nanaBand.portlet(portlets, privateInfo);
+
+                                        }
+
+                                    }else{
+
+                    */
+
+					$http.post('/main/selectUserPortletList.ajax', {}).success(function(data){
+
+						if(data.msgCode === 'success'){
+
+
+
+							if(data.state === null) {
+
+								return;
+
+							}
+
+							var pFmt = toPortletFmt(data.portlets);
+
+							sessionStorage.setItem('portlets', JSON.stringify(pFmt));
+
+							sessionStorage.setItem('privateInfo', data.state.privateInfo);
+
+
+
+							portlets = pFmt;
+
+							privateInfo = JSON.parse(data.state.privateInfo)[0];
+
+
+
+							if(nbMore){
+
+								if(nbMore.setting)
+
+									nbMore.setting(privateInfo);
+
+							}
+
+
+
+							if(main){
+
+
+
+								nanaBand.portlet(portlets, privateInfo);
+
+							}
+
+						}else{
+
+							console.log("%cERROR CODE: 1905081217", "color: red");
+
+						}
+
+					});
+
+//				}
+
+					return 0;
+
+				})($http,typeof nanaBand.portlet !== 'undefined' );
+
+
+
+
+
+
+
+
+
+				
+
+				
+
+
+
+				
+
+
+
+				$rootScope.imagePerfix = '';
+
+				
+
+				$rootScope.imagePerfix = 'data:image/png;base64,';
+
+				
+
+
+
+				i18nService.setLangCode('');
+
+				i18nService.load();
+
+
+
+				//로그아웃
+
+				$rootScope.logout = function(){
+
+					$http.post('/common/auth/doLogout.ajax', {})
+
+							.success(function(response){
+
+								if(response.result === 'ok'){
+
+									$window.location = "/login.do";
+
+								}
+
+							});
+
+				};
+
+
+
+				//언어변경(다국어)
+
+				$rootScope.chgLang = function(){
+
+					/*
+
+                    $http.post('/common/auth/doLogout.ajax', {})
+
+                    .success(function(response){
+
+                        if(response.result === 'ok'){
+
+                            $window.location = "/login.do";
+
+                        }
+
+                    });
+
+                    */
+
+				};
+
+			})
+
+			.controller("appController", function(){
+
+
+
+			})
+
+</script>
+<body class="ng-cloak" ng-app="portal" ng-clock="" ng-controller="appController">
+<ajax-indicator></ajax-indicator>
+<main class="nb-wrap" id="nanaBand">
+<section class="nb-context" id="nbContext">
+<!-- 해더 -->
+<script>
+
+   	var serverName = 'mportal.cau.ac.kr';
+
+   	var favorite = '즐겨찾기';
+    	
+    var fncLogin = function(){
+    	location.href = "/common/auth/SSOlogin.do";
+    	/*  황정섭 과장 요청 (4/19)
+        if(serverName.indexOf("dportal") != -1 || serverName.indexOf("tportal") != -1 || serverName.indexOf("mportal") != -1){
+        	location.href = "/common/auth/SSOlogin.do";
+        }else{
+        	location.href = "/login/index.do";
+        }
+        */
+    };
+
+    var callback =function(data) {
+        if(data.msgCode=='success'){
+        	if(serverName.indexOf("dportal") != -1 || serverName.indexOf("tportal") != -1 || serverName.indexOf("mportal") != -1){
+        		if( 'false' ){
+        			location.href = '';	
+        		}else{
+        			location.href = "/main.do";
+        		}
+        	}else{
+        		location.href = "/main.do";	
+        	}	
+        }
+    };
+
+    var fncLogout = function()
+    {
+        if( isAndroidNativeApp() ){ // 안드로이드
+            Android.requestLogout();
+        }
+
+        if ( isIosWebView() ){ // IOS
+            webkit.messageHandlers.logoutCallbackHandler.postMessage("test");
+        }
+
+        sessionStorage.clear();
+        gfnc_transaction('/login/logout.ajax', {}, callback, false,"json");
+    };
+
+    /* 정보제공동의 */
+    var infoAgree = function()
+    {
+        location.href = "/system/admin/info/infoAgree.do";
+    };
+
+    /* 정보수신동의 */
+    var infoRecieve = function()
+    {
+        location.href = "/common/infoRecieve/infoRecieve.do";
+    };
+
+    var sessionWinPop;
+    var tid;
+    
+    //var cnt = parseInt(30*60);//초기값(초단위) 30분으로 변경
+    var cnt = parseInt(180*60); //초기값(초단위) 180분으로 변경
+    
+    function counter_init() {
+        if( 'false' ){
+        	tid = setInterval("counter_run()", 1000);
+		}
+    }
+
+    
+    function isMobile() {
+
+        var filter = "win16|win32|win64|mac";
+
+        if(navigator.platform) {
+
+            if (0 > filter.indexOf(navigator.platform.toLowerCase())) {
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+   
+    $(document).ready(function() {
+    	var isLoginOk = "";
+    	if(isLoginOk == 'true'){
+	    	setMyPage();
+	    	runTimer();
+       	}
+    	isLogin();
+    });
+
+    function isLogin(){
+		gfnc_transaction('/login/getLoginInfo.ajax', {}, function(data){
+			if(data.msgCode == 'success' && data.loginInfo != null){
+				$(".loginTag").removeClass('loginTag');
+			}else{
+				$(".logoutTag").removeClass('logoutTag');
+			} 
+		}, false,"json");
+	}
+
+    /* myPage 학생, 교직원 다른 메뉴 노출 */
+    function setMyPage() {
+
+		var params = {
+			usergb: ""
+		};
+
+
+		if( params.usergb === "S" ) {
+			$(".std").removeClass("none");
+		} else {
+			$(".emp").removeClass("none");
+		}
+
+		// setMyPageAlarm();
+
+
+
+		// mobile
+		var userAgent = navigator.userAgent;
+		if (userAgent.match(/Android|iPhone|iPad|iPod/)) {
+			$('#eApproval').attr("href", "https://mgw.cau.ac.kr");
+		}
+    }
+
+
+    /* myPage 알람 세팅 */
+	function setMyPageAlarm() {
+
+		var params = {
+			usergb: "",
+			userId: "",
+			deptCd: "",
+			uid: "",
+			tabNo: "2"
+		};
+
+		// PUSH함 정보 가져오기
+		$.ajax({
+			method: "POST",
+			url: "/myPage/pushBox/countNewPush.ajax",
+			data: JSON.stringify(params),
+			dataType: "json",
+			contentType: "application/json; charset=utf-8",
+		}).done(function( response ) {
+			$("#pushCnt").text( response.cnt );
+			if( response.cnt > 0 ) {
+				$("#openNBuserInfo").attr( "data-new", "true" );
+			}
+		});
+
+		// 메일함 정보 가져오기
+		$.ajax({
+			method: "POST",
+			url: "/common/office365/getMailInfo.ajax",
+			data: JSON.stringify(params),
+			dataType: "json",
+			contentType: "application/json; charset=utf-8",
+		}).done(function( response ) {
+			if( !response.timedOut ) {
+				var cnt = JSON.parse( response.cnt );
+				$("#mailCnt").text( cnt.InboxUnreadCount );
+				if( cnt.InboxUnreadCount > 0 ) {
+					$("#openNBuserInfo").attr( "data-new", "true" );
+				}
+			} else {
+				$("#mailCnt").text( "시간초과" );		/*	시간초과	*/
+			}
+		});
+
+		// 결재함 정보 가져오기
+		$.ajax({
+			method: "POST",
+			url: "/portlet/p026/p026.ajax",
+			data: JSON.stringify(params),
+			dataType: "json",
+			contentType: "application/json; charset=utf-8",
+		}).done(function( response ) {
+			$("#approvalCnt").text( response.aprCount );
+			if( response.aprCount > 0 ) {
+				$("#openNBuserInfo").attr( "data-new", "true" );
+			}
+		});
+	}
+
+    function isMobiles(){
+	    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			return true;	
+	    }else{
+	    	return false;
+	    }
+	}
+     
+	function runTimer(){
+		if(!isMobiles()){
+			createTimer();
+		}
+	}
+
+	function resetTimer(){
+		if(!isMobiles()){
+			createTimer();
+		}
+	}
+
+	function createTimer(){
+		//var date = new Date().getTime() + (60000*30); // 30분
+		var date = new Date().getTime() + (60000*180); // 180분
+		
+		
+		$("#counter").countdown(date)
+		.on('update.countdown', function(event){ // 갱신
+			var time = event.strftime('%H:%M:%S');
+			if(time == '00:05:00'){
+				loadTimeoutPopup();
+			}
+			$(this).text(time);
+		})
+		.on('finish.countdown', function(event){ // 종료
+			$(this).text(event.strftime('%H:%M:%S'));
+
+			// 2018.04.30 timeout + 5초후 새로고침함 
+			// fncLogout(); // 시간만료시 로그아웃처리  
+			setTimeout(function() {
+				//location.reload();
+				refreshPage();
+			}, 5000);
+		});
+	}
+	
+	function loadTimeoutPopup(){
+		$.ajax({
+			method: "POST",
+			url: "/common/auth/popupTimerLogout.do",
+			dataType: "html"
+		}).done(function( response ) {
+			$("#popupContent").html(response);
+
+			$('#myModal').modal({backdrop : false, keyboard: true});
+			$( "#btnLogout" ).click(function() {
+				fncLogout();
+				$('#myModal').modal('hide');
+			});
+			$( "#btnReset" ).click(function() {
+				//resetTimer();
+				$('#myModal').modal('hide');
+				//location.reload();
+				refreshPage();
+			});
+		});
+	}
+	// 화면 Refresh를  Ajax 로 변경 처리.  
+	function refreshPage() {
+		//location.reload();
+		gfnc_transaction('/common/auth/checkSSO.ajax', {}, function(data){
+			if(data.msgCode == 'fail'){				
+				fncLogout();
+			} else{
+				resetTimer();
+			}
+		}, false,"json");
+	}
+</script>
+<style type="text/css">
+
+.loginTag{display: none !important;}
+.logoutTag{display: none !important;}
+.modal { 
+   background-color:rgba(0, 0, 0, 0.5);
+}
+
+/* 중앙대 모바일 검색 대신 로그인 & 로그아웃 추가 */
+@media screen and (min-width: 960px) {
+	.nb-h-search.si {display: none;}
+}
+@media screen and (max-width: 959px) {
+	.nb-h-search.se {display: none;}
+	.nb-h-search.si {background: none;width: auto;padding: 17px 10px 10px 10px;}
+	.nb-h-search.si > a {
+		color: rgba(255, 255, 255, .9);border: 1px solid rgba(255, 255, 255, .6);background-color: rgba(255, 255, 255, .05);
+		padding: 5px 10px;border-radius: 3px;overflow: hidden;
+	}
+	.nb-onMenuMobile .nb-h-search.si {right: -150px;}
+}
+
+.chatbot{position: fixed; bottom:65px; right:20px; z-index:2147483647 ; width:70px; height:70px;
+	border-radius:50%; background:#2155A4 url(https://chat.cau.ac.kr/img/sitelink_img.png) no-repeat;
+	background-size:contain; border:1px solid #fff; margin:15px auto 0; cursor: pointer;
+}
+.chatbot_pulse {
+	animation:chatbot_bound 1.2s ease-in-out 3 forwards, chatbot_pulse 3s infinite;
+	-webkit-animation:chatbot_bound 1.2s ease-in-out 3 forwards, chatbot_pulse 3s infinite;
+}
+.chatbot_pulse:hover {
+	animation: none;
+}
+@keyframes chatbot_bound {
+	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);transform: translateY(0);}
+	40% {-webkit-transform: translateY(-30px);transform: translateY(-30px);}
+	60% {-webkit-transform: translateY(-20px);transform: translateY(-20px);}
+}
+@-webkit-keyframes chatbot_pulse {
+	0% {
+		-webkit-box-shadow: 0 0 0 0 rgba(0,0,250, 0.4);
+	}
+	70% {
+		-webkit-box-shadow: 0 0 0 10px rgba(0,0,250, 0);
+	}
+	100% {
+		-webkit-box-shadow: 0 0 0 0 rgba(0,0,250, 0);
+	}
+}
+@keyframes chatbot_pulse {
+	0% {
+		-moz-box-shadow: 0 0 0 0 rgba(0,0,250, 0.4);
+		box-shadow: 0 0 0 0 rgba(0,0,250, 0.4);
+	}
+	70% {
+		-moz-box-shadow: 0 0 0 10px rgba(0,0,250, 0);
+		box-shadow: 0 0 0 10px rgba(0,0,250, 0);
+	}
+	100% {
+		-moz-box-shadow: 0 0 0 0 rgba(0,0,250, 0);
+		box-shadow: 0 0 0 0 rgba(0,0,250, 0);
+	}
+}
+
+
+</style>
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+<div class="modal-dialog">
+<!-- Modal content-->
+<div class="modal-content" id="popupContent">
+</div>
+</div>
+</div>
+<header class="nb-header" id="nbHeader">
+<div class="nb-h-mobile-btn" id="nbHeaderMenuMobile"></div><!-- 모바일 메뉴 버튼 -->
+<nav class="nb-h-top-nav">
+<div class="nb-h" id="nbHeaderContext">
+<div class="nb-h-inside">
+<div class="nb-h-begin">
+<div class="nb-headerInfos">
+<ul>
+<li class="nb-h-icon-home"><a href="/main.do">홈</a></li>
+<li class="nb-h-icon-scale loginTag" onclick="nbInformation.scale()"><a href="javascript:void(0);">확대</a></li>
+<li class="loginTag">
+<div class="nb-time2signOut">
+<div>
+<em><span id="counter"></span></em>
+</div>
+<a href="javascript:void(0);" onclick="refreshPage();">로그아웃 연장</a>
+</div>
+</li>
+<li class="nb-h-icon-setup nb-userInfo-context loginTag">
+<div class="nb-userInfo" data-new="false" id="openNBuserInfo">
+<em><span></span>님</em>
+</div>
+<div class="nb-userInfo-more">
+<div class="nb-userInfo-more-list" id="nbUcontext">
+<div class="nb-m-closeUserInfo">
+<a href="javascript:nbInformation.close();">뒤로</a>
+</div>
+<div class="nb-m-userInfoDL-context">
+<dl class="nb-scroll-y-hide">
+<dt>MY SECRET</dt>
+<dd class="emp none"><a href="/prof/gps/pGpsPer001/index.do">내 정보 수정</a></dd>
+<dd class="std none"><a href="/std/uhs/sUhsPer001/index.do">내 정보 수정</a></dd>
+<dd class="std none"><a href="/std/pis/sPisPer002/index.do">학부모 정보 수정</a></dd>
+<dd><a href="/myPage/changePw/changePw.do">비밀번호 수정</a></dd>
+<dd class="emp none"><a href="/myPage/changePin/changePin.do">PIN번호 설정</a></dd>
+<dd><a href="/myPage/representId/representId.do">대표신분 설정</a></dd>
+<dd><a href="/myPage/pushBox/pushBox.do">PUSH함</a></dd>
+<dd><a href="/common/office365/checkSignUpDate.do">메일함</a></dd>
+<dd class="emp none"><a href="https://gw.cau.ac.kr" id="eApproval" target="_blank">결재함</a></dd>
+<dd><a href="javascript:infoAgree();">정보제공 동의</a></dd>
+<dd><a href="javascript:infoRecieve();">정보수신 동의</a></dd>
+<dd class="nb-mobile-signOut"><a href="javascript:fncLogout()">Logout</a></dd>
+<dt>환경설정</dt>
+<dd class="nb-h-portlet-setup"><a href="javascript:nbInformation.portlet();">개인화 설정</a></dd>
+<dd><a href="javascript:nbMore.open('theme');">테마 설정</a></dd>
+<dd class="nb-h-portlet-setup"><a href="javascript:nbMore.open('fontSize');">포틀릿 폰트 설정</a></dd>
+<dd><a href="/myPage/myLink/myLink.do">바로가기 설정</a></dd>
+</dl>
+</div>
+</div>
+</div>
+</li>
+<li class="nb-h-icon-signOut loginTag"><a href="javascript:void(0);" onclick="fncLogout()">Logout</a></li>
+<li class="nb-h-icon-signIn logoutTag"><a href="javascript:void(0);" onclick="fncLogin()">Login</a></li>
+</ul>
+</div>
+<div class="nb-mobile-push-btn"><a href="/myPage/pushBox/pushBox.do"></a></div>
+<div class="nb-mobile-home-btn"><a href="/main.do">Home</a></div>
+<div class="nb-mobile-close-btn" id="nbCloseMobileMenu02"></div>
+</div>
+<div class="nb-h-bottom">
+<div class="nb-h-menu">
+<div class="nb-h-menu-f">
+<ul class="nb-flex-XX nb-scroll-y-hide" id="nbHeaderMenuContext"></ul>
+</div>
+<div class="nb-h-menu-list" id="nbHeaderMenuListContext">
+<div class="nb-h-menu-list-context nb-scroll-y-hide">
+<input checked="checked" id="nbSpace2m0101" name="nbSpace2m01" type="radio"/>
+<input id="nbSpace2m0102" name="nbSpace2m01" type="radio"/>
+<div>
+<section class="nb-h-menuList-left nb-tab-2m-DEL">
+<ol>
+<li><label for="nbSpace2m0101">즐겨찾기</label></li>
+<li><label for="nbSpace2m0102">바로가기</label></li>
+</ol>
+<div>
+<section class="nb-h-menu-banner">
+<dl>
+<dt>
+<img src="/common/image/def/cau_emblem.png"/>
+</dt>
+<!-- <dd>
+                                                        <p>중앙 100년</p>
+                                                        <p style="font-size: 15px;color: #666;padding: 5px 0;">대학의 기본을 바탕으로 쌓아온 100년 변화와 혁신</p>
+                                                        a href="javascript:void(0);" style="color: #79A6EA;">보러가기</a
+                                                    </dd> -->
+</dl>
+</section>
+<!-- <section>바로가기</section> -->
+</div>
+</section>
+<section class="nb-h-menuList-right">
+<div class="nb-h-menuList-context" id="nbMenuListContext"></div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</div><!-- //nb-h-bottom -->
+</div><!-- //inside -->
+<div class="nb-h-outside">
+<div>
+<div class="nb-h-logo">
+<a href="/main.do"><img src="/common/image/def/cau.logo.ko.png"/></a>
+</div>
+<div class="">
+</div>
+<div class="nb-h-search si">
+<a class="loginTag" href="javascript:fncLogout();">Logout</a>
+<a class="logoutTag" href="javascript:fncLogin();">Login</a>
+</div>
+</div>
+</div><!-- //outside -->
+<div class="nb-h-bg" id="nbCloseMobileMenu01"></div>
+</div>
+</nav>
+</header>
+<script src="/common/js/nana.fn.js"></script>
+<script src="/common/js/header.js?20180516"></script>
+<div class="nb-contents">
+<div class="nb-contents-begin">
+<!-- 바디 -->
+<page-title></page-title>
+<script src="/common/js/portalSso.js" type="text/javascript"></script>
+<script>
+	angular.module("portal")
+		.controller("MainController", MainController);
+
+	function MainController($rootScope, $scope, $http, $window, authService, $filter, $compile, SpModal, Toast, $compile, $templateCache ){
+		$window.nbEvent = function( context, data ){
+			context.html($compile(data)($scope)[0]);
+			return context;
+		};
+		var vm = this;
+		var researchForceYn ='N';
+		
+		vm.researchModal = new SpModal({
+            template : 'researchModal',
+            size : 'sm',
+            top : '100px',
+            attr : {
+				class : 'sp-modal sp-biz-modal sp-research-modal'
+            },
+            controller : function( instance ){
+                var modal = this;
+
+                modal.join = function(row){
+
+                	console.log('researchModal :: ', row);
+
+                	if (row.type == "OLD") {
+	                	gfnc_gotourl('/research/manage/researchView.do', 'POST', {researchId : row.researchId, targetId : "", isEditable : true}, '_self');
+                    } else {
+	                	gfnc_gotourl('/survey/response/surveyViewStart.do', 'POST', {mseq : row.researchId}, '_self');
+					}
+                	
+                    instance.close();
+                };
+
+                modal.join1 = function(){
+                    if(researchForceYn=='Y')
+                    	alert("포탈을 이용하시려면 필수설문에 반드시 참여해야합니다. 양해 부탁드립니다.");		/*	포탈을 이용하시려면 필수설문에 반드시 참여해야합니다. 양해 부탁드립니다.	*/
+                    else
+                   		instance.close();
+                };
+
+                modal.link = function(){
+                	instance.close();
+                };
+                
+				// 사용자 구분
+				modal.usergb = "";
+		
+				// pc 모바일 구분
+				modal.isPc = true;
+		
+				// pc, 모바일 구분 
+				var filter = "win16|win32|win64|mac|macintel";
+				if (filter.indexOf(navigator.platform.toLowerCase()) < 0) {
+					// MOBILE                  
+					modal.isPc = false;
+				}
+				console.log('isPc : ' , modal.isPc);
+				
+	       }
+	    }); 
+
+
+		//초기화
+		$scope.init = init;
+		//초기화 실행
+		$scope.init();
+		 
+		
+		function init(){ // layout.jsp 에 이동
+
+			
+			
+        };
+
+
+
+		$('#nbPortletView').on("click", ".nb-portlet-section", function(event){
+			event = event.currentTarget;
+			var params = {
+				portletId : event.id,
+				userId : '',
+				userGrpCd : '' || 'G0009'
+			};
+
+			$http.post("/system/admin/statistics/setPortletStat.ajax", params)
+				.then(function( response ){
+
+				});
+
+			return ;
+		}); 
+		return 0;
+
+
+	} //MainController
+	
+
+</script>
+<script src="/common/js/system/portlet/p013/p013.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p021/p021.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p017/p017.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p008/p008.js?20240122" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p022/p022.js?20240122" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p005/p005.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p011/p011.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p023/p023.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p024/p024.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p004/p004.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p015/p015.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p014/p014.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p007/p007.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p009/p009.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p010/p010.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p001/p001.js?20231019" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p026/p026.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p027/p027.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p012/p012.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p028/p028.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p029/p029.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p018/p018.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p016/p016.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p019/p019.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p006/p006.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p003/p003.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p002/p002.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p030/p030.js" type="text/javascript"></script>
+<script src="/common/js/system/portlet/p031/p031.js" type="text/javascript"></script>
+<link href="/common/css/portlet.contents.css" rel="stylesheet"/>
+<style>
+.active {color: green;}
+.nb-nav-context {display: none !important;}
+dd.nb-h-portlet-setup::before {display: none;}
+dd.nb-h-portlet-setup > a {color: #888;pointer-events: auto;}
+.sp-modal.sp-biz-modal.sp-research-modal .sp-modal-body img {
+    padding: 0px;
+    margin-bottom: 2px;
+}
+.sp-modal.sp-biz-modal.sp-research-modal .sp-modal-body li.research-list {
+    font-size: 0;
+    padding: 10px;
+    margin-bottom: 2px;
+    border: 1px solid #c9c9c9;
+}
+.sp-modal.sp-biz-modal.sp-research-modal .sp-modal-body p {
+	width: calc(100% - 90px);
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.sp-modal.sp-biz-modal.sp-research-modal .sp-modal-body p.button {
+	display: inline-block;
+    font-size: 14px;
+    vertical-align: top;
+    width: 90px;
+    text-align: right;
+}
+.btn-join {
+	display: inline-block;
+	border-radius: 3px;
+	padding: 10px 15px;
+	background-color: #0b3b81;
+	color: #f2f2f2;
+	font-weight: bold;
+}
+.btn-join:hover, .btn-join:active {
+	color: #fff;
+	font-weight: bold;
+}
+.nb-p-center {
+	list-style: none;
+	padding: 0 30px 0 30px;
+	white-space: normal;font-size: 0;
+	text-align: center;
+}
+.nb-p-center button {background-color: transparent;}
+.nb-p-center > li {
+	width: 50px;height:95px;
+	display: inline-block;
+	width: 33.333333%;
+	font-size: 13px;
+	padding-top: 5px;
+	text-align: center;
+}
+.nb-p-center > li:nth-child(3n) {
+	width: 33.333334%;
+}
+.nb-p-center > li a {display: inline-block;}
+.nb-p-center > li em {
+	display: inline-block;width: 50px;height: 50px;border-radius: 50%;background-color: #EFEFF7;
+	position: relative;
+	overflow: hidden;
+}
+.nb-p-center > li em img {
+/* 	position: absolute;top: 0;bottom: 0;margin: auto;width: 100%;height: auto;left: -100%;right: -100%;min-width: 50px;min-height: 50px; */
+	width: 100%;
+}
+.nb-p-center > li i {padding-top: 5px;display: block;}
+
+@media screen and (max-width: 959px) {
+	dd.nb-h-portlet-setup > a {color: #242929;}
+}
+
+@media screen and (min-width: 960px) {
+	.nb-h-menu li[active="true"] {color: rgba(255, 255, 255, .5);}
+}
+
+@media screen and (max-width: 959px) {
+	.nb-q {min-height: calc(100vh - 200px);}
+}
+</style>
+<div class="nb-q" ng-controller="MainController">
+<script id="researchModal" type="text/ng-template">
+		<div class="sp-modal-header">
+               중앙대학교 설문조사
+        <div class="sp-modal-close" ng-click="modal.join1()" ng-style="{ top: '10px', right: '10px'}"></div>
+        </div>
+        <div class="sp-modal-body">
+            <img src="/common/image/research-bg.jpeg">
+			<div class="nb-s-item ng-scope">
+				<ul class="nb-p-center">
+					<li class="ng-scope">
+                	    <a href="https://eclass3.cau.ac.kr" target="_self" ng-click="modal.link()">
+                    		<em><img ng-src="https://mportal.cau.ac.kr/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20200804110235_hhv5ttpg.png" src="https://mportal.cau.ac.kr/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20200804110235_hhv5ttpg.png"></em>
+                    		<i class="nb-p-color-08"><span class="ng-binding">e-class</span></i>
+                		</a>
+					</li>
+					<li class="ng-scope" ng-if="modal.usergb != 'S' && modal.isPc">
+						<a href="https://gw.cau.ac.kr" target="_self" ng-click="modal.link()">
+                    		<em><img ng-src="https://mportal.cau.ac.kr/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20180201105517_22048813.png" src="https://mportal.cau.ac.kr/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20180201105517_22048813.png"></em>
+                    		<i class="nb-p-color-08"><span class="ng-binding">그룹웨어</span></i>
+                		</a>
+					</li>
+					<li class="ng-scope" ng-if="modal.usergb != 'S' && !modal.isPc">
+						<a href="https://mgw.cau.ac.kr" target="_self" ng-click="modal.link()">
+                    		<em><img ng-src="https://mportal.cau.ac.kr/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20180201105517_22048813.png" src="https://mportal.cau.ac.kr/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20180201105517_22048813.png"></em>
+                    		<i class="nb-p-color-08"><span class="ng-binding">그룹웨어</span></i>
+                		</a>
+					</li>
+
+				</ul>
+			</div>
+            <ul>
+                <li ng-repeat="row in modal.params" class="research-list">
+                    <p>
+                        <span style="color:red;">{{row.forceYnName}}</span>{{row.researchTitle}}
+                        <span class="date">설문기간 : {{row.fromDate}} ~ {{row.toDate}}</span>
+                    </p>
+                    <p class="button">
+                        <a href="#" class="btn-join" ng-click="modal.join(row)">참여하기</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </script>
+<article class="nb-portlet" data-line="3" id="NanaBandPortlet">
+<!-- <div class="nb-portlet-h-btn">
+	        <ul>
+	            <li class="nb-portlet-setup-btn"><a href="javascript:void(0);" id="nbPortletSetup">포틀릿 설정</a></li>
+	            <li class="nb-portlet-setup-close-btn"><a href="javascript:void(0);" id="nbPortletSetupClose">닫기</a></li>
+	        </ul>
+	    </div> -->
+<section class="nb-portlet-move" id="nbMoveContext"></section>
+<div class="nb-portlet-bg">
+<div class="nb-portlet-bg-queue">
+<section class="nb-portlet-context" id="nbPortletView">
+<div class="nb-portlet-container" data-col="0"></div>
+<div class="nb-portlet-container" data-col="1"></div>
+<div class="nb-portlet-container" data-col="2"></div>
+<div class="nb-portlet-container" data-col="3"></div>
+</section>
+</div>
+</div>
+<div class="nb-portlet-aside">
+<aside class="nb-portlet-controller">
+<header class="nb-portlet-aside-settings">
+<div class="nb-portletSetup-close"><a href="javascript:void(0);" onclick="nbInformation.portletClose()">포틀릿 설정 닫기</a></div>
+<div class="nb-portletSetup-reset"><span>포틀릿 설정<a href="javascript:void(0);" onclick="nbInformation.portletReset('pc')">초기화</a></span></div>
+<div class="nb-portlet-btn-save"><a href="javascript:nbInformation.portletSave();">저장</a></div>
+</header>
+<div class="nb-portlet-controller-container" style="overflow: hidden;">
+<div class="nb-portlet-controller-01">
+<div class="nb-portlet-aside-header" id="nbPortletList"></div>
+</div>
+</div>
+<i class="nb-p-del-icon" id="nbPortletRemoveicon"><em><span>삭제할 포틀릿을 올려주세요</span></em></i>
+</aside>
+</div>
+</article>
+<!-- <script src="/common/js/nb.portlet.js"></script> -->
+<script type="text/javascript">
+<!--
+(function( window, document, $ ){
+    var
+        $w					= $(window),
+        $d					= $(document),
+        $html				= $('html'),
+        $body				= $('body'),
+        body				= $body[0],
+        _viewsContainer		= $("#nbPortletView"),
+        _containers			= $(".nb-portlet-container", _viewsContainer),
+
+        _list				= $("#nbPortletList"),
+        main            	= $("#nanaBand"),
+
+        _dataMemory			= {}, // 이미 로딩된 포틀릿
+        _dataAsideMemory	= {}, // 삭제된 포틀릿 리트스
+
+        _myPortletDataCache	= null, // 포틀릿 설정 열면 _studio 에서 리캐싱
+
+        _filePath			= '',
+        _db					= '/common/js/json/result.json',
+
+        screenMode			= null,
+
+		_db_portlets		= null, // global
+		_studio				= null, // global
+
+    	_fixedCollet		= null, // for fixed (care)
+
+		isTouch 			= 'ontouchstart' in window,
+
+    	isIE				= (function(userAgent){
+    		return (~userAgent.indexOf('trident') || ~userAgent.indexOf('msie')) ? true : false; // Edge는 IE에서 제외
+    	})(window.navigator.userAgent.toLowerCase());
+
+// my custom function
+	var fn = {
+		removeChild : function(el) {
+			return el.parentElement.removeChild(el);
+		},
+		insertChild : function(el, position, target) {
+			switch (position) {
+				case 'first':
+					target = target || el.parentElement;
+					var firstChild = target.firstElementChild;
+
+					if (firstChild != null) {
+						target.insertBefore(el, firstChild);
+					} else {
+						target.appendChild(el);
+					}
+					return this;
+					break;
+
+				case 'last':
+					target = target || el.parentElement;
+					target.appendChild(el);
+					return this;
+					break;
+
+				case 'before':
+					target.parentNode.insertBefore(el, target);
+					return this;
+					break;
+
+				case 'after':
+					var next = target.nextElementSibling;
+					if (next) {
+						target.parentNode.insertBefore(el, next);
+					} else {
+						target.parentNode.appendChild(el);
+					}
+					next = null;
+					return this;
+					break;
+			}
+		},
+		createNode : function() {
+			return document.createElement("div");
+		},
+		nextSibling : function(target) {
+			var next = target.nextElementSibling;
+			return !!next ? next : false;
+		},
+		prevSibling : function(target) {
+			var prev = target.previousElementSibling;
+			return !!prev ? prev : false;
+		},
+		lastChild : function(target) {
+			var last = target.lastElementChild;
+			return !!last ? last : false;
+		},
+		cloneNode: function( node, deep ){
+			return node.cloneNode(deep === undefined ? true : deep);
+		},
+		// class 함수 작업중
+		addClass: function(el, name){
+			if(el.classList){
+				el.classList.add(name);
+			}else{
+				var myName = el.className;
+				if(!~myName.indexOf(name)){
+					myName = myName.split(" ");
+					myName.push(name);
+					myName = myName.join(" ").trim();
+					el.className = myName;
+				}
+			}
+			return ;
+		},
+		removeClass: function(el, name){
+
+		},
+		toggleClass: function(el, name){
+
+		},
+		getJSON : function(path, fn) {
+			return $.ajax({
+				url : path,
+				dataType : 'json',
+				method : 'GET',
+				success : fn
+			});
+		},
+		template : {
+			select: function(id, title){
+
+			}
+		},
+		cloneJSON: function( json ){
+			return JSON.parse(JSON.stringify( json ));
+		},
+		isArray: function( data ){
+			try {
+				return Array.isArra(data);
+			}
+			catch(e){
+				if(Object.prototype.toString.call( data ) === '[object Array]'){
+					return true;
+				}else{
+					return false;
+				}
+			}
+		}
+	};
+	
+
+    var _get = {
+        json: function(path, fn){
+            return $.ajax({ url: path, dataType: 'json', method: 'GET', success: fn});
+        },
+        html: function(path, fn, d){
+            return $.ajax({
+                url: path,
+                dataType: 'html',
+                method: 'GET',
+                data: d,
+                success: fn
+            });
+        },
+        string: function(path, fn){
+            return $.ajax({ url: path, dataType: 'string', method: 'GET', success: fn });
+        },
+        fileName: function( id ){
+            return _filePath + DB_portlet[ id ].fileName;
+        }
+    };
+
+    var
+        _template = {
+            add: function( id, title ){
+                return [
+                    '<section id="' + id + '" class="nb-portlet-add">',
+                        '<div>',
+                            '<div class="nb-portlet-add-container">',
+                                '<div>',
+                                    '<h2>' + title + '</h2>',
+                                '</div>',
+                            '</div>',
+                        '</div>',
+                    '</section>',
+                ].join('');
+            },
+
+            portletContainer: function( id ){
+                return [
+                    '<section class="nb-portlet-section" id="' + id + '">',
+                    	'<div>',
+	                        '<div class="nb-portlet-getting">Loading...</div>',
+	                        '<span class="nb-before"></span>',
+	                        '<span class="nb-after"></span>',
+                        '</div>',
+                    '</section>'
+                ].join('');
+            }
+        },
+        _create = {
+            html: function( string ){
+                return (function(temp){
+                    temp.innerHTML = string;
+                    var result = temp.firstChild;
+                    temp = null;
+                    return result;
+                })( document.createElement('DIV') );
+            },
+            div: function(id, className, attr){
+                var div = document.createElement('div');
+                if(className){ div.className = className; }
+                if(id){ div.setAttribute("id", id); }
+                if(attr){ div.setAttribute(attr[0], attr[1]); }
+                return div;
+            }
+        };
+
+/*
+    if(window.console!=undefined){
+    	setTimeout(console.log.bind(console,"%c가즈아ㅏㅏ","font:3em Arial;color:tomato;font-weight:bold"),0);
+    }
+*/
+    var _init = {
+		pcLoaded: false,
+		mobileLoaded: false,
+		disp: function(mode, type, index, myPortletData, disp){ // disp = 0 ? PC & MOBILE
+
+			if(mode === 'view'){
+				if(disp === type || disp === '3'){
+					myPortletData.splice(index, 1);
+					return true;
+				}
+				return false;
+			}
+
+			if(mode === 'aside'){
+				var i, disp;
+				for( i in myPortletData ){
+					disp = myPortletData[i].disp;
+					if(disp === type || disp === '3'){
+						delete myPortletData[i];
+					}
+				}
+			}
+			return ;
+		},
+/*
+ * data : 한row 의 [데이터]
+ * columnIndex : column index
+ * myPortletData : _studio link ( PC & MOBILE )
+ * list : _dataAsideMemory (카피본 pc & mobile)
+ */
+        foreach: function(data, columnIndex, myPortletData, list, mode){ //#3
+        	
+            var index = 0, length = data.length, id = '';
+            var portlets = _db_portlets;
+
+            while( index < length ){
+                id = data[index];
+
+                if( portlets[id] ){ // 컨트롤 리스트 생성
+
+                	delete list[id];
+
+                	// checked disp
+                	if( this.disp('view', (mode === 'pc' ? '2' : '1'), index, myPortletData[columnIndex], portlets[id].disp) ){
+                		length--;
+                		continue;
+                	}
+
+                }else{ // 삭제될 포털릿(개인)
+                    myPortletData[columnIndex].splice( index, 1);
+                    length--;
+                    continue;
+                }
+
+                index++;
+            }
+
+            return 0;
+        },
+        checking: function(length, foreach, controller){ // controller: PC & MOBILE protelt IDs
+            var columnIndex = 0;
+            for(; columnIndex < length; columnIndex++){
+                foreach( controller[columnIndex], columnIndex, controller );
+            }
+            return this;
+        },
+        setting: function( mode ){ //#2 : 포틀릿 DB 체크
+			var self = this;
+			if(mode === 'pc'){
+				_dataAsideMemory.pc = fn.cloneJSON(_db_portlets);
+				self.checking(
+					3,
+					function(columnIndexData, columnIndex, portlet){ // 포틀릿 라인 Data, 라인 index, _studio
+						return self.foreach(columnIndexData, columnIndex, portlet, _dataAsideMemory.pc, 'pc');
+					},
+					_studio.PC.portlet
+				);
+				// checked disp
+				this.disp('aside', '2', false, _dataAsideMemory.pc);
+				return this;
+			}
+
+			if(mode === 'mobile'){
+				_dataAsideMemory.mobile = fn.cloneJSON(_db_portlets);
+				self.checking(
+					1,
+					function(columnIndexData, columnIndex, portlet){
+						return self.foreach(columnIndexData, columnIndex, portlet, _dataAsideMemory.mobile, 'mobile');
+					},
+					_studio.MOBILE.portlet
+				);
+				// checked disp
+				this.disp('aside', '1', false, _dataAsideMemory.mobile);
+				return this;
+			}
+
+			return this;
+        },
+        resetDB: function(){ // 반응형 데이터 리셋
+        	//console.log("%cRESET DATA BASE", "color: green");
+        	if(portletSetup.opened){
+        		portletSetup.close();
+        	}
+        	return this;
+        },
+        pc: function( type ){ // PC 셋팅
+        	this.resetDB();
+/*
+			var
+				self	= this,
+				studio	= _studio.PC;
+*/
+
+			if(!this.pcLoaded){
+
+                this.paint(_studio.PC, _containers, false);
+
+//	            this.createPortletSetup('pc'); // 포틀릿 설정 생성
+
+//	            portletSetup.open(); // TEST **
+//	            this.pcLoaded = true;
+			}else{
+
+				console.log('loaded pc data');
+			}
+
+			return this;
+        },
+        mobile: function( mode ){ // 모바일 셋팅
+        	this.resetDB();
+
+//	        _containers[1].appendChild($( _template.portletContainer('P001') )[0]);
+
+            if(!this.mobileLoaded){
+				this.paint(_studio.MOBILE, _containers, mode);
+
+//                this.mobileLoaded = true;
+            }else{
+				console.log('loaded mobile data');
+            }
+			return this;
+        },
+        paint: function( studio, _containers, mode ){ // studio = pc, mobile M, mobile L //#4
+            var index = 0;
+            _containers[0].innerHTML = '';
+            _containers[1].innerHTML = '';
+            _containers[2].innerHTML = '';
+            _containers[3].innerHTML = '';
+
+            for(; index < 4; index++){
+                this.eachData(studio.portlet[index], _containers, index, mode);
+            }
+
+            return this;
+        },
+        eachData: function( data, _containers, col, screenType ){
+
+            if(!data && data === undefined){ return ; }
+
+			if(screenType == 1){
+				var i = 0, length = data.length;
+				for(; i < length; i++){
+					if(!isIE && _dataMemory.hasOwnProperty(data[i])){ // 캐싱된 포틀릿은 메모리에서 불러들임
+						//_containers[ 0 ].appendChild( _dataMemory[ data[i] ][0] );
+						_containers[ 0 ].appendChild( _dataMemory[ data[i] ] );
+					}else{
+						this.getting($(_template.portletContainer(data[i])), _containers[ 0 ], data[i]);
+					}
+				}
+				return ;
+			}
+
+			if(screenType == 2){
+				var i = 0, length = data.length;
+				for(; i < length; i++){
+					if(!isIE && _dataMemory.hasOwnProperty(data[i])){ // 캐싱된 포틀릿은 메모리에서 불러들임
+						//_containers[ i&1 ].appendChild( _dataMemory[ data[i] ][0] );
+						_containers[ i&1 ].appendChild( _dataMemory[ data[i] ] );
+					}else{
+						this.getting($(_template.portletContainer(data[i])), _containers[ i&1 ], data[i]);
+					}
+				}
+				return ;
+			}
+
+            var i = 0, length = data.length;
+            for(; i < length; i++){
+                if(!isIE && _dataMemory.hasOwnProperty(data[i])){ // 캐싱된 포틀릿은 메모리에서 불러들임
+	                //_containers[ col ].appendChild( _dataMemory[ data[i] ][0] );
+                	_containers[ col ].appendChild( _dataMemory[ data[i] ] );
+                }else{
+	                this.getting($(_template.portletContainer(data[i])), _containers[ col ], data[i]);
+                }
+            }
+
+            return ;
+        },
+        fileName: function(id){
+            return _filePath + _db_portlets[id].fileName;
+        },
+        getting: function($html, container, dataId){
+			container.appendChild($html[0]);
+			this.connect($html, dataId);
+        },
+        connect: function( context, id ){
+
+			_get.html(this.fileName(id), function(data){
+
+					
+					data = '<div>' + data + '<span class="nb-before"></span><span class="nb-after"></span>' + '</div>';
+					//_dataMemory[id] = nbEvent(context, data);
+					_dataMemory[id] = nbEvent(context, data)[0];
+					
+
+					return 0; // skip
+
+
+					data = '<div>' + data + '<span class="nb-before"></span><span class="nb-after"></span>' + '</div>';
+					data = $(data);
+                    context.html(data);
+                    //_dataMemory[id] = data[0];
+                    _dataMemory[id] = context;
+
+
+
+                    //_dataMemory[id] = data;
+					//data = $(data);
+					//context.html($(data)[0]);
+                    //_dataMemory[id] = data;
+					//var a = $(data);
+                    //context.html( a[0] ).append('<span class="nb-before"></span><span class="nb-after"></span>');
+
+// 캐싱삭제
+//					console.log(context[0].children);
+//					_dataMemory[id] = data;
+
+                    return ;
+                });
+                return ;
+        },
+        createPortletSetup: function( mode ){ //#5 //추가할 수 있는 포틀릿 생성 (PC)
+            var index, html = [], data = fn.cloneJSON(_dataAsideMemory[mode]);
+
+            for( index in data ){
+				html.push( _template.add(index, data[index].title) );
+            }
+
+            html = html.join('');
+            _list.html(html);
+
+            return data;
+        }
+
+    }; // _init
+
+
+    var settingPortlet =function(p, s){ // 포틀릿 셋팅 시작 //#1
+
+        _db_portlets = p;// || JSON.parse(sessionStorage.getItem('portlets'));
+
+        if(_db_portlets === null || !_db_portlets){
+        	console.log("%c \n\n\n포틀릿DB가져오기실패\n\n\n", "color: red");/*	%c \n\n\n포틀릿DB가져오기실패\n\n\n	*/
+        	return ;
+        }
+
+        _studio = s;// || JSON.parse(sessionStorage.getItem('privateInfo'))[0];
+
+        //_init.setting(_studio).pc();
+
+        var setting = _init.setting('pc').setting('mobile');
+
+		var
+			sizeMode = null,
+			resize = function(size){
+
+				$screenHeight = size.height;
+				$screenWidth = size.width;
+
+				if(size.width >= 960){ // pc
+					if(sizeMode != 0){
+						setting.pc();
+						sizeMode = 0;
+						screenMode = "PC";
+						window.nbscreenMode = "pc";
+					}
+					return ;
+				}
+				if(size.width >= 640){ // mobile L
+					if(sizeMode != 1){
+
+						setting.mobile(2);
+						sizeMode = 1;
+						screenMode = "MOBILE";
+						window.nbscreenMode = "mobile";
+					}
+					return ;
+				}
+				if(sizeMode != 2){ // mobile M
+					setting.mobile(1);
+					sizeMode = 2;
+					screenMode = "MOBILE";
+					window.nbscreenMode = "mobile";
+					return ;
+				}
+			};
+
+		nana.event.resize(resize);
+    };
+
+    window.nanaBand.portlet = settingPortlet;
+
+
+// ==============================================================================================================================
+
+
+
+    var
+        cssPrefixes     = ['ms', 'O', 'Moz', 'Webkit'],
+        emptyStyle      = document.createElement("div").style,
+        vendorPropName  = function( name ){
+            if(name in emptyStyle){
+                return name;
+            }
+            var
+                capName = name[0].toUpperCase() + name.slice(1),
+                i = cssPrefixes.length;
+
+            while( i-- ) {
+                name = cssPrefixes[i] + capName;
+                if (name in emptyStyle) {
+                    return name;
+                }
+            }
+        };
+
+    var transformPrefix = vendorPropName('transform'),
+    	transitionPrefix = vendorPropName("transition");
+
+
+    var _empty, _space;
+
+    _empty = document.createElement('div');
+    _empty.className = 'nb-portlet-empty';
+
+    _space = document.createElement('div'), _spaceOff = false;
+    _space.className = 'nb-portlet-space';
+
+
+    var
+        portlet         = $("#NanaBandPortlet"),
+        moveContext     = $("#nbMoveContext"),
+        portletDelBtn	= $("#nbPortletRemoveicon")[0],
+        portletList     = _list,
+
+        $screenWidth = $(window).width(),
+        $screenHeight = null,
+
+        self, selfHeight, firstPosition = 0,
+        myPosition = [], moveFnEventCurrent, _controller, _portletID;
+
+    var
+        _dataCol = [], // [0] = prev position, [1] = done position
+        _dataEventFns = {
+    		REMOVE: function( self ){ // 포틀릿 삭제
+
+                var line = this.portletCache[ _dataCol[0] ];
+                line.splice(line.indexOf(self.id), 1);
+
+                this.tempRmv[self.id] = _db_portlets[self.id];
+
+                return ;
+            },
+            ADD: function( self ){ // 포틀릿 추가
+
+                var next = self.nextElementSibling,
+                    line = this.portletCache[ _dataCol[1] ];
+
+                if( next === null || !next ){ // setting to last
+                    line.push( self.id );
+                }else{ // setting to prev
+                    line.splice(line.indexOf(next.id), 0, self.id);
+                }
+
+               delete this.tempRmv[self.id];
+
+               return ;
+            },
+            CHANGE: function( self ){ // 포틀릿 위치 변경
+                this.REMOVE( self );
+                this.ADD( self );
+                return ;
+            },
+            CANCLE: function( self ){ // 포틀릿 위치 변경 실패 #21
+            	console.log("unfined cancle function");
+            	return ;
+            }
+        },
+        _dataEventAdd = function(){},
+        _dataEvent = function(type, self){ // mark 03
+
+            _dataEventFns[ type ]( self );
+
+            _dataCol = [];
+            self = null;
+            return ;
+        },
+        _removeSelf = function(){
+            return self.parentNode.removeChild(self);
+        },
+        _removeSpace = function(){
+            if(_spaceOff){
+                portletList[0].removeChild(_space);
+                _spaceOff = false;
+            }
+            return _space;
+        },
+        _emptyChange = function(target, parent, myName){
+
+            // 포털릿 위에 올렸을 때
+            if(myName == 'nb-after' || myName == 'nb-before'){
+
+                var sibling = parent[ myName == 'nb-after' ? 'nextElementSibling' : 'previousElementSibling' ];
+                // sibling 없을 때 (first & last)
+                if(sibling == null){
+                    _emptyAdd(parent, myName == 'nb-after' ? target.nextElementSibling : parent);
+                    return 2;
+                }
+                // sibling 이 empty 일 때
+                if(sibling.nodeName == 'DIV' && sibling.className == 'nb-portlet-empty'){ return 2; }
+
+                _emptyAdd(myName == 'nb-after' ? sibling : parent);
+                return 1;
+            }
+
+            // 포틀릿없는 빈 라인에 올렸을 때
+            if(myName == 'nb-portlet-container'){ // on the space 'line'
+                return (function( lastChild ){
+                    if(lastChild == null || lastChild.nodeName != 'DIV'){
+                        _emptyAdd(target, 'last');
+                    }
+                    return 3;
+                })(target.lastElementChild);
+            }
+
+            if(myName == 'nb-portlet-controller'){ return 1; } // view a delete icon
+
+            //console.log('done', myName); // [ TEST ]
+            return 0;
+        },
+
+        _emptyRemove = function(){
+            return _empty.parentNode.removeChild(_empty);
+        },
+
+        _emptyAdd = function( target, mode ){
+
+            if(typeof mode == 'object'){ // if no sibling
+                return target.parentNode.insertBefore(_emptyRemove(), mode);
+            }
+
+            if(mode == 'last'){ // on the space 'line'
+                return target.appendChild(_emptyRemove());
+            }
+
+            return target.parentNode.insertBefore(_emptyRemove(), target);
+        },
+
+        _moving = function(target){
+
+            target = target.parentElement.removeChild(target);
+            target.className = 'nb-portlet-section move';
+            moveContext[0].appendChild(target);
+
+            return target;
+        },
+        _overChange = function( data ){ // change to empty
+
+            var next = _empty.nextElementSibling,
+                parentNode = _empty.parentNode;
+            
+            if(next == null){ // data-col에서 바로 추가
+                parentNode.appendChild( data || _removeSelf());
+            }else{ // target change
+                next.parentNode.insertBefore( data || _removeSelf(), next);
+            }
+
+            _dataCol[1] = parseInt( parentNode.getAttribute("data-col") ); // EX data-col
+
+            _emptyRemove();
+
+            return data;
+        },
+        portletKeyUp = function(event){
+            if(event.keyCode == 27){
+                console.log('Escape');
+            }
+        },
+        portletMouseUpFn   = function( event ){
+
+            $d.off("mousemove mouseup keyup");
+
+            self.className = 'nb-portlet-section';
+            self.removeAttribute("style");
+
+            moveFnEventCurrent = null;
+
+            portlet.removeClass( _controller ? 'nb-add' : 'nb-down');
+
+            event = event.target;
+
+            var myName = event.className;
+
+            if(myName == 'nb-portlet-controller' && !_controller){ // 삭제
+            	var portletInfo = _db_portlets[_portletID];
+
+            	 // 고정된 포틀릿 (삭제불가)
+				if( Number(portletInfo.fix) ){
+					_overChange();
+					_dataEvent("CHANGE", self);
+
+					if(_fixedCollet){
+						clearTimeout(_fixedCollet);
+					}
+
+					nanaBand.care.appendMsg([portletInfo.title, " 포틀릿은 삭제할 수 없습니다"],		/*	 포틀릿은 삭제할 수 없습니다	*/ 'notice');
+
+					_fixedCollet = setTimeout(function(){
+						nanaBand.care.removeMsg();
+						clearTimeout(_fixedCollet);
+						_fixedCollet = null;
+						return ;
+					}, 3000);
+
+					return 1;
+				}
+
+            	//이거 지우면 추가된 포틀릿 삭제한뒤 다시 추가하면 에러 뜸. & resizing error PC to MOBILE [clear]
+                //_dataMemory[_portletID] = _removeSelf(); // 삭제한 포틀릿 캐싱
+
+            	_removeSelf();
+
+                portletList[0].appendChild(
+                    _create.html(
+                        _template.add(_portletID, portletInfo.title)
+                    )
+                );
+
+                _emptyRemove();
+
+                _dataCol[1] = false;
+                _dataEvent("REMOVE", self); //mark 01
+
+                return 1;
+            }
+
+            if(!_controller){ // 체인지
+                _overChange();
+                _removeSpace();
+                _dataEvent("CHANGE", self);
+                return 1;
+            }
+
+            if(
+                myName == 'nb-after' ||
+                myName == 'nb-before' ||
+                myName == 'nb-portlet-empty' ||
+                myName == 'nb-portlet-container' // the line context 'DIV'
+            ){
+                var temp = _template.portletContainer( _portletID ); // context 생성(html)
+
+                // ** angular 에러 때문에 개싱기능 삭제
+                // temp = _create.html( temp );
+                // _overChange( temp );
+                // _init.connect($(temp), _portletID);
+
+                if(!isIE && _dataMemory.hasOwnProperty(_portletID)){ // have a data
+                    // 삭제된 포틀릿 다시 추가. 캐싱된 메모리에서 가져옴
+                    temp = _overChange( _dataMemory[_portletID] );
+
+                    /*
+                    temp = $(temp);
+                    _overChange( temp[0] );
+                    temp.html(_dataMemory[_portletID]);
+                    */
+                    //console.log('old add');
+                }else{
+                    temp = _create.html( temp );
+                    _overChange( temp );
+                    _init.connect($(temp), _portletID); // 포털릿 새로 추가
+                    //console.log('new add');
+                }
+
+                _removeSelf();
+                _removeSpace();
+
+                _dataEvent('ADD', temp); // mark 02
+                temp = null;
+                return 1;
+            }
+
+            if(_controller){ // 컨트롤에서 취소
+                var cancel = _removeSelf();
+                cancel.className = 'nb-portlet-add';
+                _emptyRemove();
+                portletList[0].insertBefore( cancel, _space );
+                _removeSpace();
+                //console.log('cancel 1');
+
+            }else{ // 뷰에서 취소
+                _overChange();
+                //console.log('cancel 2');
+            }
+            //_dataEvent("CANCLE", temp); // #20
+            return 0;
+        },
+        portletMouseMoveFn = function( event ){
+
+            // 드래그중인 위치
+            self.style[ transformPrefix ] = 'translate(' +
+                    ( event.pageX - myPosition[0] + firstPosition[0] )+'px, ' +
+                    ( event.pageY - myPosition[1] + firstPosition[1] )+'px)';
+
+            event = event.target;
+
+            // 새로운 포지션 (before, after, line, 포커스 잃었을 때[id] )
+            if(moveFnEventCurrent != event && event.parentElement !== null){ // 중복 작업 방지
+                moveFnEventCurrent = event;
+				_emptyChange(event, event.parentElement.parentElement, event.className);
+                // return a _empty, (up 했을 때 현재 위치 반환 그래서 쓰면 안 됨)
+            }
+
+            return 0;
+        },
+
+        portletMouseDownFn = function(event){
+            event.preventDefault();
+            /*
+             * 마우스 왼족 클릭 , .nb-portlet-section 만 허용
+             */
+            if(event.which != 1){ return 0; } // save[1]
+
+            self = event.target.parentElement.parentElement; // move target, parentElement (+)
+
+//            self = event.target; // TEST
+
+            //console.log(self.parentElement);
+            //_dataCol[0] = self.parentElement.className === 'nb-'
+
+            _dataCol[0] = (function(parent){ // ST data-col
+                return parent.className === 'nb-portlet-container' ? parent.getAttribute('data-col') : false;
+            })(self.parentElement);
+//			})(self);// TEST
+
+
+            //console.log(self, "BB");
+            var myName = self.className;
+
+            if(myName != 'nb-portlet-section' && myName != 'nb-portlet-add'){ self = null; return 0; } // save[2]
+
+            var selfPosition = self.getBoundingClientRect(),
+                x = self.offsetLeft, y = self.offsetTop;
+
+            myPosition = [event.pageX, event.pageY]; // move start stations
+
+
+
+            //console.log(self);
+            if(myName == 'nb-portlet-add'){
+
+                portlet.addClass('nb-add');
+
+                self.parentElement.insertBefore(_space, self.nextElementSibling); // cancel 했을 때 다시 원래 위치로 보내기 위함
+
+                selfHeight = self.offsetHeight;
+                _space.style.height = selfHeight + 'px';
+
+                self = _moving( self ); // _empty height [ ! ]
+                _empty.style.height = self.offsetHeight + 'px';
+
+                _space.appendChild(_empty);
+                _spaceOff = true;
+                _controller = true;
+
+            }else{
+                portlet.addClass('nb-down');
+
+                var aa = portlet[0].getBoundingClientRect();
+                portletDelBtn.style.top = ($screenHeight / 2 + (aa.top < 0 ? -aa.top : 0)) + 'px';
+
+                selfHeight = self.offsetHeight - 10;
+                _empty.style.height = selfHeight + 'px';
+
+                // 현재 선택한 포털릿 위치에 empty 넣습니다
+                self.parentElement.insertBefore(_empty, self);
+
+                // 이동 할 포털릿 선택합니다, self 의 parent 바뀝니다
+                self = _moving(self);
+                _controller = false;
+            }
+
+            _portletID = self.id;
+
+            // 이동 할 포털릿 시작 위치를 설정합니다
+            firstPosition = (function(){
+                return [ (function( left ){
+                    if(left < 0){
+                        return x - left + 5;
+                    }else{
+                        var a = $screenWidth - (self.offsetWidth + left);
+                        return a < 0 ? x + a - 5 : x;
+                    }
+                })(selfPosition.left) - 5, (selfPosition.top < 0 ? y - selfPosition.top + 5 : y) - 0 ];
+            })();
+
+            self.style[transformPrefix] = 'translate(' + firstPosition[0] + 'px, ' + firstPosition[1] + 'px)';
+
+            $d.on("mousemove", portletMouseMoveFn);
+            $d.on("mouseup", portletMouseUpFn);
+
+            return 0;
+        };
+
+        var portletSetup = {
+            opened: false,
+        	open: function(){ // MARK 04
+                if(!_studio){
+                    console.log("error: 09270239");
+                    return ;
+                }
+
+                portletSetup.opened = true;
+
+                main.addClass("nb-open-portlet-setup");
+                portlet.on("mousedown", portletMouseDownFn);
+
+                _myPortletDataCache = JSON.parse( JSON.stringify(_studio) ); // for SAVE
+
+                _dataEventFns.portletCache = _myPortletDataCache.PC.portlet; // PC 추가, 삭제, 이동
+
+
+                // 컨트롤 생성
+                _dataEventFns.tempRmv = _init.createPortletSetup('pc');
+
+                return this;
+            },
+            close: function(){
+
+            	_init.paint(_studio.PC, _containers, false);
+
+                main.removeClass("nb-open-portlet-setup");
+                portlet.off("mousedown");
+
+                _myPortletDataCache = null;
+
+                delete _dataEventFns.tempRmv;
+
+                portletSetup.opened = false;
+                
+                _list.html('');
+
+                return this;
+            },
+            reset: function(mode){ // 포틀릿 설정 초기화
+            	nana.confirm(false, [false, function(){
+            		//console.log("%cA", "color: red");
+            		//return ;
+                	var modeUpper = mode.toLocaleUpperCase();
+            		$.ajax({
+            			url : '/menu/resetUserPortletList.ajax',
+            			method : 'POST',
+            			success : function(data){
+            				if(data.msg === 'ok'){
+
+            					data = JSON.parse(data.list[0].privateInfo)[0]; // 초기화 데이터
+
+            					data = data[modeUpper];
+
+            					sessionStorage.setItem('fontSize'+modeUpper, data.fontSize);
+    							sessionStorage.setItem('theme'+modeUpper, data.theme);
+
+            					_studio[modeUpper] = data;
+
+            					save(mode, function(data){
+            						if(data.result === 'ok'){
+            							//_init.setting(mode)[mode]();
+            							//var className = $html[0].className;
+            							//className = className.replace( className.substr( className.indexOf('nb-fontSize'), 13 ), 'nb-fontSize-'+data[modeUpper].fontSize );
+            							//className = className.replace( className.substr( className.indexOf('nb-theme'), 10 ), 'nb-theme-'+data[modeUpper].theme );
+
+            							setTimeout(function(){
+            								location.reload();
+            								return 0;
+            							}, 200);
+            						}
+            						return 0;
+            					});
+            				}
+            				return 1;
+            			}
+            		});
+            	}]).portletReset(["포틀릿 설정 초기화합니다"]);		/*	포틀릿 설정 초기화합니다	*/
+
+
+        		return false;
+            }
+        };
+
+        
+        
+        
+//  포틀릿 모바일 설정 *** ST
+
+
+	var onMouse = (function(){
+		if(isTouch){
+			return {
+				down:	'touchstart',
+				move:	'touchmove',
+				up:		'touchend'
+			};
+		}else{
+			return {
+				down:	'mousedown',
+				move:	'mousemove',
+				up:		'mouseup'
+			};
+		}
+	})();
+
+	var mobile = {
+		opened: false,
+		open: function(){
+			this.settingView();
+			return ;
+		},
+		settingView: function(){ //#1
+
+			main.css("display", "none");
+			$html.addClass("fn-nbScroll");
+
+			var sleList = fn.cloneJSON(_studio.MOBILE.portlet[0]); // 가상 리스트 생성 save ? _studio 에 업데이트
+
+			var sle = this.foreach(_db_portlets, sleList, this.template.sle);
+
+			var tempRmv = []; // _dataAsideMemory.mobile "cache"
+
+			var rmv = (function(portlets, temp){
+				var i, res = '';
+				for( i in portlets){
+					tempRmv.push(i);
+					res += temp(portlets[i].id, portlets[i].title);
+				}
+				return res;
+			})(_dataAsideMemory.mobile, this.template.rmv);
+
+			var d = $(this.template.context(sle, rmv));
+
+			$body.append(d);
+			
+			var	selected = $("#nbMobilePortletSle", d),
+				removed = $("#nbMobilePortletRmv", d);
+
+			this.target = {
+					doc: d,
+					sle: selected,
+					rmv: removed
+				};
+
+			//console.log("%cOPEN MOBILE SETTING", "color: green");
+			//console.log(fn.cloneJSON(sleList));
+
+			mobileContoller(
+				this.tempResult = fn.cloneJSON(sleList),
+				this.tempAside = tempRmv,
+				selected,
+				removed,
+				this.template
+			);
+
+
+			return ;
+/*
+			console.log("%c------------------------", "color: green");
+			console.log(_db_portlets);
+			console.log(_studio); // les
+			console.log(_dataAsideMemory.mobile); // rmv
+			console.log("%c------------------------", "color: green");
+*/
+		},
+		foreach: function(portlets, list, temp){
+
+			var i = 0, length = list.length, res = '';
+			for( ; i < length; i++ ){
+				res += temp( portlets[list[i]].id, portlets[list[i]].title );
+			}
+			return res;
+		},
+		close: function(){
+			main.removeAttr("style");
+			$html.removeClass("fn-nbScroll");
+
+			var target = this.target;
+			target.doc.remove();
+			target.sle.off();
+			target.rmv.off();
+
+			delete target;
+
+			console.log("%cCLOSE MOBILE SETTING", "color: green");
+
+			return 0;
+		},
+		reset: function(){ //#50
+			portletSetup.reset('mobile');
+			return 0;
+		},
+		save: function(){ // 포틀릿 설정 저장 (모바일)
+			nana.confirm(false, [false, function(){
+				if(!mobile.tempResult || mobile.tempResult.length === 0){
+					console.log("%cERROR : 4807151118", "color: red");
+					return ;
+				}
+				_studio.MOBILE.portlet[0] = mobile.tempResult;
+				save("mobile", function(data){
+					if(data.result == 'ok'){
+						location.reload();
+						location.hash = '';
+					}else{
+						console.log("%cERROR : 2009251217", "color: red");
+					}
+					return ;
+				});
+			}]).portletSave(["포틀릿 설정 저장합니다"]);		/*	포틀릿 설정 저장합니다	*/
+
+			//console.log(this.tempResult);
+			//console.log(this.tempAside);
+			//nbInformation.portletSave();
+			return 0;
+		},
+		template: {
+			context: function(sle, rmv){
+				return [
+					'<aside class="nb-m-portlet-setup">',
+						'<section class="nb-mps-contents">',
+							'<header class="nb-mps-hed">',
+							    '<div class="nb-mps-hed-close" onclick="nbInformation.mobile.close()">포틀릿 설정 닫기</div>',		/*	포틀릿 설정 닫기	*/
+							    '<div class="nb-mps-hed-reset" onclick="nbInformation.mobile.reset()">포틀릿 초기화</div>',		/*	포틀릿 초기화	*/
+							'</header>',
+							'<div class="nb-mps-lists">',
+								'<section class="nb-c-sle">',
+									'<h3>선택된 포틀릿</h3>',		/*	선택된 포틀릿	*/
+									'<ol id="nbMobilePortletSle">'+ sle +'</ol>',
+								'</section>',
+								'<section class="nb-c-rmv">',
+									'<h3>삭제된 포틀릿</h3>',		/*	삭제된 포틀릿	*/
+									'<ol id="nbMobilePortletRmv">'+ rmv +'</ol>',
+								'</section>',
+							'</div>',
+						'</section>',
+						'<section class="nb-mps-fixed">',
+							'<a href="javascript:nbInformation.mobile.save();"><em>저장</em></a>',		/*	저장	*/
+						'</section>',
+					'</aside>'
+				].join("");
+			},
+			rmv: function(id, title){
+				return [
+					'<li data-id="'+id+'" data-title="'+title+'">',
+						'<div>',
+							'<i data-type="add"></i>',
+							'<em>'+title+'</em>',
+						'</div>',
+					'</li>'
+				].join("");
+			},
+			sle: function(id, title){
+				return [
+					'<li class="nb-mps-items" data-id="'+id+'" data-title="'+title+'">',
+						'<div>',
+							'<i data-type="del"></i>',
+							'<em>'+title+'</em>',
+							'<span class="ico_move"></span>',
+						'</div>',
+					'</li>'
+				].join("");
+			}
+		}
+	};
+
+
+	//mobile.open();
+
+
+
+	function mobileContoller( mobileResult, mobileAside, selected, removed, template ){
+		
+
+
+		//var mobileResult = ["P001", "P002", "P003", "P004", "P005"];
+		//var mobileAside = ["P006", "P007", "P008"];
+
+
+		var y = 0, _current = null;
+
+		var touch = {
+			doc:	null,
+			chosen: null,
+			changed: false,
+			start: function(event){
+				if(event.which > 1 || event.target.className !== 'ico_move'){ return ; }
+				event.preventDefault();
+				touch.dragSetting(event, event.currentTarget);
+
+				return 0;
+			},
+
+			move: function(event){
+
+				touch.dragMove(y, event);
+				return 0;
+			},
+			up: function(event){
+
+				touch.dragDone();
+
+				return 0;
+			},
+			dragMove: function(currentY, event){
+
+				this.chosen.style.willChange = "transform";
+				this.chosen.style[transformPrefix] = "translate3d(0, "+( this._clientY(event) - currentY )+"px, 0)";
+
+				if(isTouch){
+					event = event.originalEvent; // for jQuery
+					var
+						touches = event.touches ? event.touches[0] : event.changedTouches[0],
+						realTarget = document.elementFromPoint(touches.clientX, touches.clientY);
+
+					if(_current !== realTarget){
+						this.dragChange(realTarget);
+						_current = realTarget;
+					}
+
+					return ;
+				}
+
+				event = event.target;
+				if(_current !== event){
+					this.dragChange(event);
+					_current = event;
+				}
+
+				return ;
+			},
+			dragDone: function(){
+				this.doc.off(onMouse.move);
+				this.doc.off(onMouse.up);
+
+				selected[0].className = "";
+
+				fn.removeChild(this.chosen);
+
+				if(this.changed){
+
+					var target = this.target;
+
+					var next = fn.nextSibling(target);
+
+					this.changePosition(mobileResult, target.getAttribute("data-id"), (next ? next.getAttribute("data-id") : false));
+				}
+
+				this.target.className = "nb-mps-items";
+				this.chosen = null;
+				this.target = null;
+				this.changed = false;
+
+				return 0;
+			},
+			changePosition: function(result, targetId, nextId){
+
+				result.splice(result.indexOf(targetId), 1); // remove
+
+				if(nextId){
+					result.splice(result.indexOf(nextId), 0, targetId);
+				}else{
+					result.push(targetId);
+				}
+				return 0;
+			},
+			dragSetting: function( event, target ){
+
+				this._clearSelection();
+
+				selected[0].className = "nb-down";
+
+				var clone = fn.cloneNode(target);
+
+				clone.setAttribute("data-clone", "true");
+
+				target.className	= "nb-mps-items nb-active";
+				clone.className		= "nb-mps-items nb-chosen";
+
+				fn.insertChild(clone, 'first', selected[0]);
+				clone.style.top = target.offsetTop + 'px';
+
+				this.chosen = clone;
+				this.target = target;
+
+				y = this._clientY(event);
+
+				var parent = event.liveFired || event.currentTarget.parentElement;
+
+				this.doc = $(parent.ownerDocument).on(onMouse.move, this.move).on(onMouse.up, this.up);
+
+				return this;
+			},
+			dragChange: function(hover){
+
+				// if(
+				// 	!hover || hover.nodeName === "HTML" ||
+				// 	hover.className === 'nb-mps-items nb-active' ||
+				// 	hover.className === 'nb-mps-items nb-chosen'
+				// ){ return ; }
+
+				if(!hover || hover.className !== "nb-mps-items"){ return ; }
+
+				if(!this.changed){ this.changed = true; }
+
+				var
+					next = fn.nextSibling(hover),
+					nextName = next.className,
+					target = this.target;
+
+				//console.log("%c"+nextName, "color: red", hover);
+
+				if(nextName === 'nb-mps-items nb-active'){ // append to before
+					fn.insertChild(target, 'before', hover);
+					this._animation(hover, target);
+					return ;
+				}
+
+				if(nextName === 'nb-mps-items'){ // append to after
+					fn.insertChild(target, 'after', hover);
+					this._animation(target, hover);
+					return ;
+				}
+
+				if(!next){ // append to last
+					fn.insertChild(target, 'last');
+					this._animation(target, hover);
+					return ;
+				}
+
+				console.log("%cERROR : 46011219217", "color: red");
+
+				return ;
+			},
+			_animation: function(before, after){
+
+				before.style[transformPrefix] = "translate3d(0, -60px, 0)";
+				after.style[transformPrefix] = "translate3d(0, 60px, 0)";
+
+				this._clearAttrAnime(before, after);
+				return ;
+			},
+			_clearAttrAnime: function(before, after){
+				before.offsetWidth;
+				after.offsetWidth;
+				before.style[transitionPrefix] = "all 150ms";
+				after.style[transitionPrefix] = "all 150ms";
+				before.style[transformPrefix] = "translate3d(0, 0, 0)";
+				after.style[transformPrefix] = "translate3d(0, 0, 0)";
+				var t = setTimeout(function(){
+					before.removeAttribute("style");
+					after.removeAttribute("style");
+					clearTimeout(t);
+				}, 200);
+				return ;
+			},
+			_clientY: function(event){
+				return isTouch ? event.originalEvent.changedTouches[0].pageY : event.pageY;
+				//return isTouch ? event.changedTouches[0].pageY : event.pageY;
+			},
+			_clearSelection: function(){
+				try{
+					if(document.selection){
+						//console.log("%cselection for IE9", "color: tomato");
+						setTimeout(function(){
+							document.selection.empty();
+						}, 0);
+					} else {
+						window.getSelection().removeAllRanges();
+					}
+				}catch(err){
+					console.log("%cERROR: 3303141217", "color: tomato");
+				}
+				return 0;
+			}
+		};
+
+		var evt = {
+			click: function(event){
+				event.preventDefault();
+				if(event.target.nodeName !== "I"){ return ; }
+				evt.ini(event.target.getAttribute("data-type"), event.currentTarget);
+				return ;
+			},
+			ini: function(type, target){
+				this[type](target);
+				return ;
+			},
+			del: function(el){ // 모바일 포틀릿 삭제
+
+				var id = el.getAttribute("data-id"),
+					portletInfo = _db_portlets[id];
+
+				 //고정된 포틀릿 삭제불가 (모바일)
+				if( Number( portletInfo.fix ) ){
+
+					if(_fixedCollet){
+						clearTimeout(_fixedCollet);
+					}
+
+					nanaBand.care.appendMsg([portletInfo.title, " 포틀릿은 삭제할 수 없습니다"],'notice');/*	 포틀릿은 삭제할 수 없습니다	*/
+
+					_fixedCollet = setTimeout(function(){
+						nanaBand.care.removeMsg();
+						clearTimeout(_fixedCollet);
+						_fixedCollet = null;
+						return ;
+					}, 3000);
+
+					return ;
+				}
+
+				fn.removeChild(el);
+				fn.insertChild(
+					$(this.tempAdd(el.getAttribute("data-id"), el.getAttribute("data-title")))[0],
+					'first', removed[0]
+				);
+
+				mobileResult.splice(mobileResult.indexOf(id), 1);
+				mobileAside.splice(0, 0, id);
+
+				return ;
+			},
+			add: function(el){ // 모바일 포틀릿 추가
+				var id = fn.removeChild(el).getAttribute("data-id");
+				fn.insertChild(
+					$(this.tempDel(el.getAttribute("data-id"), el.getAttribute("data-title")))[0],
+					'last', selected[0]
+				);
+
+				mobileAside.splice( mobileAside.indexOf(id), 1 );
+				mobileResult.push(id);
+
+				return ;
+			},
+			tempAdd: template.rmv,
+			tempDel: template.sle
+		};
+
+		selected.on(onMouse.down, "li", touch.start).on("click", "li", evt.click);
+		removed.on("click", "li", evt.click);
+
+		return 0;
+
+	}; // mobileContoller
+
+
+
+
+
+	nbInformation.mobile = mobile;
+
+//  포틀릿 모바일 설정 *** EX
+        
+        /*
+		 * 포틀릿 설정 열기 모바일 & 데스크탑
+		 *
+		 */
+        
+        nbInformation.portlet = function(){ // open portlet setting *****
+        	
+        	if(screenMode === "PC"){ // add once triger [ ! ]
+
+        		if(!portletSetup.opened){
+
+                    //this.settings.close();
+                	nbInformation.close();
+                    portletSetup.open();
+        		}
+                return ;
+        	}
+
+        	if(screenMode === "MOBILE"){
+        		//console.log("%cmobile setting", "color: green;");
+        		mobile.open();
+        		return ;
+        	}
+            return ;
+        };
+
+		/*
+		 * 포틀릿 설정에서 저장하기 클릭
+		 *
+		 */
+        var save = function( mode, feedback, type ){ // SAVE ***
+
+    		// type[0] : more
+    		// type[1] : new data
+    		// type[2] : theme, fontSize
+        	// mode : PC & MOBILE
+
+        	if(type && type[0] === 'more'){
+        		if(typeof type[1] !== 'number'){ // if more data type not a NUMBER
+        			return false;
+        		}
+        		_studio[ mode ][ type[2] ] = type[1];
+        	}
+
+        	if( (function( pc, mobile ){ // data check
+        		if( fn.isArray(pc) && fn.isArray(pc[0]) && fn.isArray(pc[1]) && fn.isArray(pc[2]) && fn.isArray(mobile) ){
+        			return false;
+        		}
+        		return true;
+        	})(_studio.PC.portlet, _studio.MOBILE.portlet) ){
+        		console.log("%c SAVE ERROR : 5904300118", "color: red");
+        		return 0;
+        	}
+
+        	var privateInfo = JSON.stringify(_studio);
+        	sessionStorage.setItem("privateInfo", "["+privateInfo+"]");
+        	var param = {privateInfo: "["+privateInfo+"]" , privateCd : '6'};
+        	gfnc_transaction("/menu/saveUserPortletList.ajax", param, feedback, false, "json");
+        	return ;
+        };
+        
+        window.privateSave = save;
+
+        nbInformation.portletSave = function(){
+        	nana.confirm(false, [false, function(){
+        		if(!_myPortletDataCache.PC.portlet || _myPortletDataCache.PC.portlet.length === 0){
+        			console.log("%cERROR : 5807150118", "color: red");
+        			return ;
+        		}
+            	_studio.PC.portlet = _myPortletDataCache.PC.portlet;
+            	_dataAsideMemory.pc = _dataEventFns.tempRmv;
+            	save("pc", function(data){
+            		if(data.result=="ok"){
+                		alert("정상적으로 저장되었습니다.");		/*	정상적으로 저장되었습니다.	*/
+                		portletSetup.close();
+                	}
+            	});
+        	}]).portletSave(["포틀릿 설정 저장합니다"]);		/*	포틀릿 설정 저장합니다	*/
+        	return ;
+        };
+
+
+//        function portletSaveCallback(data){
+//        	if(data.result=="ok"){
+//        		alert("정상적으로 저장되었습니다.");		/*	정상적으로 저장되었습니다.	*/
+//        		portletSetup.close();
+//        	}
+//        };
+
+        nbInformation.viewDB = function(){
+            console.log(_myPortletDataCache.PC.portlet);
+            return ;
+        };
+
+        nbInformation.open = function(){
+	        portletSetup.open();
+	        return ;
+        };
+
+        nbInformation.scale = function(){
+        	if(this.portletScale === undefined){
+        		this.portletScale = false;
+        	}
+
+        	this.portletScale = !this.portletScale;
+
+        	$html[ this.portletScale ? 'addClass' : 'removeClass' ]('nb-scale');
+        	return ;
+        };
+
+// portlet outside events
+        nbInformation.portletClose = portletSetup.close;
+        nbInformation.portletReset = portletSetup.reset;
+
+
+        
+// prefix 이벤트 이름
+        
+        
+
+		var whichEventNamne = function(names, target){
+			target = target || document.createElement("div").style;
+			var t;
+			for(t in names){
+				if(target[t] !== undefined){
+					return names[t];
+				}
+			}
+		};
+
+		var eventName = {
+			transitionEnd: whichEventNamne({
+				transition: "transitionend",
+				OTransition: "oTransitionEnd",
+				MozTransition: "transitionend",
+				WebkitTransition: "webkitTransitionEnd"
+			}, emptyStyle)
+		};
+
+
+//		var transformPrefix = vendorPropName("transform"), transitionPrefix = vendorPropName("transition");
+
+// 슬라이드
+		
+		var banner = function( context ){
+			return new banner.fn.common( $(context) );
+		};
+
+		banner.fn = {
+			common: function( context ){
+
+				var list = $("li", context),
+					length = list.length;
+
+				var on = list.eq(0).addClass("on");
+
+				if(length < 1){
+					return ;
+				}
+
+				var
+					count = 0,
+					wk = function( q ){
+						count += q;
+						count = (length + count % length) % length;
+
+						on.removeClass("on");
+						on = list.eq(count).addClass("on");
+
+						return 0;
+					},
+					left = function(){
+						wk(-1);
+						return 0;
+					},
+					right = function(){
+						wk(1);
+						return 0;
+					};
+
+				
+
+				$(".nb-s-left", context).prop("disabled", false).on("click", left);
+				$(".nb-s-right", context).prop("disabled", false).on("click", right);
+
+				return this;
+			}
+		};
+
+		banner.fn.common.prototype = banner.fn;
+
+		nbInformation.banner = banner;
+
+
+
+		var slide = function( context ){
+			return new slide.fn.common( $(context) );
+		};
+
+
+		slide.fn = {
+			common: function( context ){
+
+				this.context	= context;
+				this.list		= $(".nb-s-item", context);
+				
+				return this;
+			},
+			setup: function( option ){
+
+
+				var self = this;
+				var item = this.context[0];
+
+				var
+					items		= this.list,
+					length		= items.length,
+					count		= 0;
+
+				if(length < 2){
+					return ;
+				}
+
+				var n = 0;
+				
+				var target = item.parentNode,
+					ul = null;
+
+				option = {
+					loop: option.loop	|| false,
+					auto: option.auto	|| false,
+					left: option.left	|| false,
+					right: option.right	|| false
+				};
+
+				if(option.loop){ // setting first ini
+					ul = this._duplicate(item);
+				}else{
+					return ;
+					console.log('error 10300329');
+				}
+
+
+				var
+					clone		= false,
+					quantity	= 0,
+					direction	= false,
+					discount	= 0, // default
+					many = length, // default
+
+					_keys = [
+						[2, 1, 0],	// -
+						[2, 0, 1]	// +
+					],
+
+					distance	= function( a ){
+						count += a;
+						return (length + count % length) % length;
+					},
+					fn = {
+						work: function( n, length, type, discount ){
+							if(type){ // click right
+								if(discount % length === 0){
+									if(!clone){
+										self.appendClone( target, ul, length, true );
+										many = length;
+										clone = true;
+									}
+
+									var key = n < 0 ? -(n / length % 3) : n / length % 3;
+										val = _keys[ n < 0 ? 0 :1 ];
+
+									many = many + length;
+
+									ul[ val[key] ].style.left = many + "00%";
+
+								}
+							}else{ // click left
+								if((discount + 1) % length === 0){
+									if(!clone){
+										self.appendClone( target, ul, length, false );
+										many = -length;
+										clone = true;
+									}
+
+									var key = n < 0 ? -((n + 1) / length % 3) : (n + 1) / length % 3,
+										val = _keys[ n < 0 ? 0 : 1 ];
+
+									many = many - length;
+
+									ul[ val[key] ].style.left = many + "00%";
+
+								}
+							}
+
+							target.setAttribute("style", "transform: translate("+ (-n) +"00%, 0)");
+
+							return 0;
+						},
+						left: function(){
+							count = distance(-1);
+
+							discount--;
+							if(!direction){
+								discount = count;
+								many -= length * 2;
+								direction = true;
+							}
+
+							fn.work(--n, length, 0, discount);
+
+							return 0;
+						},
+						right: function(){
+							count = distance(1);
+
+							discount++;
+							if(direction){
+								discount = count;
+								many += length * 2;
+								direction = false;
+							}
+
+							fn.work(++n, length, 1, discount);
+
+							return 0;
+						}
+					};
+
+				$(option.left).prop("disabled", false).on("click", fn.left);
+				$(option.right).prop("disabled", false).on("click", fn.right);
+
+
+				$(target).on(eventName.transitionEnd, function(){ // finish animation
+
+					target.setAttribute("style", "transition-duration: 0ms;transform: translate(-"+count+"00%, 0)");
+
+					item.removeAttribute("style");
+
+					many = length;
+					discount = count;
+					n = count;
+					direction = false;
+
+					if(clone){
+						ul[0].parentNode.removeChild(ul[0]);
+						ul[2].parentNode.removeChild(ul[2]);
+						parent = null;
+						clone = false;
+					}
+
+				});
+
+				return this;
+			},
+			_index: function( current, length ){ // Getting prev and next index
+				var next = current + 1, prev = current - 1;
+				length = length;
+				return {
+					active: current,
+					next: next < length ? next : 0,
+					prev: prev >= 0 ? prev : length - 1
+				};
+			},
+			_moving2: function(target, index, length){
+				var i = Math.abs(index + length) % 3;
+				return 0;
+			},
+			_moving: function(target, index, length){ // for looping
+
+				var i = Math.abs(index - 1) % 3;
+				target[ i ].style.left = (length * index + length) + "00%";
+
+				return 0;
+			},
+			moving: function(type, index, n){
+				console.log(type, index, n);
+				return ;
+			},
+			_duplicate: function( target ){ // for looping
+
+				var clone = function( target, name ){
+					var a = target.cloneNode(true);
+//					a.setAttribute("data-id", name);
+					return a;
+				};
+
+				return [ clone(target, "a00"), target, clone(target, "a02") ];
+			},
+			appendClone: function( context, clones, size, type ){
+				var p = function( clone, position ){
+					clone.setAttribute("style", "left: " + (position) + "00%");
+					return clone;
+				};
+				if(type){
+					context.appendChild(p(clones[0], -size));
+					context.appendChild(p(clones[2], size));
+
+				}else{
+					context.appendChild(p(clones[2], size));
+					context.appendChild(p(clones[0], -size));
+				}
+
+				return 0;
+			},
+			linear: function(){ // animate function
+				var
+					list = this.list,
+					size = list.length;
+
+			},
+			run: function( a, animate ){
+
+				return 0;
+			}
+		};
+
+
+		slide.fn.common.prototype = slide.fn;
+
+		nbInformation.slide = slide;
+
+})( window, document, jQuery );
+//-->
+</script>
+<div class="chatbot chatbot_pulse" onclick="if(0 &gt; 'win16|win32|win64|mac'.indexOf(navigator.platform.toLowerCase())){location.href = 'https://chat.cau.ac.kr/v2/index.html'}else{window.open('https://chat.cau.ac.kr/v2/index.html', '_blank', 'width = 450, height = 720, top = 100, left = 200, location = no, resizable = yes');}" title="중앙대학교 챗봇"></div>
+<div class="nb-q-bg"></div>
+</div><!-- //contents-begin -->
+</div><!--// nb-contents -->
+</div></section>
+<!-- 풋터 -->
+<style>
+	.nb-select {
+	    padding: 5px 11px 5px 15px;
+	}
+	.nb-select select {
+		font-weight: normal;
+		padding-left: 5px;
+	}
+</style>
+<script>
+	var  chgLang = function(obj) {
+		var params = {langCode : obj.value}; 
+		gfnc_transaction("/common/auth/changeLangCode.ajax", params, callbackChgLang, false);
+	};  
+	var callbackChgLang = function(response) {
+		if(response.msgCode === 'ok'){
+			sessionStorage.removeItem('authMenuList');
+			sessionStorage.removeItem('favoMenuList');
+			var authMenuList = transformTozTreeFormat(response.authMenuList);
+			sessionStorage.setItem('authMenuList', JSON.stringify(authMenuList));
+			var favoMenuList = null;
+			if(response.favoMenuList && response.favoMenuList.privateInfo){
+				sessionStorage.setItem('favoMenuList', JSON.stringify( response.favoMenuList.privateInfo));
+				favoMenuList=   response.favoMenuList.privateInfo;
+			}
+			if(authMenuList && nanaBand.header){ 
+				nanaBand.header(authMenuList, favoMenuList, true);
+			}
+			//location.replace("/main.do");
+			window.location.reload(true);
+		}
+	};
+	var fncCallHelpDesk = function() {
+
+		if( confirm("신나는플랫폼 HelpDesk(SPoC) Site로 이동 하시겠습니까?") ==  true){		/*	신나는플랫폼 HelpDesk(SPoC) Site로 이동 하시겠습니까?	*/
+			var param = {
+					memberId : '',
+					memberName : '',
+					memberEmpNo : '',
+					serviceDomain : 'cau',
+					memberOrg	 : 'cau',
+					memberGroup : '02',
+					memberAdminYn: 'N', 
+					userId : '', 
+					memberSystem : 'sptl' 
+			};
+			gfnc_gotourl("http://spoc.smartncs.co.kr/ssoLogin.do","post",param,"_blank" );
+		}
+	};
+	
+	$(document).ready(function(){
+		if( ('' != '1H770') || ''=='' ){
+	 		$('#helpdesk').remove();
+		}
+	});
+	
+
+</script>
+<footer class="nb-footer">
+<!-- <ul class="nb-bot-contents">
+            <li class="copyright">222</li>
+        </ul> -->
+<div class="nb-main-footer">
+<div class="nb-footer-info">
+<ul>
+<li>
+<em>서울</em> 동작구 흑석로 84  <i></i>
+</li>
+<li>
+<em>다빈치</em> 경기도 안성시 대덕면 서동대로 4726  <i></i>
+</li>
+<li>
+<a href="https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=2810" style="color: blue">개인정보처리방침</a>
+</li>
+<li>
+<a href="common/manual/manual.pdf">도움말</a>
+</li>
+<!-- <li id ="helpdesk">
+                        <a href="#" onclick="fncCallHelpDesk();">Help Desk</a>
+                    </li> -->
+</ul>
+<p>ⓒ 2018 Chung-Ang Univ.</p>
+</div>
+<div class="nb-set-language">
+<div class="nb-select">
+<label>
+<select onchange="chgLang(this);">
+<option value="ko">한국어</option>
+<option value="en">English</option>
+</select>
+<i></i>
+</label>
+</div>
+</div>
+<div class="nb-top"><a href="javascript:nbInformation.top();"></a></div>
+</div>
+</footer>
+</main>
+<!-- 로딩 -->
+<!-- //로딩-->
+<!-- 팝업 배경 -->
+<div class="ux-popup-overlay" id="popupOverlay"></div>
+<!-- //팝업 배경 -->
+<!-- layout.jsp -->
+<script type="text/javascript">
+<!--
+
+
+//-->
+</script>
+</body>
+</html>
