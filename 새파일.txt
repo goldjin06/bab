@@ -1,704 +1,408 @@
+<html lang="ko" class="nb-theme-1 nb-fontSize-1"><head><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>중앙대학교 포탈</title>
+	<link rel="shortcut icon" href="/common/image/favicon.ico">
+	<link rel="stylesheet" href="/common/css/jquery-ui.css">
 
-<!DOCTYPE html>
+	<link rel="stylesheet" href="/common/bootstrap-3.3.6/css/bootstrap.css">
+	<link rel="stylesheet" href="/common/css/select.css">
+	<link rel="stylesheet" href="/common/css/select2.css">
+	<link rel="stylesheet" href="/common/css/ng-table.css">
+	<link rel="stylesheet" href="/common/summernote/font-awesome.min.css">
+	<link rel="stylesheet" href="/common/summernote/summernote.css">
+	<link rel="stylesheet" href="/common/axj/AXJ.css">
+	<link rel="stylesheet" href="/common/axj/AXUpload5.css">
+	<link rel="stylesheet" href="/common/axj/AXButton.css">
+	<link rel="stylesheet" href="/common/fullcalendar/fullcalendar.min.css">
+	<link rel="stylesheet" href="/common/css/dev.css">
+	<link rel="stylesheet" href="/common/css/ui_ux.css">
+	<link rel="stylesheet" href="/common/css/popup.css">
+	<link rel="stylesheet" href="/common/css/SpGrid.css">
+	<link rel="stylesheet" href="/common/css/SpModal.css">
+	<link rel="stylesheet" href="/common/css/layout.reset.css">
+	<link rel="stylesheet" href="/common/css/cau.page.css">
 
-<html class="nb-theme-1 nb-fontSize-1" lang="ko">
-<head>
-<meta charset="utf-8"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1.0, user-scalable=0" name="viewport"/>
-<title>중앙대학교 포탈</title>
-<link href="/common/image/favicon.ico" rel="shortcut icon"/>
-<link href="/common/css/jquery-ui.css" rel="stylesheet"/>
-<link href="/common/bootstrap-3.3.6/css/bootstrap.css" rel="stylesheet"/>
-<link href="/common/css/select.css" rel="stylesheet"/>
-<link href="/common/css/select2.css" rel="stylesheet"/>
-<link href="/common/css/ng-table.css" rel="stylesheet">
-<link href="/common/summernote/font-awesome.min.css" rel="stylesheet">
-<link href="/common/summernote/summernote.css" rel="stylesheet"/>
-<link href="/common/axj/AXJ.css" rel="stylesheet"/>
-<link href="/common/axj/AXUpload5.css" rel="stylesheet"/>
-<link href="/common/axj/AXButton.css" rel="stylesheet"/>
-<link href="/common/fullcalendar/fullcalendar.min.css" rel="stylesheet"/>
-<link href="/common/css/dev.css" rel="stylesheet"/>
-<link href="/common/css/ui_ux.css" rel="stylesheet"/>
-<link href="/common/css/popup.css" rel="stylesheet">
-<link href="/common/css/SpGrid.css" rel="stylesheet">
-<link href="/common/css/SpModal.css" rel="stylesheet"/>
-<link href="/common/css/layout.reset.css" rel="stylesheet"/>
-<link href="/common/css/cau.page.css" rel="stylesheet"/>
-<link href="/common/fullcalendar/fullcalendar.min.css" rel="stylesheet">
-<link href="/common/css/da-form.css" rel="stylesheet">
-<link href="/common/css/SpModal.css" rel="stylesheet"/>
-<link href="/common/css/treeview.css" rel="stylesheet"/>
-<script src="/common/js/lodash.min.js"></script>
-<script src="/common/fullcalendar/moment.min.js"></script>
-<script src="/common/js/moment.locale.kr.js"></script>
-<script src="/common/js/jquery-1.12.1.js"></script>
-<script src="/common/js/jquery.form.js"></script>
-<script src="/common/js/jquery-ui.js"></script>
-<script src="/common/bootstrap-3.3.6/js/bootstrap.js"></script>
-<script src="/common/js/angular.min.js"></script>
-<script src="/common/js/angular-strap.min.js"></script>
-<script src="/common/js/angular-strap.tpl.min.js"></script>
-<script src="/common/fullcalendar/fullcalendar.min.js"></script>
-<script src="/common/fullcalendar/calendar.js"></script>
-<script src="/common/js/select.min.js"></script>
-<script src="/common/js/mask.min.js"></script>
-<script src="/common/js/ng-table.min.js"></script>
-<script src="/common/js/ui-bootstrap-tpls-2.2.0.min.js"></script>
-<script src="/common/js/ocLazyLoad.min.js"></script>
-<script src="/common/summernote/summernote.js"></script>
-<script src="/common/summernote/lang/summernote-ko-KR.js"></script>
-<script src="/common/summernote/angular-summernote.js"></script>
-<script src="/common/axj/AXJ.js"></script>
-<script src="/common/axj/AXUpload5.js"></script>
-<script src="/common/chart/Chart.min.js"></script>
-<script src="/common/chart/angular-chart.min.js"></script>
-<script src="/common/js/angular-input-masks-standalone.js"></script>
-<script src="/common/js/shim.js"></script>
-<script src="/common/js/portalCommon.js"></script>
-<script src="/common/msg/commonMsg.js"></script>
-<script src="/common/js/itsu.common.js?20220315"></script>
-<script src="/common/js/itsu.grid.core.js"></script>
-<script src="/common/js/globalize.js"></script>
-<script src="/common/js/portalCommonService.js"></script>
-<script src="/common/js/fileUploadService.js"></script>
-<script src="/common/js/i18nMessage.js"></script>
-<script src="/common/js/i18nService.js?20220310"></script>
-<script src="/common/js/authService.js"></script>
-<script src="/common/js/pageDirective.js"></script>
-<script src="/common/js/portalCommonDirective.js?20221201"></script>
-<script src="/common/js/portalCommonFilter.js"></script>
-<script src="/common/js/alasql.min.js"></script>
-<script src="/common/js/xlsx.core.min.js"></script>
-<script src="/common/js/xls.full.min.js"></script>
-<script src="/common/js/xlsx.full.min.js"></script>
-<script src="/common/js/ods.js"></script>
-<script src="/common/js/oz.js"></script>
-<script src="/common/js/jquery.vticker.js"></script>
-<script src="/common/js/SpUi.js?20220311"></script>
-<script src="/common/js/angular-sanitize.js"></script>
-<script src="/common/js/SpTreeView.js"></script>
-<script src="/common/js/jquery.countdown.js"></script>
-<script src="/common/js/qrcode.min.js"></script>
-<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d91a0b4028eb80c312788a24a5a27470" type="text/javascript"></script>
-</link></link></link></link></link></link></head>
+
+	<link rel="stylesheet" href="/common/fullcalendar/fullcalendar.min.css">
+	<link rel="stylesheet" href="/common/css/da-form.css">
+	<link rel="stylesheet" href="/common/css/SpModal.css">
+
+	<link rel="stylesheet" href="/common/css/treeview.css">
+
+	<script src="/common/js/lodash.min.js"></script>
+	<script src="/common/fullcalendar/moment.min.js"></script>
+	<script src="/common/js/moment.locale.kr.js"></script>
+	<script src="/common/js/jquery-1.12.1.js"></script>
+	<script src="/common/js/jquery.form.js"></script>
+	<script src="/common/js/jquery-ui.js"></script>
+	<script src="/common/bootstrap-3.3.6/js/bootstrap.js"></script>
+	<script src="/common/js/angular.min.js"></script>
+	<script src="/common/js/angular-strap.min.js"></script>
+	<script src="/common/js/angular-strap.tpl.min.js"></script>
+	<script src="/common/fullcalendar/fullcalendar.min.js"></script>
+	<script src="/common/fullcalendar/calendar.js"></script>
+	<script src="/common/js/select.min.js"></script>
+	<script src="/common/js/mask.min.js"></script>
+	<script src="/common/js/ng-table.min.js"></script>
+	<script src="/common/js/ui-bootstrap-tpls-2.2.0.min.js"></script>
+	<script src="/common/js/ocLazyLoad.min.js"></script>
+	<script src="/common/summernote/summernote.js"></script>
+	<script src="/common/summernote/lang/summernote-ko-KR.js"></script>
+	<script src="/common/summernote/angular-summernote.js"></script>
+	<script src="/common/axj/AXJ.js"></script>
+	<script src="/common/axj/AXUpload5.js"></script>
+	<script src="/common/chart/Chart.min.js"></script>
+	<script src="/common/chart/angular-chart.min.js"></script>
+	<script src="/common/js/angular-input-masks-standalone.js"></script>
+	<script src="/common/js/shim.js"></script>
+	<script src="/common/js/portalCommon.js"></script>
+	<script src="/common/msg/commonMsg.js"></script>
+	<script src="/common/js/itsu.common.js?20220315"></script>
+	<script src="/common/js/itsu.grid.core.js"></script>
+	<script src="/common/js/globalize.js"></script>
+	<script src="/common/js/portalCommonService.js"></script>
+	<script src="/common/js/fileUploadService.js"></script>
+	<script src="/common/js/i18nMessage.js"></script>
+	<script src="/common/js/i18nService.js?20220310"></script>
+	<script src="/common/js/authService.js"></script>
+	<script src="/common/js/pageDirective.js"></script>
+	<script src="/common/js/portalCommonDirective.js?20221201"></script>
+	<script src="/common/js/portalCommonFilter.js"></script>
+	<script src="/common/js/alasql.min.js"></script>
+	<script src="/common/js/xlsx.core.min.js"></script>
+	<script src="/common/js/xls.full.min.js"></script>
+	<script src="/common/js/xlsx.full.min.js"></script>
+	<script src="/common/js/ods.js"></script>
+	<script src="/common/js/oz.js"></script>
+	<script src="/common/js/jquery.vticker.js"></script>
+	<script src="/common/js/SpUi.js?20220311"></script>
+	<script src="/common/js/angular-sanitize.js"></script>
+	<script src="/common/js/SpTreeView.js"></script>
+	<script src="/common/js/jquery.countdown.js"></script>
+	<script src="/common/js/qrcode.min.js"></script>
+	<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d91a0b4028eb80c312788a24a5a27470"></script><script charset="UTF-8" src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.19/kakao.js"></script>
+
+
 <script>
-
 	var locale = '';
-
 	if (locale == 'en') {
-
 		document.write('<script src="/common/js/angular-locale_en-us.js"><\/script>');
-
 	}else{
-
 		document.write('<script src="/common/js/angular-locale_ko-kr.js"><\/script>');
-
 	}
-
 	var _pageSize = 10;
-
 	var _popupPageSize = 7;
-
 	moment.locale('ko');
-
 	angular.module('portal',
-
 			['ngSanitize',
-
 				'oc.lazyLoad',
-
 				'ngTable',
-
 				'mgcrea.ngStrap',
-
 				'ui.bootstrap',
-
 				'ui.select',
-
 				'ui.mask',
-
 				'chart.js',
-
 				'summernote',
-
 				'ui.calendar',
-
 				'ui.utils.masks',
-
 				'portal.commonService',
-
 				'portal.commonDirective',
-
 				'portal.pageDirective',
-
 				'portal.commonFilter',
-
 				'SpUi']);
 
-
-
 	angular
-
 			.module('portal')
-
 			.config(['$provide', '$httpProvider', '$datepickerProvider', 'ChartJsProvider',
-
 				function($provide, $httpProvider, $datepickerProvider, ChartJsProvider, $rootScope){
-
 					$provide.decorator('textareaDirective', function($delegate, $log) {
-
 						//$log.debug('Hijacking input directive');
-
 						var directive = $delegate[0];
-
 						angular.extend(directive.link, {
-
 							post: function(scope, element, attr, ctrls) {
-
 								element.on('compositionupdate', function (event) {
-
 									element.triggerHandler('compositionend');
-
 								})
-
 							}
-
 						});
-
 						return $delegate;
-
 					});
-
 					$provide.decorator('inputDirective', function($delegate, $log) {
-
 						//$log.debug('Hijacking input directive');
-
 						var directive = $delegate[0];
-
 						angular.extend(directive.link, {
-
 							post: function(scope, element, attr, ctrls) {
-
 								element.on('compositionupdate', function (event) {
-
 									element.triggerHandler('compositionend');
-
 								})
-
 							}
-
 						});
-
 						return $delegate;
-
 					});
-
-
 
 					//http
-
 					$httpProvider.interceptors.push(function($q, $timeout, $window, $rootScope ) {
-
 						return {
-
 							// On request success
-
 							request: function (config) {
-
 								// Return the config or wrap it in a promise if blank.
 
 
-
-
-
 								return config || $q.when(config);
-
 							},
-
 							// On request failure
-
 							requestError: function (rejection) {
-
 								return $q.reject(rejection);
-
 							},
-
 							// On response success
-
 							response: function (response) {
-
 //			        	 Return the response or promise.
-
 								if(response.data.msgCode == "error") {
-
 									//alert(_ERR_LOGIC + "\n" + response.data.msg);
 
-
-
 									if ( !/main\.do/.test(location.href) ){
-
 										alert(response.data.message);
-
 										submitWithJson({
-
 											url : "/sysTemError.do",
-
 											data : {
-
 												msg : 'error',
-
 												error : "URL : "+response.config.url+"<br>ERROR : "+response.data.message
-
 											}
-
 										});
-
 									}
 
-
-
 									$q.reject();
-
 								}
-
-
 
 								return response || $q.when(response);
-
 							},
-
 							// On response failture
-
 							responseError: function (rejection) {
-
 								// Return the promise rejection.
-
 								if(rejection.status === 401){
-
 									//alert(_MSG_NO_SESSION);
-
 									$window.location = '/login.do';
-
 								}
-
 								return $q.reject(rejection);
-
 							}
-
 						}
-
 					});
-
-
 
 					//datepicker
-
 					angular.extend($datepickerProvider.defaults, {
-
 						dateFormat: 'yyyy/MM/dd',
-
 						autoclose: true,
-
 						dateType : 'string'
-
 					});
 
-
-
 					ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
-
 				}])
-
 			.run(function($http, $rootScope, $window, $ocLazyLoad, authService, i18nService , Toast){
-
-
 
 				$rootScope.modal = {};
 
-
-
 				$rootScope.$on('changeCurrentMenuName', function(event, curMenuInfo) {
-
 					var navHader = $("#nbNav2ds");
-
 					var topMenu = $("#topMenu");
-
 					var sndMenu = $("#sndMenu");
-
 					navHader.attr("data-mid", curMenuInfo.menuId);
-
 					navHader.attr("data-pid", curMenuInfo.prtMenuId);
-
 					topMenu.html(curMenuInfo.topMenu)
-
 					sndMenu.html(curMenuInfo.sndMenu);
-
 				})
 
-
-
 				// 공통 팝업 js 호출
-
 				$ocLazyLoad.load([
-
 					, '/common/popup/massEnrollmentController.js'
-
 					, '/common/popup/massEnrollmentController2.js'
-
 					, '/common/popup/massEnrollmentAplyInController.js'
-
 					, '/common/popup/researchPopupController.js'
-
 					, '/common/popup/gradeEnrollmentAplyInController.js'
-
 					, '/common/popup/pUsjMidIns01PopupController.js'
-
 					, '/common/popup/pUsjFinIns01PopupController.js'
-
 					, '/common/popup/sUsjFinRev01PopPopupController.js'
-
 					, '/common/popup/surveyClassificationPopupController.js'
-
 					, '/common/popup/surveyCopyPopupController.js'
-
 					, '/common/popup/surveyPageManagePopupController.js'
-
 					, '/common/popup/surveyQuestionManagePopupController.js'
-
 					, '/common/popup/surveyQuarterManagePopupController.js'
-
 					, '/common/popup/surveyTargetPopupController.js'
-
 					, '/common/popup/surveyTargetMailPopupController.js'
-
 					, '/common/popup/surveyTargetPushPopupController.js'
-
 					, '/common/popup/surveyDeployRequestPopupController.js'
-
 					, '/common/popup/rowDataPopupController.js?20211210'
-
 					, '/common/popup/gradeMsgPopupController.js'
-
 					, '/common/popup/aplyTargetController.js'
-
 				]);
-
-
 
 				// 로그인 화면 (권이)
 
-
-
 				$rootScope.modal = {};
-
 				if($window.location.pathname === '/login/index.do' ||  $window.location.pathname === '/common/auth/SSOlogin.do' ){
-
 					sessionStorage.clear();
-
 					return ;
-
 				}
 
-
-
 				// main.jsp 로그인 정보 layout.jsp에 JOIN (권이)
-
-
 
 				var signIn = false;
 
 
 
-
-
-
-
 				//로그인 정보
-
 				$rootScope.loginInfo = {};
-
 				if($window.location.pathname != '/main.do' ){
-
 					$rootScope.currentMenu = JSON.parse('null');
-
 				}
-
 				var authMenuList = null, favoMenuList = null;
 
-
-
 //			var authMenuList = JSON.parse(sessionStorage.getItem('authMenuList'));
-
 //			var favoMenuList = JSON.parse(sessionStorage.getItem('favoMenuList'));
-
-
-
 
 
 //			if( authMenuList && nanaBand.header ){ // 메뉴 정보 세션에서 가져오기
 
-
-
 //				nanaBand.header(authMenuList,favoMenuList, signIn);
-
-
 
 //			}else{// 메뉴 정보 세션에 넣어주기
 
 
 
 
-
-
-
-
-
 				$http.post('/menu/selectUserMenuList.ajax', {userId : '', userGrpCd : ''})
-
 						.success(function(data){
-
 							if(data.msgCode === "success"){
 
-
-
 								authMenuList = transformTozTreeFormat(data.authMenuList);
-
 								//if(!authMenuList || authMenuList.length === 0 || typeof authMenuList !== 'object'){
-
 								//	return ;
-
 								//}
-
-
 
 								sessionStorage.setItem('authMenuList', JSON.stringify(authMenuList));
 
-
-
 								if(data.favoMenuList && data.favoMenuList.privateInfo){
-
 									sessionStorage.setItem('favoMenuList', JSON.stringify( data.favoMenuList.privateInfo));
-
 									favoMenuList=   data.favoMenuList.privateInfo;
-
 								}
-
-
 
 								if(authMenuList && nanaBand.header){
-
 									if('' == 'guest') signIn = false;
-
 									nanaBand.header(authMenuList, favoMenuList, signIn);
-
 								}
-
 							}else{
-
 								console.log("%cERROR CODE: 3010100117", "color: red");
-
 							}
-
 						});
-
 //			}
 
-
-
 				// create & getting (portlets, privateInfo, theme) session (권이)
-
 				(function($http, main){
-
 					var portlets = null, privateInfo = null;
-
 					/*
-
                                     var portlets = sessionStorage.getItem('portlets'),
-
                                         privateInfo = sessionStorage.getItem('privateInfo');
-
-
 
                                     if(portlets && privateInfo){ // 세션에서 가져오기
 
-
-
                                         portlets = JSON.parse(portlets);
-
                                         privateInfo = JSON.parse(privateInfo)[0];
 
 
-
-
-
                                         if(nbMore.setting){
-
                                             nbMore.setting(privateInfo);
-
                                         }
-
-
 
                                         if(main){
-
                                             nanaBand.portlet(portlets, privateInfo);
-
                                         }
-
                                     }else{
-
                     */
-
 					$http.post('/main/selectUserPortletList.ajax', {}).success(function(data){
-
 						if(data.msgCode === 'success'){
 
-
-
 							if(data.state === null) {
-
 								return;
-
 							}
-
 							var pFmt = toPortletFmt(data.portlets);
-
 							sessionStorage.setItem('portlets', JSON.stringify(pFmt));
-
 							sessionStorage.setItem('privateInfo', data.state.privateInfo);
 
-
-
 							portlets = pFmt;
-
 							privateInfo = JSON.parse(data.state.privateInfo)[0];
 
-
-
 							if(nbMore){
-
 								if(nbMore.setting)
-
 									nbMore.setting(privateInfo);
-
 							}
-
-
 
 							if(main){
 
-
-
 								nanaBand.portlet(portlets, privateInfo);
-
 							}
-
 						}else{
-
 							console.log("%cERROR CODE: 1905081217", "color: red");
-
 						}
-
 					});
-
 //				}
-
 					return 0;
-
 				})($http,typeof nanaBand.portlet !== 'undefined' );
 
 
 
 
-
-
-
-
-
+				
 				
 
 				
-
-
-
-				
-
-
 
 				$rootScope.imagePerfix = '';
-
 				
-
 				$rootScope.imagePerfix = 'data:image/png;base64,';
-
 				
-
-
 
 				i18nService.setLangCode('');
-
 				i18nService.load();
 
-
-
 				//로그아웃
-
 				$rootScope.logout = function(){
-
 					$http.post('/common/auth/doLogout.ajax', {})
-
 							.success(function(response){
-
 								if(response.result === 'ok'){
-
 									$window.location = "/login.do";
-
 								}
-
 							});
-
 				};
-
-
 
 				//언어변경(다국어)
-
 				$rootScope.chgLang = function(){
-
 					/*
-
                     $http.post('/common/auth/doLogout.ajax', {})
-
                     .success(function(response){
-
                         if(response.result === 'ok'){
-
                             $window.location = "/login.do";
-
                         }
-
                     });
-
                     */
-
 				};
-
 			})
-
 			.controller("appController", function(){
 
-
-
 			})
+</script><script src="/common/popup/massEnrollmentController.js" async=""></script><script src="/common/popup/massEnrollmentController2.js" async=""></script><script src="/common/popup/massEnrollmentAplyInController.js" async=""></script><script src="/common/popup/researchPopupController.js" async=""></script><script src="/common/popup/gradeEnrollmentAplyInController.js" async=""></script><script src="/common/popup/pUsjMidIns01PopupController.js" async=""></script><script src="/common/popup/pUsjFinIns01PopupController.js" async=""></script><script src="/common/popup/sUsjFinRev01PopPopupController.js" async=""></script><script src="/common/popup/surveyClassificationPopupController.js" async=""></script><script src="/common/popup/surveyCopyPopupController.js" async=""></script><script src="/common/popup/surveyPageManagePopupController.js" async=""></script><script src="/common/popup/surveyQuestionManagePopupController.js" async=""></script><script src="/common/popup/surveyQuarterManagePopupController.js" async=""></script><script src="/common/popup/surveyTargetPopupController.js" async=""></script><script src="/common/popup/surveyTargetMailPopupController.js" async=""></script><script src="/common/popup/surveyTargetPushPopupController.js" async=""></script><script src="/common/popup/surveyDeployRequestPopupController.js" async=""></script><script src="/common/popup/rowDataPopupController.js?20211210" async=""></script><script src="/common/popup/gradeMsgPopupController.js" async=""></script><script src="/common/popup/aplyTargetController.js" async=""></script><script src="/common/js/angular-locale_ko-kr.js"></script><style>@media screen and (max-width: 959px) {.nb-scroll-y-hide {width: calc(100% + 30px);padding-right: 15px;}.nb-onMenuMobile body {padding-right: 15px;}}body.nb-openConfirmUI {overflow: hidden;padding-right: 15px !important;position: fixed;width: 100%;height: 100%;}</style><style>.nb-h-menu-list[data-menu="100000"] .nb-h-menuList-context dl[data-id="100000"] {display: block;}.nb-h-menu-list[data-menu="140000"] .nb-h-menuList-context dl[data-id="140000"] {display: block;}.nb-h-menu-list[data-menu="020000"] .nb-h-menuList-context dl[data-id="020000"] {display: block;}.nb-h-menu-list[data-menu="180000"] .nb-h-menuList-context dl[data-id="180000"] {display: block;}.nb-h-menu-list[data-menu="050000"] .nb-h-menuList-context dl[data-id="050000"] {display: block;}.nb-h-menu-list[data-menu="060000"] .nb-h-menuList-context dl[data-id="060000"] {display: block;}</style></head>
 
-</script>
-<body class="ng-cloak" ng-app="portal" ng-clock="" ng-controller="appController">
-<ajax-indicator></ajax-indicator>
-<main class="nb-wrap" id="nanaBand">
-<section class="nb-context" id="nbContext">
-<!-- 해더 -->
+<body ng-clock="" ng-app="portal" class="ng-scope" ng-controller="appController">
+
+<div class="sp-loading-wrap none ng-isolate-scope" style="display: none;"><div class="sp-loading"><div class="sp-loading-img"><img src="/common/image/loading.png" alt=""><span>Loading...</span></div></div></div>
+<main id="nanaBand" class="nb-wrap">
+	<section class="nb-context" id="nbContext">
+		<!-- 해더 -->
+		
+
+
+
+
 <script>
 
    	var serverName = 'mportal.cau.ac.kr';
@@ -966,6 +670,8 @@
 		}, false,"json");
 	}
 </script>
+
+
 <style type="text/css">
 
 .loginTag{display: none !important;}
@@ -1032,138 +738,170 @@
 
 
 </style>
+
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
-<div class="modal-dialog">
-<!-- Modal content-->
-<div class="modal-content" id="popupContent">
+  <div class="modal-dialog ">
+  
+    <!-- Modal content-->
+    <div class="modal-content" id="popupContent">
+      
+    </div>
+    
+  </div>
 </div>
-</div>
-</div>
+
 <header class="nb-header" id="nbHeader">
-<div class="nb-h-mobile-btn" id="nbHeaderMenuMobile"></div><!-- 모바일 메뉴 버튼 -->
-<nav class="nb-h-top-nav">
-<div class="nb-h" id="nbHeaderContext">
-<div class="nb-h-inside">
-<div class="nb-h-begin">
-<div class="nb-headerInfos">
-<ul>
-<li class="nb-h-icon-home"><a href="/main.do">홈</a></li>
-<li class="nb-h-icon-scale loginTag" onclick="nbInformation.scale()"><a href="javascript:void(0);">확대</a></li>
-<li class="loginTag">
-<div class="nb-time2signOut">
-<div>
-<em><span id="counter"></span></em>
-</div>
-<a href="javascript:void(0);" onclick="refreshPage();">로그아웃 연장</a>
-</div>
-</li>
-<li class="nb-h-icon-setup nb-userInfo-context loginTag">
-<div class="nb-userInfo" data-new="false" id="openNBuserInfo">
-<em><span></span>님</em>
-</div>
-<div class="nb-userInfo-more">
-<div class="nb-userInfo-more-list" id="nbUcontext">
-<div class="nb-m-closeUserInfo">
-<a href="javascript:nbInformation.close();">뒤로</a>
-</div>
-<div class="nb-m-userInfoDL-context">
-<dl class="nb-scroll-y-hide">
-<dt>MY SECRET</dt>
-<dd class="emp none"><a href="/prof/gps/pGpsPer001/index.do">내 정보 수정</a></dd>
-<dd class="std none"><a href="/std/uhs/sUhsPer001/index.do">내 정보 수정</a></dd>
-<dd class="std none"><a href="/std/pis/sPisPer002/index.do">학부모 정보 수정</a></dd>
-<dd><a href="/myPage/changePw/changePw.do">비밀번호 수정</a></dd>
-<dd class="emp none"><a href="/myPage/changePin/changePin.do">PIN번호 설정</a></dd>
-<dd><a href="/myPage/representId/representId.do">대표신분 설정</a></dd>
-<dd><a href="/myPage/pushBox/pushBox.do">PUSH함</a></dd>
-<dd><a href="/common/office365/checkSignUpDate.do">메일함</a></dd>
-<dd class="emp none"><a href="https://gw.cau.ac.kr" id="eApproval" target="_blank">결재함</a></dd>
-<dd><a href="javascript:infoAgree();">정보제공 동의</a></dd>
-<dd><a href="javascript:infoRecieve();">정보수신 동의</a></dd>
-<dd class="nb-mobile-signOut"><a href="javascript:fncLogout()">Logout</a></dd>
-<dt>환경설정</dt>
-<dd class="nb-h-portlet-setup"><a href="javascript:nbInformation.portlet();">개인화 설정</a></dd>
-<dd><a href="javascript:nbMore.open('theme');">테마 설정</a></dd>
-<dd class="nb-h-portlet-setup"><a href="javascript:nbMore.open('fontSize');">포틀릿 폰트 설정</a></dd>
-<dd><a href="/myPage/myLink/myLink.do">바로가기 설정</a></dd>
-</dl>
-</div>
-</div>
-</div>
-</li>
-<li class="nb-h-icon-signOut loginTag"><a href="javascript:void(0);" onclick="fncLogout()">Logout</a></li>
-<li class="nb-h-icon-signIn logoutTag"><a href="javascript:void(0);" onclick="fncLogin()">Login</a></li>
-</ul>
-</div>
-<div class="nb-mobile-push-btn"><a href="/myPage/pushBox/pushBox.do"></a></div>
-<div class="nb-mobile-home-btn"><a href="/main.do">Home</a></div>
-<div class="nb-mobile-close-btn" id="nbCloseMobileMenu02"></div>
-</div>
-<div class="nb-h-bottom">
-<div class="nb-h-menu">
-<div class="nb-h-menu-f">
-<ul class="nb-flex-XX nb-scroll-y-hide" id="nbHeaderMenuContext"></ul>
-</div>
-<div class="nb-h-menu-list" id="nbHeaderMenuListContext">
-<div class="nb-h-menu-list-context nb-scroll-y-hide">
-<input checked="checked" id="nbSpace2m0101" name="nbSpace2m01" type="radio"/>
-<input id="nbSpace2m0102" name="nbSpace2m01" type="radio"/>
-<div>
-<section class="nb-h-menuList-left nb-tab-2m-DEL">
-<ol>
-<li><label for="nbSpace2m0101">즐겨찾기</label></li>
-<li><label for="nbSpace2m0102">바로가기</label></li>
-</ol>
-<div>
-<section class="nb-h-menu-banner">
-<dl>
-<dt>
-<img src="/common/image/def/cau_emblem.png"/>
-</dt>
-<!-- <dd>
+    <div class="nb-h-mobile-btn" id="nbHeaderMenuMobile"></div><!-- 모바일 메뉴 버튼 -->
+    <nav class="nb-h-top-nav">
+
+        <div class="nb-h" id="nbHeaderContext">
+
+            <div class="nb-h-inside">
+                <div class="nb-h-begin">
+                    <div class="nb-headerInfos">
+                        <ul>
+                        	<li class="nb-h-icon-home"><a href="/main.do">홈</a></li>
+                        	
+                        	
+                        		
+	                            <li class="nb-h-icon-scale loginTag" onclick="nbInformation.scale()"><a href="javascript:void(0);">확대</a></li>
+	
+	                            <li class="loginTag">
+	                                <div class="nb-time2signOut">
+	                                    <div>
+	                                        <em><span id="counter"></span></em>
+	                                    </div>
+	                                    <a href="javascript:void(0);" onclick="refreshPage();">로그아웃 연장</a>
+	                                </div>
+	                            </li>
+	
+	                            <li class="nb-h-icon-setup nb-userInfo-context loginTag">
+
+                                    
+                                    <div class="nb-userInfo" id="openNBuserInfo" data-new="false">
+                                        <em><span></span>님</em>
+                                    </div>
+	                                <div class="nb-userInfo-more">
+	                                    <div class="nb-userInfo-more-list" id="nbUcontext">
+	                                        <div class="nb-m-closeUserInfo">
+	                                            <a href="javascript:nbInformation.close();">뒤로</a>
+	                                        </div>
+	                                        <div class="nb-m-userInfoDL-context">
+	                                            <dl class="nb-scroll-y-hide">
+	                                                <dt>MY SECRET</dt>
+	                                                <dd class="emp none"><a href="/prof/gps/pGpsPer001/index.do">내 정보 수정</a></dd>
+	                                                <dd class="std none"><a href="/std/uhs/sUhsPer001/index.do">내 정보 수정</a></dd>
+	                                                <dd class="std none"><a href="/std/pis/sPisPer002/index.do">학부모 정보 수정</a></dd>
+	                                                <dd><a href="/myPage/changePw/changePw.do">비밀번호 수정</a></dd>
+	                                                <dd class="emp none"><a href="/myPage/changePin/changePin.do">PIN번호 설정</a></dd>
+	                                                <dd><a href="/myPage/representId/representId.do">대표신분 설정</a></dd>
+	                                                <dd><a href="/myPage/pushBox/pushBox.do">PUSH함</a></dd>
+	                                                <dd><a href="/common/office365/checkSignUpDate.do">메일함</a></dd>
+	                                                <dd class="emp none"><a href="https://gw.cau.ac.kr" target="_blank" id="eApproval">결재함</a></dd>
+	                                                <dd><a href="javascript:infoAgree();">정보제공 동의</a></dd>
+	                                                <dd><a href="javascript:infoRecieve();">정보수신 동의</a></dd>
+	                                                <dd class="nb-mobile-signOut"><a href="javascript:fncLogout()">Logout</a></dd>
+	                                                <dt>환경설정</dt>
+	                                                <dd class="nb-h-portlet-setup"><a href="javascript:nbInformation.portlet();">개인화 설정</a></dd>
+	                                                <dd><a href="javascript:nbMore.open('theme');">테마 설정</a></dd>
+	                                                <dd class="nb-h-portlet-setup"><a href="javascript:nbMore.open('fontSize');">포틀릿 폰트 설정</a></dd>
+	                                                <dd><a href="/myPage/myLink/myLink.do">바로가기 설정</a></dd>
+	                                            </dl>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                
+	                            </li>
+	
+	                            <li class="nb-h-icon-signOut loginTag"><a href="javascript:void(0);" onclick="fncLogout()">Logout</a></li>
+	                            
+                            
+                        			<li class="nb-h-icon-signIn"><a href="javascript:void(0);" onclick="fncLogin()">Login</a></li>
+                        		
+                        </ul>
+                    </div>
+                    <div class="nb-mobile-push-btn"><a href="/myPage/pushBox/pushBox.do"></a></div>
+                    <div class="nb-mobile-home-btn"><a href="/main.do">Home</a></div>
+                    <div class="nb-mobile-close-btn" id="nbCloseMobileMenu02"></div>
+                </div>
+                <div class="nb-h-bottom">
+                    <div class="nb-h-menu">
+                        <div class="nb-h-menu-f">
+                            <ul class="nb-flex-XX nb-scroll-y-hide" id="nbHeaderMenuContext"><li active="true" data-id="100000"><em>정보마당</em></li><li data-id="140000"><em>학사마당</em></li><li data-id="020000"><em>e-상담센터</em></li><li data-id="180000"><em>IT Help desk</em></li><li data-id="050000"><em>학부모마당</em></li><li data-id="060000"><em>주요사이트</em></li></ul>
+                        </div>
+                        <div class="nb-h-menu-list" id="nbHeaderMenuListContext">
+                            <div class="nb-h-menu-list-context nb-scroll-y-hide">
+                                <input type="radio" name="nbSpace2m01" id="nbSpace2m0101" checked="checked">
+                                <input type="radio" name="nbSpace2m01" id="nbSpace2m0102">
+                                <div>
+                                    <section class="nb-h-menuList-left nb-tab-2m-DEL">
+                                        <ol>
+                                            <li><label for="nbSpace2m0101">즐겨찾기</label></li>
+                                            <li><label for="nbSpace2m0102">바로가기</label></li>
+                                        </ol>
+                                        <div>
+                                            <section class="nb-h-menu-banner">
+                                                <dl>
+                                                    <dt>
+                                                        <img src="/common/image/def/cau_emblem.png">
+                                                    </dt>
+                                                    <!-- <dd>
                                                         <p>중앙 100년</p>
                                                         <p style="font-size: 15px;color: #666;padding: 5px 0;">대학의 기본을 바탕으로 쌓아온 100년 변화와 혁신</p>
                                                         a href="javascript:void(0);" style="color: #79A6EA;">보러가기</a
                                                     </dd> -->
-</dl>
-</section>
-<!-- <section>바로가기</section> -->
-</div>
-</section>
-<section class="nb-h-menuList-right">
-<div class="nb-h-menuList-context" id="nbMenuListContext"></div>
-</section>
-</div>
-</div>
-</div>
-</div>
-</div><!-- //nb-h-bottom -->
-</div><!-- //inside -->
-<div class="nb-h-outside">
-<div>
-<div class="nb-h-logo">
-<a href="/main.do"><img src="/common/image/def/cau.logo.ko.png"/></a>
-</div>
-<div class="">
-</div>
-<div class="nb-h-search si">
-<a class="loginTag" href="javascript:fncLogout();">Logout</a>
-<a class="logoutTag" href="javascript:fncLogin();">Login</a>
-</div>
-</div>
-</div><!-- //outside -->
-<div class="nb-h-bg" id="nbCloseMobileMenu01"></div>
-</div>
-</nav>
+                                                </dl>
+                                            </section>
+                                            <!-- <section>바로가기</section> -->
+                                        </div>
+                                    </section>
+                                    <section class="nb-h-menuList-right">
+                                        <div class="nb-h-menuList-context" id="nbMenuListContext"><div><dl data-id="100000"><dt>공지사항</dt><dd data-key="100101" id="h100101"><em><a href="javascript:void(0);" data-id="100101" data-mobile="true" data-path="/system/admin/board/B0004/board.do" data-blank="false" data-name="포털공지">포털공지</a></em></dd><dd data-key="100102" id="h100102"><em><a href="javascript:void(0);" data-id="100102" data-mobile="true" data-path="/system/admin/board/B0005/board.do" data-blank="false" data-name="학칙개정공고">학칙개정공고</a></em></dd><dd data-key="100104" id="h100104"><em><a href="javascript:void(0);" data-id="100104" data-mobile="true" data-path="/system/campMap/index.do" data-blank="false" data-name="캠퍼스맵">캠퍼스맵</a></em></dd><dd data-key="100108" id="h100108"><em><a href="javascript:void(0);" data-id="100108" data-mobile="true" data-path="/std/usk/sUskSif001/search.do" data-blank="false" data-name="강의시간표조회">강의시간표조회</a></em></dd></dl><dl data-id="140000"><dt>교환학생</dt><dd data-key="141002" id="h141002"><em><a href="javascript:void(0);" data-id="141002" data-mobile="true" data-path="/std/uhs/sUhsExs002/index.do" data-blank="false" data-name="초청학생 지원">초청학생 지원</a></em></dd><dd data-key="141003" id="h141003"><em><a href="javascript:void(0);" data-id="141003" data-mobile="true" data-path="/std/uhs/sUhsExs006/index.do" data-blank="false" data-name="초청학생 지원(계절학기)">초청학생 지원(계절학기)</a></em></dd></dl><dl data-id="020000"><dt>IT Help desk</dt><dd data-key="100413" id="h100413"><em><a href="javascript:void(0);" data-id="100413" data-mobile="true" data-path="/system/admin/board/B0024/board.do" data-blank="false" data-name="인터넷증명">인터넷증명</a></em></dd></dl><dl data-id="180000"><dt>네트워크</dt></dl><dl data-id="050000"><dt>학부모 서비스</dt><dd data-key="050103" id="h050103"><em><a href="javascript:void(0);" data-id="050103" data-mobile="true" data-path="/std/pis/sPisApp001/index.do" data-blank="false" data-name="학부모로그인">학부모로그인</a></em></dd></dl><dl data-id="060000"><dt>주요사이트  바로가기</dt><dd data-key="060113" id="h060113"><em><a href="javascript:void(0);" data-id="060113" data-mobile="true" data-path="https://mportal.cau.ac.kr/system/admin/board/B0021/board.do" data-blank="true" data-name="E-mail">E-mail</a></em></dd><dd data-key="060101" id="h060101"><em><a href="javascript:void(0);" data-id="060101" data-mobile="true" data-path="https://cauin.cau.ac.kr/" data-blank="true" data-name="중앙인">중앙인</a></em></dd><dd data-key="060105" id="h060105"><em><a href="javascript:void(0);" data-id="060105" data-mobile="true" data-path="https://www.cau.ac.kr/" data-blank="true" data-name="홈페이지">홈페이지</a></em></dd><dd data-key="060103" id="h060103"><em><a href="javascript:void(0);" data-id="060103" data-mobile="true" data-path="https://rainbow.cau.ac.kr/" data-blank="true" data-name="레인보우시스템">레인보우시스템</a></em></dd><dd data-key="060104" id="h060104"><em><a href="javascript:void(0);" data-id="060104" data-mobile="true" data-path="https://library.cau.ac.kr/default" data-blank="true" data-name="학술정보원">학술정보원</a></em></dd><dd data-key="060106" id="h060106"><em><a href="javascript:void(0);" data-id="060106" data-mobile="true" data-path="https://113366.com/cau0" data-blank="true" data-name="원격지원">원격지원</a></em></dd><dd data-key="060108" id="h060108"><em><a href="javascript:void(0);" data-id="060108" data-mobile="true" data-path="https://cert.cau.ac.kr/SSO_CAU/Default.jsp" data-blank="true" data-name="인터넷증명">인터넷증명</a></em></dd><dd data-key="060107" id="h060107"><em><a href="javascript:void(0);" data-id="060107" data-mobile="true" data-path="http://ithelp.cau.ac.kr/" data-blank="true" data-name="IT헬프">IT헬프</a></em></dd><dd data-key="060121" id="h060121"><em><a href="javascript:void(0);" data-id="060121" data-mobile="true" data-path="/std/usk/QS_EMP_SURVEY_2020/index.do" data-blank="true" data-name="기업계평판도조사">기업계평판도조사</a></em></dd><dd data-key="060122" id="h060122"><em><a href="javascript:void(0);" data-id="060122" data-mobile="true" data-path="/std/usk/QS_ACD_SURVEY_2020/index.do" data-blank="true" data-name="학계평판도조사">학계평판도조사</a></em></dd></dl></div><div><dl data-id="100000"><dt>인터넷증명</dt><dd data-key="100801" id="h100801"><em><a href="javascript:void(0);" data-id="100801" data-mobile="true" data-path="https://cert.cau.ac.kr/SSO_CAU/Default.jsp" data-blank="true" data-name="증명서발급">증명서발급</a></em></dd><dd data-key="100802" id="h100802"><em><a href="javascript:void(0);" data-id="100802" data-mobile="true" data-path="https://post.cau.ac.kr/SSO/PostDefault.jsp" data-blank="true" data-name="증명서우편접수">증명서우편접수</a></em></dd></dl><dl data-id="140000"><dt>국내 교환학생(학점교류)</dt><dd data-key="141301" id="h141301"><em><a href="javascript:void(0);" data-id="141301" data-mobile="true" data-path="/system/share/plf/index.do" data-blank="true" data-name="공유대학 플랫폼(학점교류 안내)">공유대학 플랫폼(학점교류 안내)</a></em></dd></dl><dl data-id="180000"><dt>이메일/Office365</dt><dd data-key="180501" id="h180501"><em><a href="javascript:void(0);" data-id="180501" data-mobile="true" data-path="/system/admin/board/B0021/board.do" data-blank="false" data-name="이메일/Office365 사용안내">이메일/Office365 사용안내</a></em></dd><dd data-key="180502" id="h180502"><em><a href="javascript:void(0);" data-id="180502" data-mobile="true" data-path="/system/admin/emailExtension/emailExtension/index.do" data-blank="false" data-name="이메일 사용연장신청">이메일 사용연장신청</a></em></dd></dl></div><div></div><div></div></div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- //nb-h-bottom -->
+            </div><!-- //inside -->
+            <div class="nb-h-outside">
+                <div>
+                    <div class="nb-h-logo">
+                        <a href="/main.do"><img src="/common/image/def/cau.logo.ko.png"></a>
+                    </div>
+                    <div class="">
+                    </div>
+                    <div class="nb-h-search si">
+                   		<a href="javascript:fncLogout();" class="loginTag">Logout</a>
+                    	<a href="javascript:fncLogin();" class="">Login</a>
+                    </div>
+                </div>
+            </div><!-- //outside -->
+            <div class="nb-h-bg" id="nbCloseMobileMenu01"></div>
+        </div>
+
+    </nav>
 </header>
+
 <script src="/common/js/nana.fn.js"></script>
 <script src="/common/js/header.js?20180516"></script>
-<div class="nb-contents">
-<div class="nb-contents-begin">
-<!-- 바디 -->
-<page-title></page-title>
-<script src="/common/js/portalSso.js" type="text/javascript"></script>
+
+		<div class="nb-contents">
+
+			<div class="nb-contents-begin">
+				
+
+				<!-- 바디 -->
+				<page-title class="ng-isolate-scope"><div class="nb-mainTitle ng-hide" ng-show="vm.isMenuShow">        <section class="nb-title main">
+            <h2><em class="ng-binding"></em></h2>
+        </section></div></page-title>
+				
+
+
+
+
+<script type="text/javascript" src="/common/js/portalSso.js"></script>
 <script>
 	angular.module("portal")
 		.controller("MainController", MainController);
@@ -1264,36 +1002,74 @@
 	
 
 </script>
-<script src="/common/js/system/portlet/p013/p013.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p021/p021.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p017/p017.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p008/p008.js?20240122" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p022/p022.js?20240122" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p005/p005.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p011/p011.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p023/p023.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p024/p024.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p004/p004.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p015/p015.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p014/p014.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p007/p007.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p009/p009.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p010/p010.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p001/p001.js?20231019" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p026/p026.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p027/p027.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p012/p012.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p028/p028.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p029/p029.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p018/p018.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p016/p016.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p019/p019.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p006/p006.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p003/p003.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p002/p002.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p030/p030.js" type="text/javascript"></script>
-<script src="/common/js/system/portlet/p031/p031.js" type="text/javascript"></script>
-<link href="/common/css/portlet.contents.css" rel="stylesheet"/>
+
+
+
+
+
+<script type="text/javascript" src="/common/js/system/portlet/p013/p013.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p021/p021.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p017/p017.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p008/p008.js?20240122"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p022/p022.js?20240122"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p005/p005.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p011/p011.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p023/p023.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p024/p024.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p004/p004.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p015/p015.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p014/p014.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p007/p007.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p009/p009.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p010/p010.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p001/p001.js?20231019"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p026/p026.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p027/p027.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p012/p012.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p028/p028.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p029/p029.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p018/p018.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p016/p016.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p019/p019.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p006/p006.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p003/p003.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p002/p002.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p030/p030.js"></script>
+
+<script type="text/javascript" src="/common/js/system/portlet/p031/p031.js"></script>
+
+
+<link rel="stylesheet" href="/common/css/portlet.contents.css">
+
+
+
 <style>
 .active {color: green;}
 .nb-nav-context {display: none !important;}
@@ -1376,8 +1152,9 @@ dd.nb-h-portlet-setup > a {color: #888;pointer-events: auto;}
 	.nb-q {min-height: calc(100vh - 200px);}
 }
 </style>
-<div class="nb-q" ng-controller="MainController">
-<script id="researchModal" type="text/ng-template">
+
+<div class="nb-q ng-scope" ng-controller="MainController">
+	<script type="text/ng-template" id="researchModal">
 		<div class="sp-modal-header">
                중앙대학교 설문조사
         <div class="sp-modal-close" ng-click="modal.join1()" ng-style="{ top: '10px', right: '10px'}"></div>
@@ -1420,41 +1197,1130 @@ dd.nb-h-portlet-setup > a {color: #888;pointer-events: auto;}
             </ul>
         </div>
     </script>
-<article class="nb-portlet" data-line="3" id="NanaBandPortlet">
-<!-- <div class="nb-portlet-h-btn">
+
+	<article id="NanaBandPortlet" class="nb-portlet" data-line="3">
+	    <!-- <div class="nb-portlet-h-btn">
 	        <ul>
 	            <li class="nb-portlet-setup-btn"><a href="javascript:void(0);" id="nbPortletSetup">포틀릿 설정</a></li>
 	            <li class="nb-portlet-setup-close-btn"><a href="javascript:void(0);" id="nbPortletSetupClose">닫기</a></li>
 	        </ul>
 	    </div> -->
-<section class="nb-portlet-move" id="nbMoveContext"></section>
-<div class="nb-portlet-bg">
-<div class="nb-portlet-bg-queue">
-<section class="nb-portlet-context" id="nbPortletView">
-<div class="nb-portlet-container" data-col="0"></div>
-<div class="nb-portlet-container" data-col="1"></div>
-<div class="nb-portlet-container" data-col="2"></div>
-<div class="nb-portlet-container" data-col="3"></div>
-</section>
+	    <section id="nbMoveContext" class="nb-portlet-move"></section>
+	    <div class="nb-portlet-bg">
+	        <div class="nb-portlet-bg-queue">
+	            <section id="nbPortletView" class="nb-portlet-context">
+	                <div class="nb-portlet-container" data-col="0"><section class="nb-portlet-section" id="P012"><div class="ng-scope">
+
+
+<div>
+	<div class="nb-portlet-contents ng-scope" ng-controller="P012Controller as page">
+		<div>
+			<header class="nb-p-headers">
+				<h2 class="nb-p-title nb-left">학교소개</h2>
+				<div class="nb-right nb-t-right">
+					<ol class="nb-headerIcons">
+						<!-- ngIf: page.homeUrl != null --><li class="nb-p-iconHone ng-scope" ng-if="page.homeUrl != null"><a href="https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=1720" target="_blank">홈</a></li><!-- end ngIf: page.homeUrl != null -->
+					</ol>
+				</div>
+			</header>
+			<div class="nb-p-s-cc">
+				<div class="nb-slide">
+					<div class="nb-s-context">
+						<div class="nb-s-wrapper">
+							<div class="nb-s-items-context" id="slide012">
+								<!-- Looping 1 -->
+								<!-- ngRepeat: tab in page.tabs --><div class="nb-s-item ng-scope" ng-repeat="tab in page.tabs">
+									<div class="nb-p-07s">
+										<!-- Looping 2 -->
+										<!-- ngRepeat: item in tab --><dl ng-repeat="item in tab" class="ng-scope">
+											<dt>
+												<a href="https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=2780" target="_blank"><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20180206182904_29706274.jpg" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20180206182904_29706274.jpg"></a>
+											</dt>
+											<dd>
+												<span ng-bind="item.title" class="ng-binding">NEW VISION CAU 2030+</span>
+											</dd>
+											<dd>
+												<span ng-bind="item.cont" class="ng-binding"></span>
+											</dd>
+										</dl><!-- end ngRepeat: item in tab --><dl ng-repeat="item in tab" class="ng-scope">
+											<dt>
+												<a href="https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=1630" target="_blank"><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20180131231053_91992018.jpg" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20180131231053_91992018.jpg"></a>
+											</dt>
+											<dd>
+												<span ng-bind="item.title" class="ng-binding">교육이념/목적/목표</span>
+											</dd>
+											<dd>
+												<span ng-bind="item.cont" class="ng-binding"></span>
+											</dd>
+										</dl><!-- end ngRepeat: item in tab -->
+										<!-- //Looping 2 -->
+									</div>
+								</div><!-- end ngRepeat: tab in page.tabs --><div class="nb-s-item ng-scope" ng-repeat="tab in page.tabs">
+									<div class="nb-p-07s">
+										<!-- Looping 2 -->
+										<!-- ngRepeat: item in tab --><dl ng-repeat="item in tab" class="ng-scope">
+											<dt>
+												<a href="https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=1720" target="_blank"><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20240906093733_ta70fvxx.PNG" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20240906093733_ta70fvxx.PNG"></a>
+											</dt>
+											<dd>
+												<span ng-bind="item.title" class="ng-binding">이사장 인사말</span>
+											</dd>
+											<dd>
+												<span ng-bind="item.cont" class="ng-binding"></span>
+											</dd>
+										</dl><!-- end ngRepeat: item in tab --><dl ng-repeat="item in tab" class="ng-scope">
+											<dt>
+												<a href="https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=360" target="_blank"><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20220617104655_m43x20gy.jpg" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20220617104655_m43x20gy.jpg"></a>
+											</dt>
+											<dd>
+												<span ng-bind="item.title" class="ng-binding">총장인사말</span>
+											</dd>
+											<dd>
+												<span ng-bind="item.cont" class="ng-binding"></span>
+											</dd>
+										</dl><!-- end ngRepeat: item in tab -->
+										<!-- //Looping 2 -->
+									</div>
+								</div><!-- end ngRepeat: tab in page.tabs --><div class="nb-s-item ng-scope" ng-repeat="tab in page.tabs">
+									<div class="nb-p-07s">
+										<!-- Looping 2 -->
+										<!-- ngRepeat: item in tab --><dl ng-repeat="item in tab" class="ng-scope">
+											<dt>
+												<a href="https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=220" target="_blank"><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20210916180712_fnij1l5l.PNG" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20210916180712_fnij1l5l.PNG"></a>
+											</dt>
+											<dd>
+												<span ng-bind="item.title" class="ng-binding">중앙대 상징</span>
+											</dd>
+											<dd>
+												<span ng-bind="item.cont" class="ng-binding"></span>
+											</dd>
+										</dl><!-- end ngRepeat: item in tab --><dl ng-repeat="item in tab" class="ng-scope">
+											<dt>
+												<a href="https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=200" target="_blank"><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20210916181030_p6ioe406.PNG" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20210916181030_p6ioe406.PNG"></a>
+											</dt>
+											<dd>
+												<span ng-bind="item.title" class="ng-binding">중앙대 역사</span>
+											</dd>
+											<dd>
+												<span ng-bind="item.cont" class="ng-binding"></span>
+											</dd>
+										</dl><!-- end ngRepeat: item in tab -->
+										<!-- //Looping 2 -->
+									</div>
+								</div><!-- end ngRepeat: tab in page.tabs -->
+								<!-- //Looping 1 -->
+							</div>
+						</div>
+					</div>
+					<button class="nb-s-left" id="slide012left"> Left </button>
+					<button class="nb-s-right" id="slide012right"> Right </button>
+				</div>
+				<!-- nb-slide -->
+			</div>
+			<!-- nb-p-s-cc -->
+		</div>
+	</div>
 </div>
+<span class="nb-before"></span><span class="nb-after"></span></div></section><section class="nb-portlet-section" id="P007"><div class="ng-scope">
+
+<div>
+	<div class="nb-portlet-contents ng-scope" ng-controller="p007Controller as page">
+		<div>
+			<header class="nb-p-headers">
+				<h2 class="nb-p-title nb-left"><span ng-bind="page.title" class="ng-binding">CAU News Today</span></h2>
+				<div class="nb-right nb-t-right">
+					<ol class="nb-headerIcons">
+						<li class="nb-p-iconNewWindow"><a href="https://news.cau.ac.kr/" target="_blank">목록</a></li>
+						<!-- ngIf: page.homeUrl != null --><li class="nb-p-iconHone ng-scope" ng-if="page.homeUrl != null"><a href="https://www.cau.ac.kr/" target="_blank">홈</a></li><!-- end ngIf: page.homeUrl != null -->
+					</ol>
+				</div>
+			</header>
+			<div class="nb-p-s-cc">
+				<div class="nb-slide">
+					<div class="nb-s-context">
+						<div class="nb-s-wrapper">
+							<div class="nb-s-items-context" id="slide007">
+								<!-- Looping 1 -->
+								<!-- ngRepeat: item in page.tabs --><div class="nb-s-item ng-scope" ng-repeat="item in page.tabs">
+									<div class="nb-p-07s">
+										<!-- Looping 2 -->
+										<!-- ngRepeat: row in item --><dl ng-repeat="row in item" class="ng-scope">
+											<dt>
+											<!--	<a href="http://news.cau.ac.kr/bbs/news_view.php?idx={{row.IDX}}" target="_blank"> <img ng-src="{{row.THUNBNAIL}}"></a>-->
+											<a href="https://news.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=10&amp;CONTENTS_NO=&amp;SITE_NO=5&amp;BOARD_SEQ=1&amp;BBS_SEQ=8677" target="_blank"> <img ng-src="https://www.cau.ac.kr/attach/images/000265/그림1.png" src="https://www.cau.ac.kr/attach/images/000265/그림1.png"></a>
+											</dt>
+											<dd>
+												<span ng-bind="row.TITLE" class="ng-binding">경영전문대학원, 상하이 Fudan대학 EMA 복수학위 설명회 성료</span>
+											</dd>
+											<dd>
+												<span ng-bind="row.CONTENTS" class="ng-binding">4월 22일경영전문대학원에서 상하이 Fudan대학 경제학원 복수학위 프로그램 담당자를 초청한 설명회가 성공적으로 개최되었다.
+
+이번 설명회는 본교 학부 및 Global MBA 재학생과 졸업생을 대상으로 진행되었으며, 중간시험 기간 중임에도 불구하고 많은 학생들이 설명회에 참석하여 프로그램에 대한 뜨거운 관심을 보였다.
+
+CAU-FUDAN Dual-Degree Program은 입학 후 1년 간 경영전문대학원에서 경영 전문지식을 학습하고 다음 2차년도에는 중국 상하이 소재 명문 Fudan대학 경제대학(SOE, School of Economics)의 EMA 프로그램(English-taught Professional Master Degree Program)을 이수하여 우리 대학경영전문 석사학위와 Fudan 대학의 Finance 또는 International Business 전문석사학위를 모두 취득하는 프로그램이다.
+
+본 과정은 우리 대학과Fudan대학 두 곳 모두 영어로 100% 진행되는 Full Time 과정으로, 국제적 기준에 맞춘 체계적인 교육 프로그램과 밀착형 지도방식으로 한 단계 더 높은 차원의 경력 성장을 이룰 수 있는 복수학위 프로그램이다.
+
+
+
+이번 설명회는 Fudan 대학 관계자가 직접 참석하여 현장감 있는 프로그램 소개가 이루어 졌으며, 복수학위 프로그램의 주요 내용과 혜택에 대한 소개가 이어졌고, 참석자들의 질문에 대한 질의응답 시간도 마련되어 많은 호응을 얻었다.
+
+
+(좌) 신인석 경영전문대학원 원장, (우) 리위에장 Fudan 대학 경제학원 당위서기
+
+신인석 경영전문대학원 원장은 "경영전문대학원 Global MBA프로그램은 변화하는 글로벌 경영 환경에서 경쟁력을 높이고 싶은 학생들과 직장인들에게 합리적인 선택지가 될 것이며, 학생들의 국제적 역량 강화를 위해 지속적으로 노력할 것"이라고 강조하였다.
+
+
+
+우리 대학MBA 2025학년도 가을학기 신입생 모집은 2025년 5월 12일(월)부터 시작되며, 외국인 학생들에게는 50%의 장학 혜택을 지원한다. 보다 자세한 내용은 경영전문대학원 홈페이지(https://mba.cau.ac.kr/)에서 확인할 수 있다.
+
+## 문의caumba@cau.ac.kr</span>
+											</dd>
+										</dl><!-- end ngRepeat: row in item --><dl ng-repeat="row in item" class="ng-scope">
+											<dt>
+											<!--	<a href="http://news.cau.ac.kr/bbs/news_view.php?idx={{row.IDX}}" target="_blank"> <img ng-src="{{row.THUNBNAIL}}"></a>-->
+											<a href="https://news.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=10&amp;CONTENTS_NO=&amp;SITE_NO=5&amp;BOARD_SEQ=1&amp;BBS_SEQ=8676" target="_blank"> <img ng-src="https://www.cau.ac.kr/attach/images/000265/CAU_4307.jpg" src="https://www.cau.ac.kr/attach/images/000265/CAU_4307.jpg"></a>
+											</dt>
+											<dd>
+												<span ng-bind="row.TITLE" class="ng-binding">제65주년 4·19혁명 기념식 개최</span>
+											</dd>
+											<dd>
+												<span ng-bind="row.CONTENTS" class="ng-binding">우리나라의 민주화를 위해 불의에 항거하고자 4.19혁명에 참여했다가 희생된 여섯 명의 열사를 추모하며, 선배들의 숭고한 뜻을 기리는 자리가 마련됐다.
+
+&amp;lsquo;제65주년 4&amp;middot;19 혁명 기념식&amp;rsquo;이 지난 18일 서울캠퍼스 도서관 앞 의혈탑에서 거행됐다.
+
+
+
+
+
+
+  
+
+
+
+이날 기념식에는 박상규 총장, 박광용 교학부총장, 성맹제 연구부총장을 비롯한 우리 대학 주요 보직자들과 한강호 노동조합위원장, 신현국 총동문회장, 김정일 전 4.19 혁명공로회 부회장, 유용태, 박진서 전 총동문회장, 이언식 동문을 비롯한 4.19 혁명 참가 동문, 서울 및 다빈치캠퍼스 학생대표자들이 함께 하며 영령들의 넋을 기렸다.
+  
+기념식은 ▲국민의례 ▲내빈소개 ▲4&amp;middot;19혁명 역사 보고(이장한 학생처장) ▲4&amp;middot;19혁명 희생 영령 및 순국선열에 대한 묵념 ▲분향과 헌화 ▲기념사(박상규 총장) ▲추모사(신현국 총동문회장) ▲헌사(김정일 전 4.19 혁명공로자회 부회장) ▲선배 영령께 드리는 글(서울캠&amp;middot;다빈치캠 총학생회장) ▲교가 제창 순서로 진행됐다.
+
+
+
+
+
+
+  
+4&amp;middot;19혁명은 우리나라 근현대사의 물줄기를 크게 바꾼 사건이다. 우리 대학을 비롯한 학생들이 주축이 돼 우리나라의 민주주의를 지켰다는 점에서 세계적으로도 유례를 찾기 힘든 뜻깊은 혁명이다. 우리 대학 학생 4000여 명도 운동장에 모여 선언문을 낭독하고 &amp;lsquo;의에 죽고 참에 살자&amp;rsquo;는 의혈정신을 앞세워 한강을 넘어 혁명에 동참했다.
+  
+
+
+4.19혁명은 한편으로 우리 대학에 큰 아픔을 가져다 준 사건이기도 했다. 불의에 항거하는 과정에서 ▲고병래(상학과) ▲김태년(약학과) ▲서현무(법학과) ▲송규석(정치외교학과) ▲전무영(신문학과) ▲지영헌(신문학과) 총 6인의 열사가 유명을 달리했다. 
+  
+우리 대학은 여섯 열사의 정신을 기리며, 의혈탑을 건립해 매년 추모식을 거행하고 있다. 의와 참의 정신을 몸소 실천한 선배 열사들의 고귀한 뜻을 이어받고 지키기 위해 지속적으로 노력하고 있다.
+  
+
+
+이날 행사에 참석한 신현국 총동문회장은 중앙의 동문들이 앞으로도 역사의 중심에 우뚝 서서 선배 영령들의 숭고한 뜻을 받들고 우리나라를 위해 헌신하겠다는 의지를 전했다. 
+
+
+  
+
+박상규 총장은 &amp;ldquo;우리나라의 민주주의를 위해 희생하신 여섯 열사를 비롯한 선배님들께 깊은 감사와 존경을 표한다&amp;rdquo;며, &amp;ldquo;피땀으로 이뤄낸 역사를 마음 깊이 간직하며, 지키고 이어가겠다&amp;rdquo;고 기념사를 남겼다.</span>
+											</dd>
+										</dl><!-- end ngRepeat: row in item -->
+										<!-- //Looping 2 -->
+									</div>
+								</div><!-- end ngRepeat: item in page.tabs --><div class="nb-s-item ng-scope" ng-repeat="item in page.tabs">
+									<div class="nb-p-07s">
+										<!-- Looping 2 -->
+										<!-- ngRepeat: row in item --><dl ng-repeat="row in item" class="ng-scope">
+											<dt>
+											<!--	<a href="http://news.cau.ac.kr/bbs/news_view.php?idx={{row.IDX}}" target="_blank"> <img ng-src="{{row.THUNBNAIL}}"></a>-->
+											<a href="https://news.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=10&amp;CONTENTS_NO=&amp;SITE_NO=5&amp;BOARD_SEQ=1&amp;BBS_SEQ=8673" target="_blank"> <img ng-src="https://www.cau.ac.kr/attach/images/000265/CAU_4821.jpg" src="https://www.cau.ac.kr/attach/images/000265/CAU_4821.jpg"></a>
+											</dt>
+											<dd>
+												<span ng-bind="row.TITLE" class="ng-binding">우리 대학 노동조합, 제37주년 창립기념식 개최</span>
+											</dd>
+											<dd>
+												<span ng-bind="row.CONTENTS" class="ng-binding">우리 대학 노동조합이 24일 오후 4시 메가박스 이수점에서 제37주년 창립기념식을 개최했다.
+  
+이날 행사에는 박상규 총장을 비롯해 고석범 상임이사, 한강호 노동조합위원장 등 우리 대학 주요 관계자들과 조합원들이 참석했다. 
+  
+1부 행사는 ▲개회 ▲국민의례 ▲내빈 소개 ▲위원장 인사말 ▲총장 축사 ▲축하영상 상영 ▲폐회 순서로 기념식이 진행됐다. 이어진 2부에서는 영화 &amp;lsquo;야당&amp;rsquo;을 함께 관람하며, 이날 행사가 마무리되었다. 
+
+
+  
+한강호 노동조합 15대 위원장은 &amp;ldquo;노동조합이 창립한 지 37년이 지나는 동안 여러 가지 힘든 일과 기쁜 일들을 함께 해왔다. 15대 노동조합은 그 역사를 잊지 않고 마음에 새겨 모든 조합원들의 권익과 삶의 질을 향상하기 위해 최선을 다하겠다&amp;rdquo;고 말했다.
+
+
+  
+
+박상규 총장은 &amp;ldquo;취임한 지 6주년이 되었는데, 그간 우리 대학이 많은 성장을 이뤄냈다. 구성원 여러분이 한마음으로 노력해주셨기에 이런 성장이 가능했던 것 같다.&amp;rdquo;며, &amp;ldquo;앞으로도 더 나은 환경과 복지를 위해 최선을 다하겠다&amp;rdquo;고 말했다.</span>
+											</dd>
+										</dl><!-- end ngRepeat: row in item --><dl ng-repeat="row in item" class="ng-scope">
+											<dt>
+											<!--	<a href="http://news.cau.ac.kr/bbs/news_view.php?idx={{row.IDX}}" target="_blank"> <img ng-src="{{row.THUNBNAIL}}"></a>-->
+											<a href="https://news.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=10&amp;CONTENTS_NO=&amp;SITE_NO=5&amp;BOARD_SEQ=1&amp;BBS_SEQ=8675" target="_blank"> <img ng-src="https://www.cau.ac.kr/attach/images/000265/CAU_4175.jpg" src="https://www.cau.ac.kr/attach/images/000265/CAU_4175.jpg"></a>
+											</dt>
+											<dd>
+												<span ng-bind="row.TITLE" class="ng-binding">중간고사 학생격려 이벤트, ‘총.쏘.야. 총장님이 쏜다!’ 행사 성료</span>
+											</dd>
+											<dd>
+												<span ng-bind="row.CONTENTS" class="ng-binding">중간고사를 준비하는 재학생들을 격려하고 응원하기 위한 의미로 마련된 간식 지원 행사인 &amp;lsquo;총장님이 쏜다&amp;rsquo; 행사가 지난 16일(수) 오후 4시 310관(100주년 기념관) 1층 로비에서 열렸다.
+
+
+  
+서울캠퍼스 총학생회와 학생처가 함께 주최한 이번 행사에는 박상규 총장, 박광용 교학부총장, 성맹제 연구부총장, 이찬규 행정부총장, 이장한 학생처장 등 주요 보직자들이 함께 했다.
+
+
+
+
+  
+이날 행사에서는 햄버거 1,000개와 음료 1,000개가 준비되었으며, 재학생들의 적극적인 참여로 30여 분 만에 준비된 간식이 모두 매진되었다.
+  
+
+
+
+우리 대학 &amp;lsquo;총장님이 쏜다&amp;rsquo; 행사는 10년 이상 이어져 온 행사로 총장이 재학생들을 가까이에서 격려하고 교류할 수 있는 장을 마련하고 있다. 시험 준비에 지친 재학생들을 격려하고, 재학생들로 하여금 학교에 대한 애교심과 자긍심을 고취시키기 위해 매 학기 진행된다.</span>
+											</dd>
+										</dl><!-- end ngRepeat: row in item -->
+										<!-- //Looping 2 -->
+									</div>
+								</div><!-- end ngRepeat: item in page.tabs --><div class="nb-s-item ng-scope" ng-repeat="item in page.tabs">
+									<div class="nb-p-07s">
+										<!-- Looping 2 -->
+										<!-- ngRepeat: row in item --><dl ng-repeat="row in item" class="ng-scope">
+											<dt>
+											<!--	<a href="http://news.cau.ac.kr/bbs/news_view.php?idx={{row.IDX}}" target="_blank"> <img ng-src="{{row.THUNBNAIL}}"></a>-->
+											<a href="https://news.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=10&amp;CONTENTS_NO=&amp;SITE_NO=5&amp;BOARD_SEQ=1&amp;BBS_SEQ=8674" target="_blank"> <img ng-src="https://www.cau.ac.kr/attach/images/000265/image01.png" src="https://www.cau.ac.kr/attach/images/000265/image01.png"></a>
+											</dt>
+											<dd>
+												<span ng-bind="row.TITLE" class="ng-binding">토목공학과 총동문회(중토회) 부산지부 모임</span>
+											</dd>
+											<dd>
+												<span ng-bind="row.CONTENTS" class="ng-binding">지난 4월 17일, 부산 광안대교 앞 일식당에서 우리 대학 토목공학과 총동문회(이하 중토회) 부산지부 모임이 개최되었다.
+
+이번 자리는 37대 회장으로 추대된 설영만(86, 現 ㈜대한 대표이사) 동문이 참석해 동문 간의 결속과 미래지향적 발전을 다짐하는 뜻깊은 시간이었다.
+
+
+토목공학과 동문회는 단순한 친목을 넘어, 후배 양성 및 사회공헌에도 앞장서고 있으며, 학업과 대내외 활동에서 우수한 학생을 선발해 장학기금을 조성하는 등 미래 인재 육성에 힘쓰고 있다.
+
+졸업생 선배들이 직접 후배들과의 대화 시간을 마련해 진로 지도와 실질적 조언을 나누고 세대 간 지식과 경험의 교류와 소통과 협력을 바탕으로 지속적인 발전과 혁신을 이어갈예정이다.</span>
+											</dd>
+										</dl><!-- end ngRepeat: row in item --><dl ng-repeat="row in item" class="ng-scope">
+											<dt>
+											<!--	<a href="http://news.cau.ac.kr/bbs/news_view.php?idx={{row.IDX}}" target="_blank"> <img ng-src="{{row.THUNBNAIL}}"></a>-->
+											<a href="https://news.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=10&amp;CONTENTS_NO=&amp;SITE_NO=5&amp;BOARD_SEQ=1&amp;BBS_SEQ=8672" target="_blank"> <img ng-src="https://www.cau.ac.kr/attach/images/000265/CAU_4750.jpg" src="https://www.cau.ac.kr/attach/images/000265/CAU_4750.jpg"></a>
+											</dt>
+											<dd>
+												<span ng-bind="row.TITLE" class="ng-binding">신완균 박사(약학 '59), 발전기금 1억원 기부</span>
+											</dd>
+											<dd>
+												<span ng-bind="row.CONTENTS" class="ng-binding">약학대학 동문(59학번)인 신완균 박사가 24일(수) 오후 2시 본관 총장실을 방문해 약학대학 연구 활성화를 위해 써달라며 1억원을 쾌척했다.
+  
+이날 전달식에는 박상규 총장, 황광우 약학대학장, 최재오 대외협력처장, 김태암 약학대학 교학지원팀장, 신중범 대외협력팀장 등 우리 대학 관계자들과 약학대학 후배 재학생들이 함께해 감사의 마음을 전했다. 
+  
+신완균 박사는 1959년 우리 대학에 입학해 약학 학사 및 석사 과정을 마친 후, 동덕여대에서 박사 학위를 취득했다. 1965년 졸업 후 22년간 개인 약국을 운영하다 1987년부터 2012년까지 한국휴텍스제약에서 근무하며 대표이사 회장을 역임했다. 2012년부터 2017년까지 구주제약 부회장으로서 다양한 의약품을 개발하며, 한국 제약산업의 성장에 크게 기여했다. 
+  
+2017년 은퇴 후 &amp;rsquo;후배들을 위해 의미있는 일을 하고 싶다&amp;lsquo;는 결심을 하고,이번 모교를 위한발전기금으로 1억원을 전달하며따뜻한 나눔을 실천했다.
+
+
+  
+신 박사는 발전기금을 전달하며, &amp;ldquo;지금껏 부모님과 학교, 회사 등 사랑을 받아만 왔던 것 같다. 자녀들도 모두 경제적으로 자립하였고, 모든 것이 감사한 생활의 연속이다. 인생의 졸업을 앞두고 사회와 모교를 위해 뜻깊은 일을 하고 싶었다&amp;rdquo;고 말했다.
+  
+
+박상규 총장은 &amp;ldquo;신완균 박사님의 모교에 대한 큰 사랑에 진심으로 감사드린다.&amp;rdquo;며, &amp;ldquo;전달해주신 발전기금은 우리 대학이 글로벌 연구중심대학으로 성장하기 위한 소중한 밑거름으로 의미 있게 사용하겠다&amp;rdquo;고 말했다.</span>
+											</dd>
+										</dl><!-- end ngRepeat: row in item -->
+										<!-- //Looping 2 -->
+									</div>
+								</div><!-- end ngRepeat: item in page.tabs --><div class="nb-s-item ng-scope" ng-repeat="item in page.tabs">
+									<div class="nb-p-07s">
+										<!-- Looping 2 -->
+										<!-- ngRepeat: row in item --><dl ng-repeat="row in item" class="ng-scope">
+											<dt>
+											<!--	<a href="http://news.cau.ac.kr/bbs/news_view.php?idx={{row.IDX}}" target="_blank"> <img ng-src="{{row.THUNBNAIL}}"></a>-->
+											<a href="https://news.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=10&amp;CONTENTS_NO=&amp;SITE_NO=5&amp;BOARD_SEQ=1&amp;BBS_SEQ=8671" target="_blank"> <img ng-src="https://www.cau.ac.kr/attach/images/000265/그림.png" src="https://www.cau.ac.kr/attach/images/000265/그림.png"></a>
+											</dt>
+											<dd>
+												<span ng-bind="row.TITLE" class="ng-binding">첨단영상대학원, OTT 콘텐츠 특성화 대학원 지원사업 재선정, ‘창작 IP 발굴 촉진’</span>
+											</dd>
+											<dd>
+												<span ng-bind="row.CONTENTS" class="ng-binding">우리 대학이 OTT 콘텐츠에 특화된 융합형 전문 인재 양성&amp;middot;지원 사업을 연속 수행하게 됐다.
+
+첨단영상대학원이 문화체육관광부와 한국콘텐츠진흥원이 주관하는 &amp;lsquo;OTT(Over The Top, 온라인 동영상 서비스) 콘텐츠 특성화 대학원 지원사업&amp;rsquo;에 4월 23일 최종 선정됐다. 2022년 최초 선정 이후 2회 연속으로 사업에 선정된 이번 결과를 통해, 우리 대학은 2028년 상반기까지 3년간 최대 16억 5천만 원의 정부 지원금을 확보하게 됐다.
+
+우리 대학은 2022년 5월 본 사업에 선정된 이후 매년 9억 원(첫 해는 4.85억 원)을 지원받아 연 20명의 장학생을 선발해왔으며, 수료 시까지 지속적인 장학 혜택을 제공해 OTT 산업 인재 양성에 박차를 가해왔다.
+
+그간의 주요 프로그램으로▲쇼미더피치(교내 IP 공모전 및 피칭대회) ▲중앙파란영화제(영화영상제작 전공 작품 발표회) ▲논스크립트 콘텐츠 포럼(콘텐츠 산업 연사 초청 포럼) ▲100건 이상의 전문가 특강 등이 있다.
+
+특히, 'OTT 프로젝트 워크숍' 과 '숏폼 콘텐츠 프로젝트' 교과목을 통해 유망한 기획안들을 발굴하고 산업 전문가들의 멘토링을 거쳐 실전 피칭으로 연결하는 실무 연계 교육에 주력해왔다. 완성된 결과물들은 부산국제영화제, 서울독립영화제, 국제초단편영화제 등에서 두각을 나타내는 실적을 거뒀으며, 이 중 일부는 OTT 플랫폼 및 제작사와 계약을 체결할 정도로 사업화 성과로 이어졌다.
+
+재선정을 계기로 우리 대학은 OTT 트랙 장학생 선발을 이어가는 한편, 보다 고도화된 산업친화형 커리큘럼을 운영할 계획이다. 융합 창작 교과 프로젝트를 통해 픽션, 논스크립트 콘텐츠, 숏폼 등 다양한 창작 IP를 발굴하고, 산학협력 기반의 제작&amp;middot;배급 연계를 강화하는 사업화를 모색하고,교과-비교과 연계 프로그램인 쇼미더피치는 쇼미더IP로 확대 및 분화되어학기 말 쇼케이스를 통해 현업 프로듀서와 창업 투자사와 연결되는 기회를 제공할 예정이다.사업 종료 이후에는 &amp;lsquo;CAU IPs(가칭)&amp;rsquo;라는 IP홀딩스컴퍼니를 설립하여 장학생의 창작 IP를 보호하고 첨단영상대학원의 자립 운영 체계를 확립할 계획이다.
+
+이번재선정은 우리 대학 총장단과 본부의 적극적인 지원과 협력이 이루어낸 성취로, 대학 차원의 체계적인 협조가 없었다면 결코 가능하지 않았을 결과다. 다양한 행정적&amp;middot;제도적 뒷받침 덕분에, 본 사업을 다시 수행할 수 있는 소중한 기회를 확보할 수 있었다.
+
+이창재 첨단영상대학원장은 &amp;ldquo;지원사업 선정은 우리 대학의 실무 중심 교육 경쟁력이 다시 한 번 입증된 결과이다. 융합형 커리큘럼을 기반으로 창의적 인재 양성과 글로벌 콘텐츠 IP 개발에 더욱 힘쓰겠다&amp;ldquo;고 말했다.
+
+우리 대학 기술지주주식회사인 탁툰엔터프라이즈를 통해 OTT 콘텐츠와 관련된 다수의 성과를 창출하고 있는 본 사업의 과제책임자인 김탁훈 첨단영상대학원 교수는 &amp;ldquo;기획&amp;middot;개발부터 투자&amp;middot;제작, 유통까지 아우르는 원스톱 통합 교육 시스템을 구축해 실질적 성과로 이어가겠다&amp;rdquo;며 사업에 임하는 포부를 밝혔다.
+
+박상규 총장은 &amp;ldquo;이번 사업은 대학 구성원 모두의 헌신과 지원의 결실이며, 특히 첨단영상대학원이 보여준 기획력과 실행 역량이 주효했다&amp;rdquo;며, &amp;ldquo;앞으로도 우리 대학은 문화콘텐츠 분야에서 선도적인 교육과 연구 거점지로서의 위상을 지켜나갈 것&amp;rdquo;이라고 말했다.</span>
+											</dd>
+										</dl><!-- end ngRepeat: row in item --><dl ng-repeat="row in item" class="ng-scope">
+											<dt>
+											<!--	<a href="http://news.cau.ac.kr/bbs/news_view.php?idx={{row.IDX}}" target="_blank"> <img ng-src="{{row.THUNBNAIL}}"></a>-->
+											<a href="https://news.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=10&amp;CONTENTS_NO=&amp;SITE_NO=5&amp;BOARD_SEQ=1&amp;BBS_SEQ=8670" target="_blank"> <img ng-src="https://www.cau.ac.kr/attach/images/000265/image06.png" src="https://www.cau.ac.kr/attach/images/000265/image06.png"></a>
+											</dt>
+											<dd>
+												<span ng-bind="row.TITLE" class="ng-binding">융합공학부 유기나노소재 연구실(지도교수 왕동환), 2025 한국고분자학회 춘계학술대회 논문상 수상</span>
+											</dd>
+											<dd>
+												<span ng-bind="row.CONTENTS" class="ng-binding">사진설명. (왼쪽부터) 김병기 박사후연구원, 김민수 박사과정, 김진영 박사과정
+
+우리 대학 융합공학부 유기나노소재 연구실(지도교수:왕동환)소속 김병기 박사후연구원, 김민수 박사과정, 김진영 박사과정이 지난4월17일(목)제주 제주컨벤션센터에서 열린 한국고분자학회 2025년 춘계학술대회에서 각각 공모 부분 '최삼권우수학위논문상', &amp;lsquo;포스터 부문 대상&amp;rsquo;, &amp;lsquo;구두(토론) 부문 장려상&amp;rsquo;을 수상했다.
+  
+최삼권우수학위논문상은 우수한 연구성과를 도출한 박사 학위자에게 수여되는 상으로 100만 원의 상금이 별도로 주어진다. 김병기 박사는 &amp;lsquo;고효율 에너지 하베스팅/센싱용 유무기 하이브리드 반도체 기반 광전자소자 계면 결함 제어 연구&amp;rsquo; 논문을 통해 수상의 기쁨을 안게 됐다. 본 상은 대학원 학위과정 중 고분자 관련 우수한 연구성과에 기반해, 고분자과학과 공학 발전을 위해 포상하고자 신설되었다. 
+  
+또한, 김민수 박사과정은 &amp;lsquo;Well-Ordered Molecular Orientation of Ternary Active Layer via Transfer Lamination for Efficient Light Energy Harvesting and Signal Sensing&amp;rsquo; 연구를 통해 포스터발표 부문 대상을 수상했다. 이는 최우수 포스터발표 중에 선정하며 50만 원의 상금이 별도로 주어진다. 한편, 김진영 박사과정생은 &amp;lsquo;Silane Network Passivation for Polar-Resistant and High-Mobility Perovskite Quantum Dots&amp;rsquo; 연구를 통해 구두(토론) 부문 장려상을 수상했다. 
+  
+왕동환 교수는 이번 한국고분자학회 춘계학술대회에 소속 박사 및 학생들의 수상을 통해 &amp;ldquo;차세대 전도성 고분자 및 양자점 융복합 소재 개발을 통한 첨단 광전자소자 응용 개발을 목표로 수행한 연구 결과로 의미가 깊다&amp;rdquo;라는 소감을 밝혔다. 
+  
+
+한편, 한국고분자학회는 1976년 창립돼 올해로 49주년을 맞이한 학회로 전자&amp;middot;에너지&amp;middot;자동차&amp;middot;바이오 분야의 첨단 기술을 연구 개발하는 4500명 이상의 회원이 활동 중이다.
+
+
+# 문의 : 중앙대 왕동환 교수 TEL: 02-820-5074 / Website: https://onml.cau.ac.kr</span>
+											</dd>
+										</dl><!-- end ngRepeat: row in item -->
+										<!-- //Looping 2 -->
+									</div>
+								</div><!-- end ngRepeat: item in page.tabs --><div class="nb-s-item ng-scope" ng-repeat="item in page.tabs">
+									<div class="nb-p-07s">
+										<!-- Looping 2 -->
+										<!-- ngRepeat: row in item --><dl ng-repeat="row in item" class="ng-scope">
+											<dt>
+											<!--	<a href="http://news.cau.ac.kr/bbs/news_view.php?idx={{row.IDX}}" target="_blank"> <img ng-src="{{row.THUNBNAIL}}"></a>-->
+											<a href="https://news.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=10&amp;CONTENTS_NO=&amp;SITE_NO=5&amp;BOARD_SEQ=1&amp;BBS_SEQ=8669" target="_blank"> <img ng-src="https://www.cau.ac.kr/attach/images/000265/DSC00925.png" src="https://www.cau.ac.kr/attach/images/000265/DSC00925.png"></a>
+											</dt>
+											<dd>
+												<span ng-bind="row.TITLE" class="ng-binding">우리 대학 주관 ‘첨단소재·나노융합 혁신융합대학 서포터즈 2기’ 발대식 개최</span>
+											</dd>
+											<dd>
+												<span ng-bind="row.CONTENTS" class="ng-binding">우리 대학첨단소재&amp;middot;나노융합 혁신융합대학사업단(단장 박광용 교학부총장, 이하 사업단)이서울캠퍼스 102관(약학대학 및 R&amp;D센터) 11층 University Club(U.C)에서 &amp;lsquo;MNM COSS 서포터즈 2기 발대식&amp;rsquo;을 개최했다.
+
+이번 행사는 사업단의 주요 비전과 사업 방향을 소개하고, 서포터즈의 역할과 향후 활동 계획을 공유하는 자리로 마련됐다.
+  
+
+
+발대식에는우리 대학을비롯해 강원대, 국립금오공대, 한남대, 인하공업전문대학 등 5개 참여대학의 단장 및 부단장, 관계자, 서포터즈 등 총 92명이 참석했다. 대학 간 협업과 교류가 활발히 이루어지는 가운데, 참석자들은 서포터즈 2기의 출범을 축하하고 첨단분야 혁신융합대학(COSS, Convergence and Open Sharing System) 지자체 참여형 사업의 대중적 확산을 위한 의지를 다졌다.
+  
+MNM COSS 서포터즈 2기는 지난해 선발된 1기에 이어 활동을 시작한 대학생 중심의 콘텐츠 홍보단으로, 앞으로 온&amp;middot;오프라인 콘텐츠 제작, 교육 및 연구성과 확산, 사업단 관련 행사 취재 및 운영 지원 등 다양한 활동을 전개할 예정이다. 특히 소재, 나노, 제조 분야에 대한 대중 친화적 콘텐츠를 기획&amp;middot;제작함으로써, 관련 산업에 대한 국민적 이해를 높이고 사회적 관심을 확산시키는 데 힘쓸 계획이다.
+  
+서포터즈들은 ▲사업단 유튜브 및 SNS 채널을 활용한 카드뉴스&amp;middot;영상 콘텐츠 제작 ▲전공 연계 인터뷰 및 실험&amp;middot;교육 현장 소개 ▲성과 발표회, 심포지엄 등 주요 행사 취재 및 기록 ▲참여 대학 간 공동 콘텐츠 협업 등 다양한 프로젝트에 참여하게 된다. 또한 각 캠퍼스의 전공 및 지역적 특성을 살린 콘텐츠를 통해, 사업단의 활동을 보다 입체적으로 소개하고 지속 가능한 관심을 유도할 예정이다.
+  
+박광용 사업단장은 &amp;ldquo;서포터즈 2기는 첨단소재와 나노융합, 적층제조 기술의 중요성을 널리 알리고, 우리 컨소시엄의 비전과 목표를 국민에게 효과적으로 전달하는 중추적 역할을 맡게 될 것&amp;rdquo;이라며, &amp;ldquo;대학, 기업, 연구소가 함께 교육 콘텐츠와 인프라를 공유하고 개방하는 융합 교육 생태계 속에서, 여러분의 활동이 큰 동력이 되기를 기대한다&amp;rdquo;고 밝혔다. 또한 박 단장은 &amp;ldquo;서포터즈 1기가 우리 사업단의 교과과정과 마이크로디그리 등을 처음 소개한 주자였다면, 2기는 그 성과를 확산하고 비전을 널리 알리는 기폭제가 되어줄 것&amp;rdquo;이라며, &amp;ldquo;이번 활동이 여러분에게도 값진 경험이 되기를 바라며, 함께 멋진 변화를 만들어가자&amp;rdquo;고 덧붙였다. 
+  
+사업단은 앞으로도 서포터즈 활동이 사업단의 외연을 확장하고, 대학 간 연계와 산업 간 협력을 촉진하는 촉매제가 될 수 있도록 적극적으로 지원해 나갈 계획이다.</span>
+											</dd>
+										</dl><!-- end ngRepeat: row in item --><dl ng-repeat="row in item" class="ng-scope">
+											<dt>
+											<!--	<a href="http://news.cau.ac.kr/bbs/news_view.php?idx={{row.IDX}}" target="_blank"> <img ng-src="{{row.THUNBNAIL}}"></a>-->
+											<a href="https://news.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=10&amp;CONTENTS_NO=&amp;SITE_NO=5&amp;BOARD_SEQ=1&amp;BBS_SEQ=8668" target="_blank"> <img ng-src="https://www.cau.ac.kr/attach/images/000264/그림1_3.jpg" src="https://www.cau.ac.kr/attach/images/000264/그림1_3.jpg"></a>
+											</dt>
+											<dd>
+												<span ng-bind="row.TITLE" class="ng-binding">영어교육과 이장호 교수-Oxford 대학 연구팀, 교육학분야 최상위 학술지 논문 게재</span>
+											</dd>
+											<dd>
+												<span ng-bind="row.CONTENTS" class="ng-binding">사진설명. (왼쪽부터) 영어교육과 이장호 교수, 옥스퍼드대학 Ernesto Macaro 교수, 옥스퍼드대학 Heath Rose 교수, 육군사관학교 이한솔 교수
+
+영어교육과 이장호 교수-옥스포드 대학 교육학과 교수진(Ernesto Macaro, Heath Rose)-육사 이한솔 교수 연구팀이 영어매개수업(EMI, English Medium Instruction)의 효과성에 기여하는 필수 요소를 밝히고 이들 간의 구조적 관계를 통계적으로 검증하는데 성공했다.
+  
+영어매개수업(이하 EMI)은 비영어권 국가의 교육기관에서 일반 교과목(예: 과학, 수학, 공학, 경제학 등)을 영어를 주된 매개로 진행하는 수업 형태를 말한다. 국제화 시대 속 영어의 중요성이 더욱 강조됨에 따라 세계적으로 빠르게 확산되고 있는 교육 방식이지만, EMI의 성공 요인에 대한 체계적인 분석은 부족한 상황이었다.
+  
+이장호 교수 연구팀은 이 같은 학문적 공백에 주목해, 메타분석과 구조방정식모형을 결합한 메타-구조방정식모형(MASEM, Meta-Analytic Structural Equation Modelling) 기법을 활용해 비영어권 국가의 대학 교육기관에서의 EMI에 대한 대규모 연구를 수행했다. 총 1만 오천여명 학습자 데이터를 종합 분석한 결과, 학습자의 영어 능력과 수업 참여도(engagement)가 EMI의 성공을 결정짓는 핵심 요인으로 밝혀졌다. 특히, 영어 능력은 영어 성취에, 참여도는 교과목 내용 이해에 더욱 중요한 영향을 미치는 것으로 나타났다. 특히, 학교의 모든 수업이 영어로 진행되는 &amp;lsquo;Full EMI&amp;rsquo;의 경우와 달리, 모국어로 진행되는 과목과 EMI 과목이 혼합된 이른바 &amp;lsquo;Partial EMI&amp;rsquo; 환경에서는 학습자의 수업 참여도가 보다 더 중요한 역할을 하는 것으로 드러나, 각 학교별 EMI 환경에 따른 맞춤형 지원 정책의 필요성도 제기되었다.
+  
+이장호 교수는 &amp;ldquo;이번 연구를 통해 EMI가 단순히 영어로 진행되는 수업을 넘어서, 학습자의 특성과 학교별 EMI 정책에 따라 성과가 달라진다는 점을 실증적으로 입증했다&amp;rdquo;며, &amp;ldquo;학교 기관에서 EMI 정책을 설계할 때 더욱 세분화된 전략이 필요하다는 점을 강조하고 싶다&amp;rdquo;고 밝혔다.
+  
+
+이번 연구는 세계적 EMI 전문가인 영국 옥스퍼드대학교 교육학과 Ernesto Macaro 교수, Heath Rose 교수 등과 함께 수행한 공동연구로, 교육학 분야 최고 수준의 국제학술지인 Educational Research Review(Impact Factor 9.6, JCR 교육 분야 760개 학술지 중 2위)에 게재되었다.</span>
+											</dd>
+										</dl><!-- end ngRepeat: row in item -->
+										<!-- //Looping 2 -->
+									</div>
+								</div><!-- end ngRepeat: item in page.tabs -->
+								<!-- //Looping 1 -->
+							</div>
+						</div>
+					</div>
+					<button class="nb-s-left" id="slide007left"> Left </button>
+					<button class="nb-s-right" id="slide007right"> Right </button>
+				</div>
+				<!-- nb-slide -->
+			</div>
+			<!-- nb-p-s-cc -->
+		</div>
+	</div>
 </div>
-<div class="nb-portlet-aside">
-<aside class="nb-portlet-controller">
-<header class="nb-portlet-aside-settings">
-<div class="nb-portletSetup-close"><a href="javascript:void(0);" onclick="nbInformation.portletClose()">포틀릿 설정 닫기</a></div>
-<div class="nb-portletSetup-reset"><span>포틀릿 설정<a href="javascript:void(0);" onclick="nbInformation.portletReset('pc')">초기화</a></span></div>
-<div class="nb-portlet-btn-save"><a href="javascript:nbInformation.portletSave();">저장</a></div>
-</header>
-<div class="nb-portlet-controller-container" style="overflow: hidden;">
-<div class="nb-portlet-controller-01">
-<div class="nb-portlet-aside-header" id="nbPortletList"></div>
+<span class="nb-before"></span><span class="nb-after"></span></div></section><section class="nb-portlet-section" id="P014"><div class="ng-scope">
+
+
+<div>
+	<div class="nb-portlet-contents ng-scope" ng-controller="P014Controller as page">
+		<div>
+			<header class="nb-p-headers">
+				<h2 class="nb-p-title nb-left"><span ng-bind="page.title" class="ng-binding">학사일정</span></h2>
+				<div class="nb-right nb-t-right">
+					<ol class="nb-headerIcons">
+						<li class="nb-p-iconNewWindow"><a href="javascript:void(0);" ng-click="page.goList()">new window</a></li>
+						<!-- ngIf: page.homeUrl != null -->
+					</ol>
+				</div>
+			</header>
+			<header class="nb-p-headers">
+				<!-- tab nav -->
+				<ol class="nb-p-tab nb-p-flexXXX">
+					<!-- ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope"> <span ng-bind="tab.title" class="ng-binding">3월</span> </li><!-- end ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope on"> <span ng-bind="tab.title" class="ng-binding">4월</span> </li><!-- end ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope"> <span ng-bind="tab.title" class="ng-binding">5월</span> </li><!-- end ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope"> <span ng-bind="tab.title" class="ng-binding">6월</span> </li><!-- end ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope"> <span ng-bind="tab.title" class="ng-binding">7월</span> </li><!-- end ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope"> <span ng-bind="tab.title" class="ng-binding">8월</span> </li><!-- end ngRepeat: tab in page.tabs -->
+				</ol>
+				<!-- //tab nav -->
+			</header>
+			<!-- tab contents -->
+			<ol class="nb-p-tab-sections">
+				<!-- 전체 -->
+				<li class="on">
+					<div class="nb-padding-5-0 nb-font-13">
+						<div class="nb-p-table">
+							<div class="nb-p-column">
+								<div></div>
+								<div class="nb-30p"></div>
+							</div>
+							<!-- ngRepeat: item in page.printList --><div class="nb-p-row ng-scope" ng-repeat="item in page.printList">
+								<!-- Looping -->
+								<a href="javascript:void(0);" class="nb-p-cell"> <em class="nb-t-left nb-p-dot"> <span ng-bind="item.TITLE" class="ng-binding">2025년 1학기 중간시험(8주차)</span> </em> <em class="nb-p-nr nb-t-right nb-rtrim nb-p-color-01"><span ng-bind="item.TDAY" class="ng-binding">22일(화)~28일(월)</span></em> </a>
+								<i class="nb-t-more"><span ng-bind-html="item.TITLE" class="ng-binding">2025년 1학기 중간시험(8주차)</span></i>
+								<!-- //Looping -->
+							</div><!-- end ngRepeat: item in page.printList --><div class="nb-p-row ng-scope" ng-repeat="item in page.printList">
+								<!-- Looping -->
+								<a href="javascript:void(0);" class="nb-p-cell"> <em class="nb-t-left nb-p-dot"> <span ng-bind="item.TITLE" class="ng-binding">유연학기 Term 2(8주)</span> </em> <em class="nb-p-nr nb-t-right nb-rtrim nb-p-color-01"><span ng-bind="item.TDAY" class="ng-binding">29일(화)~06.23일(월)</span></em> </a>
+								<i class="nb-t-more"><span ng-bind-html="item.TITLE" class="ng-binding">유연학기 Term 2(8주)</span></i>
+								<!-- //Looping -->
+							</div><!-- end ngRepeat: item in page.printList -->
+						</div>
+						<!-- ngIf: page.p014List.length == 0 -->
+					</div>
+					<!-- ngIf: page.p014List.length > 5 --> </li>
+				<!-- //전체 -->
+			</ol>
+			<!-- //tab contents -->
+		</div>
+	</div>
 </div>
+<span class="nb-before"></span><span class="nb-after"></span></div></section><section class="nb-portlet-section" id="P005"><div class="ng-scope">
+
+<style>
+	.important-empty {text-align:center;font-size: 13px !important;padding: 5px 0;color: #888;}
+</style>
+<div>
+	<div class="nb-portlet-contents ng-scope" ng-controller="p005Controller as page">
+		<div>
+			<header class="nb-p-headers">
+				<h2 class="nb-p-title nb-left"><span ng-bind="page.title" class="ng-binding">식단표</span></h2>
+				<div class="nb-right nb-t-right">
+					<!-- tab nav -->
+					<ol class="nb-p-tab">
+						<!-- ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index, 'tabs')" ng-class="{on: tab.active}" ng-init="" class="ng-scope on"><span ng-bind="tab.title" class="ng-binding">서울</span></li><!-- end ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index, 'tabs')" ng-class="{on: tab.active}" ng-init="" class="ng-scope"><span ng-bind="tab.title" class="ng-binding">다빈치</span></li><!-- end ngRepeat: tab in page.tabs -->
+					</ol>
+					<!-- //tab nav -->
+				</div>
+			</header>
+			<!-- tab contents -->
+			<ol class="nb-p-tab-sections">
+				<!-- 서울 -->
+				<li class="on">
+					<header class="nb-p-headers">
+						<div class="nb-left">
+							<div class="nb-p-time-select">
+								<a href="javascript:void(0);" class="nb-p-time-select-prev" ng-click="page.onDate('left')"> &lt; </a>
+								<a href="javascript:void(0);" class="nb-p-time-select-next" ng-click="page.onDate('right')"> &gt; </a>
+								<p class="nb-p-time-select-current ng-binding" ng-bind="page.p005SelectList[0].date">2025.04.26</p>
+							</div>
+						</div>
+						<div class="nb-right nb-t-right">
+							<ol class="nb-p-04-list">
+								<!-- ngRepeat: tab in page.tabs2 --><li ng-repeat="tab in page.tabs2" ng-click="page.activeTab($index, 'tabs2')" ng-class="{on: tab.active}" class="ng-scope"><em ng-bind="tab.title" class="ng-binding">조식</em></li><!-- end ngRepeat: tab in page.tabs2 --><li ng-repeat="tab in page.tabs2" ng-click="page.activeTab($index, 'tabs2')" ng-class="{on: tab.active}" class="ng-scope on"><em ng-bind="tab.title" class="ng-binding">중식</em></li><!-- end ngRepeat: tab in page.tabs2 --><li ng-repeat="tab in page.tabs2" ng-click="page.activeTab($index, 'tabs2')" ng-class="{on: tab.active}" class="ng-scope"><em ng-bind="tab.title" class="ng-binding">석식</em></li><!-- end ngRepeat: tab in page.tabs2 -->
+							</ol>
+						</div>
+					</header>
+					<!-- tab contents 2 -->
+					<ol class="nb-p-04-content" id="carteP005">
+						<!-- 조식 -->
+						<!-- ngIf: page.isEmpty == 'N' --><li class="on ng-scope" ng-if="page.isEmpty == 'N'">
+							<!-- Looping 1 -->
+							<!-- ngRepeat: item in page.restArray --><dl class="nb-p-04-list-02 ng-scope" ng-repeat="item in page.restArray">
+								<dt class="nb-font-13">
+									<a href="javascript:void(0);" ng-click="page.showMenu($index)" style="color:#1A9A83 !important"><span ng-bind="item" class="ng-binding">생활관식당(블루미르308관)</span></a>
+								</dt>
+								<!-- Looping 2 -->
+								<!-- ngRepeat: row in page.p005SelectList | filter:{rest:item} --><dd ng-repeat="row in page.p005SelectList | filter:{rest:item}" ng-show="isShowArray[$parent.$index]" class="ng-scope">
+									<label> <input type="checkbox">
+										<ul>
+											<li class="nb-font-13"><span ng-bind="row.time" class="ng-binding">11:30~13:00</span></li>
+											<li class="nb-font-13"><span ng-bind="row.course" class="ng-binding">중식(양식)</span></li>
+											<li class="nb-font-13"><span ng-bind="row.price" class="ng-binding">5,500 원</span></li>
+										</ul>
+										<!-- 상세보기 -->
+										<div class="nb-p-04-detail">
+											<div class="nb-p-04-01">
+												<img ng-src="https://mportal.cau.ac.kr/file/imageView.do?filePath=Upload/gtm/menu/hansik.png" src="https://mportal.cau.ac.kr/file/imageView.do?filePath=Upload/gtm/menu/hansik.png">
+											</div>
+											<div class="nb-p-04-02">
+												<div class="nb-p-04-02-01 nb-font-12">
+													<p class="nb-p-04-02-01-a"><span ng-bind="row.rest" class="ng-binding">생활관식당(블루미르308관)</span></p>
+													<p class="nb-p-04-02-01-b"><span ng-bind="row.time" class="ng-binding">11:30~13:00</span></p>
+												</div>
+												<div class="nb-p-04-02-02 nb-font-18">
+													<p class="nb-p-04-02-02-b"><span ng-bind="row.price" class="ng-binding">5,500 원</span></p>
+												</div>
+											</div>
+											<div class="nb-p-04-03 nb-font-13 nb-p-flex nb-wrap ng-binding" ng-bind-html="getRowData(row.menuDetail)"><p>쌀밥</p><p>크림스프</p><p>돈가스*소스</p><p>토마토푸실리파스타</p><p>오이피클</p><p>배추김치</p><p>그린샐러드*드레싱</p></div>
+										</div>
+										<!-- //상세보기 --> </label>
+								</dd><!-- end ngRepeat: row in page.p005SelectList | filter:{rest:item} -->
+								<!-- //Looping 2 -->
+							</dl><!-- end ngRepeat: item in page.restArray --><dl class="nb-p-04-list-02 ng-scope" ng-repeat="item in page.restArray">
+								<dt class="nb-font-13">
+									<a href="javascript:void(0);" ng-click="page.showMenu($index)" style="color:#1A9A83 !important"><span ng-bind="item" class="ng-binding">생활관식당(블루미르309관)</span></a>
+								</dt>
+								<!-- Looping 2 -->
+								<!-- ngRepeat: row in page.p005SelectList | filter:{rest:item} --><dd ng-repeat="row in page.p005SelectList | filter:{rest:item}" ng-show="isShowArray[$parent.$index]" class="ng-scope ng-hide">
+									<label> <input type="checkbox">
+										<ul>
+											<li class="nb-font-13"><span ng-bind="row.time" class="ng-binding">11:00~13:30</span></li>
+											<li class="nb-font-13"><span ng-bind="row.course" class="ng-binding">중식(한식)</span></li>
+											<li class="nb-font-13"><span ng-bind="row.price" class="ng-binding">0 원</span></li>
+										</ul>
+										<!-- 상세보기 -->
+										<div class="nb-p-04-detail">
+											<div class="nb-p-04-01">
+												<img ng-src="https://mportal.cau.ac.kr/file/imageView.do?filePath=Upload/gtm/menu/hansik.png" src="https://mportal.cau.ac.kr/file/imageView.do?filePath=Upload/gtm/menu/hansik.png">
+											</div>
+											<div class="nb-p-04-02">
+												<div class="nb-p-04-02-01 nb-font-12">
+													<p class="nb-p-04-02-01-a"><span ng-bind="row.rest" class="ng-binding">생활관식당(블루미르309관)</span></p>
+													<p class="nb-p-04-02-01-b"><span ng-bind="row.time" class="ng-binding">11:00~13:30</span></p>
+												</div>
+												<div class="nb-p-04-02-02 nb-font-18">
+													<p class="nb-p-04-02-02-b"><span ng-bind="row.price" class="ng-binding">0 원</span></p>
+												</div>
+											</div>
+											<div class="nb-p-04-03 nb-font-13 nb-p-flex nb-wrap ng-binding" ng-bind-html="getRowData(row.menuDetail)"></div>
+										</div>
+										<!-- //상세보기 --> </label>
+								</dd><!-- end ngRepeat: row in page.p005SelectList | filter:{rest:item} --><dd ng-repeat="row in page.p005SelectList | filter:{rest:item}" ng-show="isShowArray[$parent.$index]" class="ng-scope ng-hide">
+									<label> <input type="checkbox">
+										<ul>
+											<li class="nb-font-13"><span ng-bind="row.time" class="ng-binding">11:00~13:30</span></li>
+											<li class="nb-font-13"><span ng-bind="row.course" class="ng-binding">중식(양식)</span></li>
+											<li class="nb-font-13"><span ng-bind="row.price" class="ng-binding">0 원</span></li>
+										</ul>
+										<!-- 상세보기 -->
+										<div class="nb-p-04-detail">
+											<div class="nb-p-04-01">
+												<img ng-src="https://mportal.cau.ac.kr/file/imageView.do?filePath=Upload/gtm/menu/hansik.png" src="https://mportal.cau.ac.kr/file/imageView.do?filePath=Upload/gtm/menu/hansik.png">
+											</div>
+											<div class="nb-p-04-02">
+												<div class="nb-p-04-02-01 nb-font-12">
+													<p class="nb-p-04-02-01-a"><span ng-bind="row.rest" class="ng-binding">생활관식당(블루미르309관)</span></p>
+													<p class="nb-p-04-02-01-b"><span ng-bind="row.time" class="ng-binding">11:00~13:30</span></p>
+												</div>
+												<div class="nb-p-04-02-02 nb-font-18">
+													<p class="nb-p-04-02-02-b"><span ng-bind="row.price" class="ng-binding">0 원</span></p>
+												</div>
+											</div>
+											<div class="nb-p-04-03 nb-font-13 nb-p-flex nb-wrap ng-binding" ng-bind-html="getRowData(row.menuDetail)"></div>
+										</div>
+										<!-- //상세보기 --> </label>
+								</dd><!-- end ngRepeat: row in page.p005SelectList | filter:{rest:item} --><dd ng-repeat="row in page.p005SelectList | filter:{rest:item}" ng-show="isShowArray[$parent.$index]" class="ng-scope ng-hide">
+									<label> <input type="checkbox">
+										<ul>
+											<li class="nb-font-13"><span ng-bind="row.time" class="ng-binding">11:00~13:30</span></li>
+											<li class="nb-font-13"><span ng-bind="row.course" class="ng-binding">중식(특식)</span></li>
+											<li class="nb-font-13"><span ng-bind="row.price" class="ng-binding">0 원</span></li>
+										</ul>
+										<!-- 상세보기 -->
+										<div class="nb-p-04-detail">
+											<div class="nb-p-04-01">
+												<img ng-src="https://mportal.cau.ac.kr/file/imageView.do?filePath=Upload/gtm/menu/hansik.png" src="https://mportal.cau.ac.kr/file/imageView.do?filePath=Upload/gtm/menu/hansik.png">
+											</div>
+											<div class="nb-p-04-02">
+												<div class="nb-p-04-02-01 nb-font-12">
+													<p class="nb-p-04-02-01-a"><span ng-bind="row.rest" class="ng-binding">생활관식당(블루미르309관)</span></p>
+													<p class="nb-p-04-02-01-b"><span ng-bind="row.time" class="ng-binding">11:00~13:30</span></p>
+												</div>
+												<div class="nb-p-04-02-02 nb-font-18">
+													<p class="nb-p-04-02-02-b"><span ng-bind="row.price" class="ng-binding">0 원</span></p>
+												</div>
+											</div>
+											<div class="nb-p-04-03 nb-font-13 nb-p-flex nb-wrap ng-binding" ng-bind-html="getRowData(row.menuDetail)"></div>
+										</div>
+										<!-- //상세보기 --> </label>
+								</dd><!-- end ngRepeat: row in page.p005SelectList | filter:{rest:item} -->
+								<!-- //Looping 2 -->
+							</dl><!-- end ngRepeat: item in page.restArray -->
+						</li><!-- end ngIf: page.isEmpty == 'N' -->
+						<!-- ngRepeat: item in page.restArray --><!-- ngIf: page.isEmpty == 'Y' --><!-- end ngRepeat: item in page.restArray --><!-- ngIf: page.isEmpty == 'Y' --><!-- end ngRepeat: item in page.restArray -->
+						<!-- //조식 -->
+					</ol>
+					<!-- //tab contents 2 -->
+<!-- 					<div class="nb-p-02-list-more" ng-if="page.p005SelectList.length > 5"> -->
+
+
+<!-- 					</div> -->
+				</li>
+				<!-- //서울 -->
+			</ol>
+			<!-- //tab contents -->
+		</div>
+	</div>
 </div>
-<i class="nb-p-del-icon" id="nbPortletRemoveicon"><em><span>삭제할 포틀릿을 올려주세요</span></em></i>
-</aside>
+<span class="nb-before"></span><span class="nb-after"></span></div></section></div>
+	                <div class="nb-portlet-container" data-col="1"><section class="nb-portlet-section" id="P002"><div class="ng-scope">
+
+<div>
+	<div class="nb-portlet-contents ng-scope" ng-controller="P002Controller as page">
+		<div>
+			<div>
+				<!--{{ page.p002List }}-->
+			</div>
+			<div id="nbBanner" class="nb-p-banner">
+				<ul>
+					<!-- ngRepeat: item in page.p002List --><li class="ng-scope on" ng-repeat="item in page.p002List">
+						<a href="#">
+							<img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20190326132027_dh14x4sy.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20190326132027_dh14x4sy.png">
+						</a>
+					</li><!-- end ngRepeat: item in page.p002List --><li class="ng-scope" ng-repeat="item in page.p002List">
+						<a href="#">
+							<img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20180112203543_52884932.jpg" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/BOARD/20180112203543_52884932.jpg">
+						</a>
+					</li><!-- end ngRepeat: item in page.p002List -->
+				</ul>
+
+				<button class="nb-s-left">left</button>
+				<button class="nb-s-right">right</button>
+			</div>
+
+		</div>
+	</div>
+
+	<script>
+
+	</script>
+
+</div><span class="nb-before"></span><span class="nb-after"></span></div></section><section class="nb-portlet-section" id="P004"><div class="ng-scope">
+
+
+<div>
+	<div class="nb-portlet-contents ng-scope" ng-controller="P004Controller as page">
+		<div>
+			<header class="nb-p-headers">
+				<h2 class="nb-p-title nb-left"><span ng-bind="page.title" class="ng-binding">공지사항</span></h2>
+				<div class="nb-right nb-t-right">
+					<ol class="nb-headerIcons">
+						<!-- ngIf: page.homeUrl != null --><li class="nb-p-iconHone ng-scope" ng-if="page.homeUrl != null"><a href="http://mportal.cau.ac.kr/system/admin/board/B0004/board.do" target="_blank">홈</a></li><!-- end ngIf: page.homeUrl != null -->
+					</ol>
+				</div>
+			</header>
+			<header class="nb-p-headers">
+				<div class="nb-left">
+					<!-- tab nav -->
+					<ol class="nb-p-tab">
+						<!-- ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope on"><span ng-bind="tab.title" class="ng-binding">포탈공지</span></li><!-- end ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope"><span ng-bind="tab.title" class="ng-binding">학칙개정 공고</span></li><!-- end ngRepeat: tab in page.tabs -->
+					</ol>
+					<!-- //tab nav -->
+				</div>
+				<div class="nb-right nb-t-right">
+					<ol class="nb-headerIcons">
+						<li class="nb-p-iconNewWindow"><a href="javascript:void(0);" ng-click="page.goList()">new window</a></li>
+					</ol>
+				</div>
+			</header>
+			<!-- tab contents -->
+			<ol class="nb-p-tab-sections">
+				<li class="on">
+					<div class="nb-p-table nb-padding-5-0 nb-font-13">
+						<div class="nb-p-column">
+							<div></div>
+							<div class="nb-30p"></div>
+						</div>
+						<!-- ngRepeat: item in page.printList --><div class="nb-p-row ng-scope" ng-repeat="item in page.printList">
+							<!--Looping -->
+							<a href="/system/admin/board/B0004/viewPost.do?postId=474" target="_self" class="nb-p-cell"> <em class="nb-t-left nb-p-dot"><span ng-bind="item.title" class="ng-binding">블록체인 기반 디지털배지 학위증 발급 안내</span></em> <em class="nb-p-nr nb-t-right nb-rtrim nb-p-color-01"><span ng-bind="item.regDt" class="ng-binding">2025.02.17</span></em> </a>
+							<i class="nb-t-more"><span ng-bind-html="item.title" class="ng-binding">블록체인 기반 디지털배지 학위증 발급 안내</span></i>
+							<!--//Looping -->
+						</div><!-- end ngRepeat: item in page.printList --><div class="nb-p-row ng-scope" ng-repeat="item in page.printList">
+							<!--Looping -->
+							<a href="/system/admin/board/B0004/viewPost.do?postId=472" target="_self" class="nb-p-cell"> <em class="nb-t-left nb-p-dot"><span ng-bind="item.title" class="ng-binding">2025-1 수강신청 부하테스트 안내</span></em> <em class="nb-p-nr nb-t-right nb-rtrim nb-p-color-01"><span ng-bind="item.regDt" class="ng-binding">2025.02.03</span></em> </a>
+							<i class="nb-t-more"><span ng-bind-html="item.title" class="ng-binding">2025-1 수강신청 부하테스트 안내</span></i>
+							<!--//Looping -->
+						</div><!-- end ngRepeat: item in page.printList --><div class="nb-p-row ng-scope" ng-repeat="item in page.printList">
+							<!--Looping -->
+							<a href="/system/admin/board/B0004/viewPost.do?postId=463" target="_self" class="nb-p-cell"> <em class="nb-t-left nb-p-dot"><span ng-bind="item.title" class="ng-binding">서울캠퍼스 교내 셔틀버스 운행 재개 안내(11.27(수) 15:45~)</span></em> <em class="nb-p-nr nb-t-right nb-rtrim nb-p-color-01"><span ng-bind="item.regDt" class="ng-binding">2024.11.27</span></em> </a>
+							<i class="nb-t-more"><span ng-bind-html="item.title" class="ng-binding">서울캠퍼스 교내 셔틀버스 운행 재개 안내(11.27(수) 15:45~)</span></i>
+							<!--//Looping -->
+						</div><!-- end ngRepeat: item in page.printList --><div class="nb-p-row ng-scope" ng-repeat="item in page.printList">
+							<!--Looping -->
+							<a href="/system/admin/board/B0004/viewPost.do?postId=437" target="_self" class="nb-p-cell"> <em class="nb-t-left nb-p-dot"><span ng-bind="item.title" class="ng-binding">2024-1학기 등록금 납부 안내</span></em> <em class="nb-p-nr nb-t-right nb-rtrim nb-p-color-01"><span ng-bind="item.regDt" class="ng-binding">2024.02.26</span></em> </a>
+							<i class="nb-t-more"><span ng-bind-html="item.title" class="ng-binding">2024-1학기 등록금 납부 안내</span></i>
+							<!--//Looping -->
+						</div><!-- end ngRepeat: item in page.printList --><div class="nb-p-row ng-scope" ng-repeat="item in page.printList">
+							<!--Looping -->
+							<a href="/system/admin/board/B0004/viewPost.do?postId=434" target="_self" class="nb-p-cell"> <em class="nb-t-left nb-p-dot"><span ng-bind="item.title" class="ng-binding">2024-1 수강신청 부하테스트 안내</span></em> <em class="nb-p-nr nb-t-right nb-rtrim nb-p-color-01"><span ng-bind="item.regDt" class="ng-binding">2024.02.02</span></em> </a>
+							<i class="nb-t-more"><span ng-bind-html="item.title" class="ng-binding">2024-1 수강신청 부하테스트 안내</span></i>
+							<!--//Looping -->
+						</div><!-- end ngRepeat: item in page.printList -->
+					</div>
+					<!-- ngIf: page.p004List.length == 0 -->
+					<!-- ngIf: page.p004List.length > 5 --><div class="nb-p-02-list-more ng-scope" ng-if="page.p004List.length > 5">
+						<a href="javascript:void(0);" ng-click="page.showMoreList()" ng-show="page.showMore.show"><em>더보기</em></a>
+						<a href="javascript:void(0);" ng-click="page.showInitList()" ng-show="!page.showMore.show" class="ng-hide"><em>닫기</em></a>
+					</div><!-- end ngIf: page.p004List.length > 5 --> </li>
+			</ol>
+			<!-- //tab contents -->
+		</div>
+	</div>
 </div>
-</article>
+<span class="nb-before"></span><span class="nb-after"></span></div></section><section class="nb-portlet-section" id="P013"><div class="ng-scope">
+
+
+
+<div>
+	<div class="nb-portlet-contents ng-scope" ng-controller="P013Controller as page">
+		<div>
+			<header class="nb-p-headers">
+				<h2 class="nb-p-title nb-left"><span ng-bind="page.title" class="ng-binding">교내 전화번호</span></h2>
+				<div class="nb-right nb-t-right">
+					<!-- tab nav -->
+					<ol class="nb-p-tab">
+						<!-- ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="tab.active ? 'on' : ''" class="ng-scope on"> <span ng-bind="tab.title" class="ng-binding">서울</span> </li><!-- end ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="tab.active ? 'on' : ''" class="ng-scope"> <span ng-bind="tab.title" class="ng-binding">다빈치</span> </li><!-- end ngRepeat: tab in page.tabs -->
+					</ol>
+					<!-- //tab nav -->
+				</div>
+			</header>
+			<!-- tab contents -->
+			<ol class="nb-p-tab-sections">
+				<!-- 서울 -->
+				<li class="on">
+					<div class="nb-p-02-search-c">
+						<div class="nb-p-02-search-q">
+							<form class="ng-pristine ng-valid">
+								<div class="nb-p-02-search-type">
+									<select ng-model="page.searchInfo.searchType" class="ng-pristine ng-untouched ng-valid ng-not-empty"> <option value="nm">이름</option> <option value="dept">부서</option> </select>
+								</div>
+								<div class="nb-p-02-search-val">
+									<input type="text" ng-model="page.searchInfo.searchKeyword" class="ng-pristine ng-untouched ng-valid ng-empty">
+									<i><input type="submit" value="검색" ng-click="page.selectP013List()" ng-enter="page.selectP013List()"></i>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="nb-p-02-list">
+
+						<dl class="nb-p-04-list-02 nb-P013 ng-scope" id="P013list">
+							<!-- ngIf: !page.isSearched --><dd class="nb-font-13 ng-scope" ng-if="!page.isSearched">
+								<label>
+									<input type="checkbox">
+									<ul>
+										<li class="nb-font-13 ng-binding">서울 </li>
+										<li class="nb-font-13 ng-binding">02-820-5114</li>
+									</ul>
+									<ul>
+										<li class="nb-font-13 ng-binding">다빈치</li>
+										<li class="nb-font-13 ng-binding">031-670-3114</li>
+									</ul>
+								</label>
+							</dd><!-- end ngIf: !page.isSearched -->
+							<!-- ngRepeat: item in page.printList -->
+							<!-- ngIf: page.printList.length == 0 -->
+						</dl>
+
+						<!-- ngIf: page.p013List.length > 15 -->
+					</div>
+				</li>
+			</ol>
+			<!-- //tab contents -->
+		</div>
+	</div>
+</div>
+<span class="nb-before"></span><span class="nb-after"></span></div></section></div>
+	                <div class="nb-portlet-container" data-col="2"><section class="nb-portlet-section" id="P029"><div class="ng-scope">
+
+
+<div class="nb-portlet-contents ng-scope" ng-controller="p029Controller as page">
+	<div class="nb-portlet-contents">
+		<div>
+			<header class="nb-p-headers">
+				<h2 class="nb-p-title nb-left"><span ng-bind="page.title" class="ng-binding">주요 서비스</span></h2>
+				<div class="nb-right nb-t-right">
+					<ol class="nb-headerIcons">
+						<!-- ngIf: page.homeUrl != null -->
+					</ol>
+				</div>
+			</header>
+			<div class="nb-p-s-cc">
+				<div class="nb-slide">
+					<div class="nb-s-context">
+						<div class="nb-s-wrapper">
+							<div class="nb-s-items-context" id="slide029">
+							
+								<!-- ngRepeat: item in page.list --><div class="nb-s-item ng-scope" ng-repeat="item in page.list">
+									<ul class="nb-p-08">
+										<!-- ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+											<a href="https://mportal.cau.ac.kr/common/office365/checkSignUpDate.do" target="_blank">
+												<em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20220315180319_rs1ob54j.jpg" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20220315180319_rs1ob54j.jpg"></em>
+												<i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">E-mail</span></i>
+											</a>
+										</li><!-- end ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+											<a href="https://eclass3.cau.ac.kr" target="">
+												<em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20230316161848_lu18sap2.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20230316161848_lu18sap2.png"></em>
+												<i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">e-class</span></i>
+											</a>
+										</li><!-- end ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+											<a href="https://irms.cau.ac.kr" target="_blank">
+												<em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20240502174804_qnqmolp1.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20240502174804_qnqmolp1.png"></em>
+												<i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">산학협력단시스템(아이림스)</span></i>
+											</a>
+										</li><!-- end ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+											<a href="https://sugang.cau.ac.kr" target="_blank">
+												<em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20220329170613_ex3mwbii.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20220329170613_ex3mwbii.png"></em>
+												<i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">수강신청</span></i>
+											</a>
+										</li><!-- end ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+											<a href="https://rainbow.cau.ac.kr" target="">
+												<em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20230316161739_0uzxgais.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20230316161739_0uzxgais.png"></em>
+												<i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">Rainbow  Sys.</span></i>
+											</a>
+										</li><!-- end ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+											<a href="https://cauin.cau.ac.kr" target="">
+												<em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20220329170322_necfndq0.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20220329170322_necfndq0.png"></em>
+												<i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">중앙인</span></i>
+											</a>
+										</li><!-- end ngRepeat: row in item -->
+									</ul>
+								</div><!-- end ngRepeat: item in page.list --><div class="nb-s-item ng-scope" ng-repeat="item in page.list">
+									<ul class="nb-p-08">
+										<!-- ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+											<a href="https://www.cau.ac.kr/" target="">
+												<em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20220509115035_csr5x4nh.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20220509115035_csr5x4nh.png"></em>
+												<i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">홈페이지</span></i>
+											</a>
+										</li><!-- end ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+											<a href="https://www.youtube.com/@cautv-media" target="_blank">
+												<em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20250325102607_rng6pgu4.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20250325102607_rng6pgu4.png"></em>
+												<i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">CAUinTV</span></i>
+											</a>
+										</li><!-- end ngRepeat: row in item -->
+									</ul>
+								</div><!-- end ngRepeat: item in page.list -->
+
+							</div>
+						</div>
+					</div>
+					<button class="nb-s-left nb-normal" id="slide029left"> Left </button>
+					<button class="nb-s-right nb-normal" id="slide029right"> Right </button>
+				</div>
+				<!-- nb-slide -->
+			</div>
+			<!-- nb-p-s-cc -->
+		</div>
+	</div>
+</div>
+<span class="nb-before"></span><span class="nb-after"></span></div></section><section class="nb-portlet-section" id="P027"><div class="ng-scope">
+
+
+<div class="nb-portlet-contents ng-scope" ng-controller="p027Controller as page">
+    <div class="nb-portlet-contents">
+        <div>
+            <header class="nb-p-headers">
+                <h2 class="nb-p-title nb-left"><span ng-bind="page.title" class="ng-binding">주요 기관</span></h2>
+                <div class="nb-right nb-t-right">
+                    <ol class="nb-headerIcons">
+                        <!-- ngIf: page.homeUrl != null -->
+                    </ol>
+                </div>
+            </header>
+            <div class="nb-p-s-cc">
+                <div class="nb-slide">
+                    <div class="nb-s-context">
+                        <div class="nb-s-wrapper">
+                            <div class="nb-s-items-context" id="slide027">
+
+                                <!-- ngRepeat: item in page.list --><div class="nb-s-item ng-scope" ng-repeat="item in page.list">
+                                    <ul class="nb-p-08">
+                                        <!-- ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+                                            <a href="https://sugang.cau.ac.kr" target="_blank">
+                                                <em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20220329170759_s66mv5ym.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20220329170759_s66mv5ym.png"></em>
+                                                <i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">수강신청</span></i>
+                                            </a>
+                                        </li><!-- end ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+                                            <a href="http://admission.cau.ac.kr/intro/intro.html" target="_blank">
+                                                <em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20171222190837_14959486.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20171222190837_14959486.png"></em>
+                                                <i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">입학처</span></i>
+                                            </a>
+                                        </li><!-- end ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+                                            <a href="https://library.cau.ac.kr/default" target="_blank">
+                                                <em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20240119174227_82ht2uh3.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20240119174227_82ht2uh3.png"></em>
+                                                <i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">학술정보원</span></i>
+                                            </a>
+                                        </li><!-- end ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+                                            <a href="http://ctl.cau.ac.kr/" target="_blank">
+                                                <em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20180201105904_90275972.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20180201105904_90275972.png"></em>
+                                                <i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">교수학습개발센터</span></i>
+                                            </a>
+                                        </li><!-- end ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+                                            <a href="https://iacf.cau.ac.kr/page/main.php" target="">
+                                                <em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20200907165142_qavzbxcx.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20200907165142_qavzbxcx.png"></em>
+                                                <i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">산학협력단</span></i>
+                                            </a>
+                                        </li><!-- end ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+                                            <a href="http://caufund.cau.ac.kr/2018/main/main.php" target="">
+                                                <em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20180201111804_34303083.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20180201111804_34303083.png"></em>
+                                                <i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">대외협력처(발전기금)</span></i>
+                                            </a>
+                                        </li><!-- end ngRepeat: row in item -->
+                                    </ul>
+                                </div><!-- end ngRepeat: item in page.list --><div class="nb-s-item ng-scope" ng-repeat="item in page.list">
+                                    <ul class="nb-p-08">
+                                        <!-- ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+                                            <a href="http://ch.cauhs.or.kr/" target="">
+                                                <em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20171222190809_79307015.png" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20171222190809_79307015.png"></em>
+                                                <i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">중앙대병원</span></i>
+                                            </a>
+                                        </li><!-- end ngRepeat: row in item --><li ng-repeat="row in item" class="ng-scope">
+                                            <a href="http://ice.cau.ac.kr/" target="_blank">
+                                                <em><img ng-src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20220316174904_ubl48vq3.jpg" src="/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20220316174904_ubl48vq3.jpg"></em>
+                                                <i class="nb-p-color-08"><span ng-bind="row.linkName" class="ng-binding">커리큘럼혁신센터</span></i>
+                                            </a>
+                                        </li><!-- end ngRepeat: row in item -->
+                                    </ul>
+                                </div><!-- end ngRepeat: item in page.list -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <button class="nb-s-left nb-normal" id="slide027left"> Left</button>
+                    <button class="nb-s-right nb-normal" id="slide027right"> Right</button>
+                </div>
+                <!-- nb-slide -->
+            </div>
+            <!-- nb-p-s-cc -->
+        </div>
+    </div>
+</div>
+<span class="nb-before"></span><span class="nb-after"></span></div></section><section class="nb-portlet-section" id="P021"><div class="ng-scope">
+
+
+<div>
+	<div class="nb-portlet-contents ng-scope" ng-controller="P021Controller as page">
+		<div>
+			<header class="nb-p-headers">
+				<h2 class="nb-p-title nb-left"><span ng-bind="page.title" class="ng-binding">CAU Notice</span></h2>
+				<div class="nb-right nb-t-right">
+					<ol class="nb-headerIcons">
+						<li class="nb-p-iconNewWindow"><a href="javascript:void(0);" ng-click="page.goList()">목록</a></li>
+						<!-- ngIf: page.homeUrl != null --><li class="nb-p-iconHone ng-scope" ng-if="page.homeUrl != null"><a href="https://www.cau.ac.kr" target="_blank">홈</a></li><!-- end ngIf: page.homeUrl != null -->
+					</ol>
+				</div>
+			</header>
+			<header class="nb-p-headers">
+				<!-- tab nav -->
+				<ol class="nb-p-tab nb-p-flex">
+					<!-- ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope on"> <span ng-bind="tab.title" class="ng-binding">전체</span> </li><!-- end ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope"> <span ng-bind="tab.title" class="ng-binding">학사</span> </li><!-- end ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope"> <span ng-bind="tab.title" class="ng-binding">학점교류</span> </li><!-- end ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope"> <span ng-bind="tab.title" class="ng-binding">모집</span> </li><!-- end ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope"> <span ng-bind="tab.title" class="ng-binding">장학</span> </li><!-- end ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope"> <span ng-bind="tab.title" class="ng-binding">행사</span> </li><!-- end ngRepeat: tab in page.tabs --><li ng-repeat="tab in page.tabs" ng-click="page.activeTab($index)" ng-class="{ on : tab.active  }" ng-init="" class="ng-scope"> <span ng-bind="tab.title" class="ng-binding">일반</span> </li><!-- end ngRepeat: tab in page.tabs -->
+				</ol>
+				<!-- //tab nav -->
+			</header>
+
+			<!-- tab contents -->
+			<ol class="nb-p-tab-sections">
+				<!-- 전체 -->
+				<li class="on">
+					<div class="nb-padding-5-0 nb-font-13">
+						<div class="nb-p-table">
+							<div class="nb-p-column">
+								<div></div>
+								<div class="nb-30p"></div>
+							</div>
+							<!-- ngRepeat: item in page.printList --><div class="nb-p-row ng-scope" ng-repeat="item in page.printList">
+								<!-- Looping -->
+								<a href="https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&amp;CONTENTS_NO=6&amp;SITE_NO=2&amp;BOARD_SEQ=4&amp;BBS_SEQ=28611" target="_blank" class="nb-p-cell"> 
+									<em class="nb-t-left nb-p-dot"> <strong>[<span ng-bind="item.CATEGORY2" class="ng-binding">통합</span>]</strong><span ng-bind-html="item.TITLE" class="ng-binding">2025 상반기 캠퍼스리크루팅 개최 안내</span> </em>
+									<em class="nb-t-right nb-p-color-01 nb-rtrim"><span ng-bind="item.REGDATE.substring(0, 10)" class="ng-binding">2025-04-25</span></em> </a>
+								<i class="nb-t-more"><span ng-bind-html="item.TITLE" class="ng-binding">2025 상반기 캠퍼스리크루팅 개최 안내</span></i>
+								<!-- //Looping -->
+							</div><!-- end ngRepeat: item in page.printList --><div class="nb-p-row ng-scope" ng-repeat="item in page.printList">
+								<!-- Looping -->
+								<a href="https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&amp;CONTENTS_NO=2&amp;SITE_NO=2&amp;BOARD_SEQ=4&amp;BBS_SEQ=28768" target="_blank" class="nb-p-cell"> 
+									<em class="nb-t-left nb-p-dot"> <strong>[<span ng-bind="item.CATEGORY2" class="ng-binding">통합</span>]</strong><span ng-bind-html="item.TITLE" class="ng-binding">2025-2학기 복수, 연계, 융합, 자기설계, 부전공 신청 안내문</span> </em>
+									<em class="nb-t-right nb-p-color-01 nb-rtrim"><span ng-bind="item.REGDATE.substring(0, 10)" class="ng-binding">2025-04-25</span></em> </a>
+								<i class="nb-t-more"><span ng-bind-html="item.TITLE" class="ng-binding">2025-2학기 복수, 연계, 융합, 자기설계, 부전공 신청 안내문</span></i>
+								<!-- //Looping -->
+							</div><!-- end ngRepeat: item in page.printList --><div class="nb-p-row ng-scope" ng-repeat="item in page.printList">
+								<!-- Looping -->
+								<a href="https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&amp;CONTENTS_NO=4&amp;SITE_NO=2&amp;BOARD_SEQ=4&amp;BBS_SEQ=28767" target="_blank" class="nb-p-cell"> 
+									<em class="nb-t-left nb-p-dot"> <strong>[<span ng-bind="item.CATEGORY2" class="ng-binding">통합</span>]</strong><span ng-bind-html="item.TITLE" class="ng-binding">첨단소재나노융합 혁신융합대학사업단 CO-WEEK 행사 안내</span> </em>
+									<em class="nb-t-right nb-p-color-01 nb-rtrim"><span ng-bind="item.REGDATE.substring(0, 10)" class="ng-binding">2025-04-25</span></em> </a>
+								<i class="nb-t-more"><span ng-bind-html="item.TITLE" class="ng-binding">첨단소재나노융합 혁신융합대학사업단 CO-WEEK 행사 안내</span></i>
+								<!-- //Looping -->
+							</div><!-- end ngRepeat: item in page.printList --><div class="nb-p-row ng-scope" ng-repeat="item in page.printList">
+								<!-- Looping -->
+								<a href="https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&amp;CONTENTS_NO=4&amp;SITE_NO=2&amp;BOARD_SEQ=4&amp;BBS_SEQ=28766" target="_blank" class="nb-p-cell"> 
+									<em class="nb-t-left nb-p-dot"> <strong>[<span ng-bind="item.CATEGORY2" class="ng-binding">통합</span>]</strong><span ng-bind-html="item.TITLE" class="ng-binding">[교무처 학사팀] 2025 전공개방 멘토링 신청 안내</span> </em>
+									<em class="nb-t-right nb-p-color-01 nb-rtrim"><span ng-bind="item.REGDATE.substring(0, 10)" class="ng-binding">2025-04-25</span></em> </a>
+								<i class="nb-t-more"><span ng-bind-html="item.TITLE" class="ng-binding">[교무처 학사팀] 2025 전공개방 멘토링 신청 안내</span></i>
+								<!-- //Looping -->
+							</div><!-- end ngRepeat: item in page.printList --><div class="nb-p-row ng-scope" ng-repeat="item in page.printList">
+								<!-- Looping -->
+								<a href="https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&amp;CONTENTS_NO=4&amp;SITE_NO=2&amp;BOARD_SEQ=4&amp;BBS_SEQ=28765" target="_blank" class="nb-p-cell"> 
+									<em class="nb-t-left nb-p-dot"> <strong>[<span ng-bind="item.CATEGORY2" class="ng-binding">통합</span>]</strong><span ng-bind-html="item.TITLE" class="ng-binding">[교수학습개발센터] 전공선택 및 진로탐색 가이드(e-class 강좌)</span> </em>
+									<em class="nb-t-right nb-p-color-01 nb-rtrim"><span ng-bind="item.REGDATE.substring(0, 10)" class="ng-binding">2025-04-25</span></em> </a>
+								<i class="nb-t-more"><span ng-bind-html="item.TITLE" class="ng-binding">[교수학습개발센터] 전공선택 및 진로탐색 가이드(e-class 강좌)</span></i>
+								<!-- //Looping -->
+							</div><!-- end ngRepeat: item in page.printList -->
+						</div>
+						<!-- ngIf: page.p021List.length == 0 -->
+					</div>
+					<!-- ngIf: page.p021List.length > 5 --><div class="nb-p-02-list-more ng-scope" ng-if="page.p021List.length > 5">
+						<a href="javascript:void(0);" ng-click="page.showMoreList()" ng-show="page.showMore.show"><em>더보기</em></a>
+						<a href="javascript:void(0);" ng-click="page.showInitList()" ng-show="!page.showMore.show" class="ng-hide"><em>닫기</em></a>
+					</div><!-- end ngIf: page.p021List.length > 5 --> </li>
+				<!-- //전체 -->
+			</ol>
+			<!-- //tab contents -->
+		</div>
+	</div>
+</div>
+<span class="nb-before"></span><span class="nb-after"></span></div></section></div>
+	                <div class="nb-portlet-container" data-col="3"></div>
+	            </section>
+	        </div>
+	    </div>
+	
+	    <div class="nb-portlet-aside">
+	        <aside class="nb-portlet-controller">
+	            <header class="nb-portlet-aside-settings">
+	           		<div class="nb-portletSetup-close"><a href="javascript:void(0);" onclick="nbInformation.portletClose()">포틀릿 설정 닫기</a></div>
+	            	<div class="nb-portletSetup-reset"><span>포틀릿 설정<a href="javascript:void(0);" onclick="nbInformation.portletReset('pc')">초기화</a></span></div>
+	            	<div class="nb-portlet-btn-save"><a href="javascript:nbInformation.portletSave();">저장</a></div>
+	            </header>
+	            <div style="overflow: hidden;" class="nb-portlet-controller-container">
+	                <div class="nb-portlet-controller-01">
+	                    <div id="nbPortletList" class="nb-portlet-aside-header"></div>
+	                </div>
+	            </div>
+	            <i class="nb-p-del-icon" id="nbPortletRemoveicon"><em><span>삭제할 포틀릿을 올려주세요</span></em></i>
+	        </aside>
+	    </div>
+	</article>
+
 <!-- <script src="/common/js/nb.portlet.js"></script> -->
+
+
 <script type="text/javascript">
 <!--
 (function( window, document, $ ){
@@ -3377,12 +4243,18 @@ dd.nb-h-portlet-setup > a {color: #888;pointer-events: auto;}
 })( window, document, jQuery );
 //-->
 </script>
-<div class="chatbot chatbot_pulse" onclick="if(0 &gt; 'win16|win32|win64|mac'.indexOf(navigator.platform.toLowerCase())){location.href = 'https://chat.cau.ac.kr/v2/index.html'}else{window.open('https://chat.cau.ac.kr/v2/index.html', '_blank', 'width = 450, height = 720, top = 100, left = 200, location = no, resizable = yes');}" title="중앙대학교 챗봇"></div>
-<div class="nb-q-bg"></div>
-</div><!-- //contents-begin -->
-</div><!--// nb-contents -->
-</div></section>
-<!-- 풋터 -->
+<div class="chatbot chatbot_pulse" onclick="if(0 > 'win16|win32|win64|mac'.indexOf(navigator.platform.toLowerCase())){location.href = 'https://chat.cau.ac.kr/v2/index.html'}else{window.open('https://chat.cau.ac.kr/v2/index.html', '_blank', 'width = 450, height = 720, top = 100, left = 200, location = no, resizable = yes');}" title="중앙대학교 챗봇"></div>
+
+				<div class="nb-q-bg"></div>
+			</div><!-- //contents-begin -->
+
+		</div><!--// nb-contents -->
+	</div></section>
+
+	<!-- 풋터 -->
+	
+
+
 <style>
 	.nb-select {
 	    padding: 5px 11px 5px 15px;
@@ -3441,57 +4313,148 @@ dd.nb-h-portlet-setup > a {color: #888;pointer-events: auto;}
 	
 
 </script>
-<footer class="nb-footer">
-<!-- <ul class="nb-bot-contents">
+    <footer class="nb-footer">
+        <!-- <ul class="nb-bot-contents">
             <li class="copyright">222</li>
         </ul> -->
-<div class="nb-main-footer">
-<div class="nb-footer-info">
-<ul>
-<li>
-<em>서울</em> 동작구 흑석로 84  <i></i>
-</li>
-<li>
-<em>다빈치</em> 경기도 안성시 대덕면 서동대로 4726  <i></i>
-</li>
-<li>
-<a href="https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=2810" style="color: blue">개인정보처리방침</a>
-</li>
-<li>
-<a href="common/manual/manual.pdf">도움말</a>
-</li>
-<!-- <li id ="helpdesk">
+        <div class="nb-main-footer">
+            <div class="nb-footer-info">
+                <ul>
+                    <li>
+                        <em>서울</em> 동작구 흑석로 84  <i></i>
+                    </li>
+                    <li>
+                        <em>다빈치</em> 경기도 안성시 대덕면 서동대로 4726  <i></i>
+                    </li>
+                    <li>
+                        <a href="https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=2810" style="color: blue">개인정보처리방침</a>
+                    </li>
+                    <li>
+                        <a href="common/manual/manual.pdf">도움말</a>
+                    </li>
+					<!-- <li id ="helpdesk">
                         <a href="#" onclick="fncCallHelpDesk();">Help Desk</a>
                     </li> -->
-</ul>
-<p>ⓒ 2018 Chung-Ang Univ.</p>
-</div>
-<div class="nb-set-language">
-<div class="nb-select">
-<label>
-<select onchange="chgLang(this);">
-<option value="ko">한국어</option>
-<option value="en">English</option>
-</select>
-<i></i>
-</label>
-</div>
-</div>
-<div class="nb-top"><a href="javascript:nbInformation.top();"></a></div>
-</div>
-</footer>
+                </ul>
+                <p>ⓒ 2018 Chung-Ang Univ.</p>
+            </div>
+
+            <div class="nb-set-language">
+                <div class="nb-select">
+                    <label>
+                        <select onchange="chgLang(this);">
+                        <option value="ko">한국어</option>
+                        <option value="en">English</option>
+                        
+                        </select>
+                        <i></i>
+                    </label>
+                </div>
+            </div>
+            <div class="nb-top"><a href="javascript:nbInformation.top();"></a></div>
+        </div>
+    </footer>
 </main>
+
 <!-- 로딩 -->
+
+
+
+
+
 <!-- //로딩-->
+
 <!-- 팝업 배경 -->
-<div class="ux-popup-overlay" id="popupOverlay"></div>
+<div id="popupOverlay" class="ux-popup-overlay"></div>
 <!-- //팝업 배경 -->
 <!-- layout.jsp -->
+
+
 <script type="text/javascript">
 <!--
 
 
 //-->
 </script>
-</body>
-</html>
+
+
+<div class="sp-modal-wrap out ng-scope"><div class="sp-modal sp-message-modal" ng-class="getModalAttr().class"><div class="sp-modal-header">
+<section class="nb-title page">
+<h2><em class="ng-binding"></em></h2>
+</section>
+<span class="sp-modal-close" ng-click="modal.close()"></span>
+</div>
+<div class="sp-modal-body">
+<div ng-bind-html="modal.replaceMessage(modal.params.message) | to_trusted" class="ng-binding"></div>
+</div>
+<div class="sp-modal-footer">
+<div class="nb-buttons center">
+<div class="nb-btn-save nb-theme"><button ng-click="modal.close()" class="ng-binding"></button></div>
+</div>
+</div></div></div><div class="sp-modal-backdrop out"></div><div class="sp-modal-wrap out ng-scope"><div class="sp-modal sp-message-modal" ng-class="getModalAttr().class"><div class="sp-modal-header">
+<section class="nb-title page">
+<h2><em class="ng-binding"></em></h2>
+</section>
+<span class="sp-modal-close" ng-click="modal.close()"></span>
+</div>
+<div class="sp-modal-body">
+<div ng-bind-html="modal.replaceMessage(modal.params.message) | to_trusted" class="ng-binding"></div>
+</div>
+<div class="sp-modal-footer">
+<div class="nb-buttons center">
+<div class="nb-btn-save nb-theme"><button ng-click="modal.ok()" class="ng-binding"></button></div>
+<div class="nb-btn-save"><button ng-click="modal.no()" class="ng-binding"></button></div>
+</div>
+</div></div></div><div class="sp-modal-backdrop out"></div><div class="sp-modal-wrap out ng-scope"><div class="sp-modal sp-message-modal" ng-class="getModalAttr().class"><div class="sp-modal-header">
+<section class="nb-title page">
+<h2><em>날짜선택</em></h2>
+</section>
+<span class="sp-modal-close" ng-click="modal.close()"></span>
+</div>
+<div class="sp-modal-body" style="overflow:visible;">
+<div class="nb-inputCalendarMore nb-2m wid100">
+<div class="nb-inputText calendar">
+<label>
+<div>
+<input type="text" id="modalDatePicker" bs-datepicker="" data-date-format="yyyy-MM-dd" data-model-date-format="yyyy-MM-dd" ng-model="modal.selectedDate" class="ng-pristine ng-untouched ng-valid ng-empty">
+<a href="javascript:void(0);"><em>날자검색</em></a>
+<i></i>
+</div>
+</label>
+</div>
+</div>
+</div>
+<div class="sp-modal-footer" ng-click"modal.test();"="">
+<div class="nb-buttons center">
+<div class="nb-btn-save nb-theme"><button ng-click="modal.returnDate()">확인</button></div>
+</div>
+</div></div></div><div class="sp-modal-backdrop out"></div><div class="sp-modal-wrap out ng-scope"><div class="sp-modal sp-biz-modal sp-research-modal" ng-class="getModalAttr().class">
+		<div class="sp-modal-header">
+               중앙대학교 설문조사
+        <div class="sp-modal-close" ng-click="modal.join1()" ng-style="{ top: '10px', right: '10px'}" style="top: 10px; right: 10px;"></div>
+        </div>
+        <div class="sp-modal-body">
+            <img src="/common/image/research-bg.jpeg">
+			<div class="nb-s-item ng-scope">
+				<ul class="nb-p-center">
+					<li class="ng-scope">
+                	    <a href="https://eclass3.cau.ac.kr" target="_self" ng-click="modal.link()">
+                    		<em><img ng-src="https://mportal.cau.ac.kr/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20200804110235_hhv5ttpg.png" src="https://mportal.cau.ac.kr/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20200804110235_hhv5ttpg.png"></em>
+                    		<i class="nb-p-color-08"><span class="ng-binding">e-class</span></i>
+                		</a>
+					</li>
+					<!-- ngIf: modal.usergb != 'S' && modal.isPc --><li class="ng-scope" ng-if="modal.usergb != 'S' &amp;&amp; modal.isPc">
+						<a href="https://gw.cau.ac.kr" target="_self" ng-click="modal.link()">
+                    		<em><img ng-src="https://mportal.cau.ac.kr/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20180201105517_22048813.png" src="https://mportal.cau.ac.kr/file/imageView.do?filePath=/Upload/TIS/ADMIN/LINK_MANAGE/20180201105517_22048813.png"></em>
+                    		<i class="nb-p-color-08"><span class="ng-binding">그룹웨어</span></i>
+                		</a>
+					</li><!-- end ngIf: modal.usergb != 'S' && modal.isPc -->
+					<!-- ngIf: modal.usergb != 'S' && !modal.isPc -->
+
+				</ul>
+			</div>
+            <ul>
+                <!-- ngRepeat: row in modal.params -->
+            </ul>
+        </div>
+    </div></div><div class="sp-modal-backdrop out"></div></body></html>
