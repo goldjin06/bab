@@ -8,6 +8,10 @@ import time
 load_dotenv()
 bot = discord.Bot()
 
+class status():
+    def __init__(self):
+        self.lastCheckTime = timeCheck()
+        pass
 
 def timeCheck():
     tm = time.localtime(time.time())
