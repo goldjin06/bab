@@ -51,7 +51,7 @@ def getMenu(driver,babtime):
 
 
 
-def getBab(day, time, driver): # day여덟자리, time은 0조식 1중식 2석식
+def getBab(day, time): # day여덟자리, time은 0조식 1중식 2석식
     file = f'./data/{day+str(time)}.json'     # 예제 Textfile
 
     if os.path.isfile(file):
@@ -59,6 +59,11 @@ def getBab(day, time, driver): # day여덟자리, time은 0조식 1중식 2석�
             data = json.load(f)
         return(data["data"])
     else:
+
+        driver = webdriver.Edge()
+        driver.set_window_size(400,1000) # 반응형웹이라서 창 크기
+        driver.get('https://mportal.cau.ac.kr/main.do')
+        
         click = int(day) - int(timeCheck())
         
         if click > 0:
@@ -69,14 +74,12 @@ def getBab(day, time, driver): # day여덟자리, time은 0조식 1중식 2석�
         for i in range(abs(click)):
             link.click()
             
+        
         return(getMenu(driver,time))
 
     
 
 if __name__ == "__main__":
-    driver = webdriver.Edge()
-    driver.set_window_size(400,1000) # 반응형웹이라서 창 크기
-    driver.get('https://mportal.cau.ac.kr/main.do')
-    print(getBab("20250429",1,driver))
-
-    driver.quit()
+    
+    print(getBab("20250430",1))
+    
