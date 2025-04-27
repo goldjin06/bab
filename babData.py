@@ -18,7 +18,9 @@ def getMenu(driver):
             continue
 
         menuInfo = {"place" : contentList[0].getText(),
-                    "time" : contentList[1].getText()}
+                    "time" : contentList[1].getText(),
+                    "price" : contentList[2].getText()
+                    }
 
         menuList = content.select("div > p")
         menu = []
@@ -49,6 +51,10 @@ def dinner(driver):
     link.click()
     time.sleep(0.1)
     return(getMenu(driver))
+
+# TODO:
+def bab(day, time, driver): # day는 전날은 음수로 다음날은 양수로 받기, time은 0조식 1중식 2석식
+    pass
 
 if __name__ == "__main__":
     driver = webdriver.Edge()
