@@ -28,6 +28,8 @@ def getMenu(driver,babtime):
         contentList = content.select("div > div > p > .ng-binding")
         if contentList[2].getText() == "0 원":
             continue
+        elif contentList[0].getText() == 'University Club(102관11층)':
+            continue
 
         menuInfo = {"place" : contentList[0].getText(),
                     "time" : contentList[1].getText(),
@@ -39,16 +41,17 @@ def getMenu(driver,babtime):
         for i in range(3,len(menuList)):
             menu.append(menuList[i].getText())
 
-        menuInfo["menu"] = menu
-        allMenu.append(menuInfo)
+        if menu != []:
+            menuInfo["menu"] = menu
+            allMenu.append(menuInfo)
 
     with open(f"./data/{title}.json","w") as f:
         json.dump({"data" : allMenu},f)
     return(allMenu)
 
 
-# TODO:
-def bab(day, time, driver): # day여덟자리, time은 0조식 1중식 2석식
+
+def getBab(day, time, driver): # day여덟자리, time은 0조식 1중식 2석식
     file = f'./data/{day+str(time)}.json'     # 예제 Textfile
 
     if os.path.isfile(file):
@@ -74,6 +77,6 @@ if __name__ == "__main__":
     driver = webdriver.Edge()
     driver.set_window_size(400,1000) # 반응형웹이라서 창 크기
     driver.get('https://mportal.cau.ac.kr/main.do')
-    print(bab("20250428",0,driver))
+    print(getBab("20250429",1,driver))
 
     driver.quit()

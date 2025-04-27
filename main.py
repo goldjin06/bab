@@ -4,7 +4,7 @@ import os
 import babData as bab
 from selenium import webdriver
 import time
- 
+
 load_dotenv()
 bot = discord.Bot()
 
@@ -42,7 +42,7 @@ def displayDic(menu):
 class selectTimeView(discord.ui.View): # Create a class called MyView that subclasses discord.ui.View
     @discord.ui.button(label="조식", style=discord.ButtonStyle.grey, emoji="🌅") # Create a button with the label "😎 Click me!" with color Blurple
     async def button_breakfast(self, button, interaction):
-        await interaction.response.send_message(displayDic(a[0])) # Send a message when the button is clicked
+        await interaction.response.send_message(bab.getBab(day,time,driver)) # Send a message when the button is clicked
 
     @discord.ui.button(label="중식", style=discord.ButtonStyle.grey, emoji="☀️") # Create a button with the label "😎 Click me!" with color Blurple
     async def button_lunch(self, button, interaction):
@@ -52,21 +52,12 @@ class selectTimeView(discord.ui.View): # Create a class called MyView that subcl
     async def button_dinner(self, button, interaction):
         await interaction.response.send_message(displayDic(a[2]))
 
-@bot.slash_command(name="bab", description="밥 알려줌")
+@bot.slash_command(name="todaybab", description="밥 알려줌")
 async def hello(ctx: discord.ApplicationContext):
-    if lastCheckTime != timeCheck():
-        refresh()
     await ctx.respond("언제 밥?", view = selectTimeView())
 
+
 if __name__ == "__main__":
-    driver = webdriver.Edge()
-    driver.set_window_size(400,1000) # 반응형웹이라서 창 크기
-    driver.get('https://mportal.cau.ac.kr/main.do')
-
-
-    global a
-    global lastCheckTime
-    lastCheckTime = timeCheck()
-    a = [bab.breakfast(driver), bab.lunch(driver), bab.dinner(driver)]
+    
 
     bot.run(os.getenv("TOKEN"))
