@@ -8,10 +8,12 @@ import time
 load_dotenv()
 bot = discord.Bot()
 
+class status():
+    def __init__(self):
+        self.lastCheckTime = timeCheck()
+        pass
 
-def timeCheck():
-    tm = time.localtime(time.time())
-    return("%d%02d%d" % (tm.tm_year,tm.tm_mon,tm.tm_mday))
+timeCheck = bab.timeCheck()
 
 def refresh():
     lastCheckTime = timeCheck()
@@ -37,7 +39,7 @@ def displayDic(menu):
     return(printStr)
 
 
-class MyView(discord.ui.View): # Create a class called MyView that subclasses discord.ui.View
+class selectTimeView(discord.ui.View): # Create a class called MyView that subclasses discord.ui.View
     @discord.ui.button(label="조식", style=discord.ButtonStyle.grey, emoji="🌅") # Create a button with the label "😎 Click me!" with color Blurple
     async def button_breakfast(self, button, interaction):
         await interaction.response.send_message(displayDic(a[0])) # Send a message when the button is clicked
@@ -50,11 +52,11 @@ class MyView(discord.ui.View): # Create a class called MyView that subclasses di
     async def button_dinner(self, button, interaction):
         await interaction.response.send_message(displayDic(a[2]))
 
-@bot.slash_command(name="todaybab", description="밥 알려줌")
+@bot.slash_command(name="bab", description="밥 알려줌")
 async def hello(ctx: discord.ApplicationContext):
     if lastCheckTime != timeCheck():
         refresh()
-    await ctx.respond("언제 밥?", view = MyView())
+    await ctx.respond("언제 밥?", view = selectTimeView())
 
 if __name__ == "__main__":
     driver = webdriver.Edge()
